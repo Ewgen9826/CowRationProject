@@ -11,5 +11,8 @@ import { LoadingService } from "../services/loading.service";
 export class LoadingComponent implements OnInit {
   constructor(public loadingService: LoadingService) {}
 
-  ngOnInit() {}
+  public progress:number;
+  ngOnInit() {
+    this.progress = 65;
+  }
 }
