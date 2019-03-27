@@ -1,0 +1,14 @@
+<a [ngClass]="{'card-hover':!disable}" routerLink="{{link}}" class="card">
+  <div *ngIf="disable" class="disable-mask"></div>
+  <img src="{{cardIcon}}" class="card-img">
+  <span class="card-header">{{headerText}}</span>
+  <a routerLink="{{link}}" [style.background]="btnColor" class="card-btn">
+    <span class="btn-label">{{btnText}}</span>
+    <span class="mask"></span>
+  </a>
+  <img *ngIf="disable" (mouseover)="mouseWarrning=true" (mouseout)="mouseWarrning=false" src="assets/img/warrning.png" class="warrning-btn">
+  <div *ngIf="mouseWarrning" class="tooltip-bubble">
+    <div>Рассчитайте рацион, чтобы получить доступ к другим параметрам...</div>
+    <div class="arrow down"></div>
+  </div>
+</a>

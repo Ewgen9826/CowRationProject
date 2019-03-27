@@ -1,0 +1,12 @@
+<section class="navigation">
+  <app-sidenav-container>
+    <app-sidenav-item [link]="['/company/home']" [icon]="['assets/img/home.svg']" [label]="['Главная']"></app-sidenav-item>
+    <app-sidenav-item [link]="['/company/account']" [icon]="['assets/img/profile.svg']" [label]="['Профиль']"></app-sidenav-item>
+    <app-sidenav-item [link]="['/company/notifications']" [icon]="['assets/img/ring.svg']" [label]="['Уведомления']"></app-sidenav-item>
+    <app-sidenav-item [link]="['/company/settings']" [icon]="['assets/img/settings.svg']" [label]="['Настройки']"></app-sidenav-item>
+  </app-sidenav-container>
+</section>
+
+<section class="main">
+  <router-outlet></router-outlet>
+</section>

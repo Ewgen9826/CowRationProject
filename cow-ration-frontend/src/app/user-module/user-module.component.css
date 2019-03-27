@@ -1,0 +1,8 @@
+:host{
+  display: flex;
+  flex-direction: row;
+}
+.main{
+  margin: 20px 60px;
+  width: 100%;
+}

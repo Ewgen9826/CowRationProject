@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <section class="header-text">
+    <h1>Cow Ration 2019</h1>
+    <div>
+      <span class="line"></span>
+    </div>
+  </section>
+  <section class="cards-section">
+    <app-dashboard-card [cardIcon]="['assets/img/diet.png']" 
+                        [headerText]="['Рацион']" 
+                        [btnText]="['Рассчитать']" 
+                        [btnColor]="['#63f304']"
+                        [link]="['/company/ration']" >
+    </app-dashboard-card>
+    <app-dashboard-card [cardIcon]="['assets/img/logic.png']" 
+                        [headerText]="['Логистика']" 
+                        [btnText]="['Рассчитать']" 
+                        [btnColor]="['#EE6C3B']" 
+                        [disable]="true">
+    </app-dashboard-card>
+    <app-dashboard-card [cardIcon]="['assets/img/economy.png']" 
+                        [headerText]="['Экономика']" 
+                        [btnText]="['Рассчитать']" 
+                        [btnColor]="['#F1A139']" 
+                        [disable]="true" >
+    </app-dashboard-card>
+  </section>
+</div>

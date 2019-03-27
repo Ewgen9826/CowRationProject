@@ -1,0 +1,10 @@
+<div class="sidenav" [@MenuToggle]="toggleService.stateMenuToggle">
+  <div class="sidenav-content">
+      <ng-content></ng-content>
+</div>
+  <div class="btn-item">
+  <button [@IconToggle]="toggleService.stateMenuToggle" class="btn-toggle" (click)="toggleService.toggle()">
+    <img class="btn-icon" src="assets/img/left-arrow.png">
+  </button>
+</div>
+</div>

@@ -1,0 +1,14 @@
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { RouterModule } from "@angular/router";
+import { SidenavContainerComponent } from "./sidenav-container/sidenav-container.component";
+import { SidenavItemComponent } from "./sidenav-item/sidenav-item.component";
+import { ToggleService } from "./services/toggle.service";
+
+@NgModule({
+	declarations: [ SidenavContainerComponent, SidenavItemComponent ],
+	imports: [ CommonModule, RouterModule ],
+	providers: [ ToggleService ],
+	exports: [ SidenavContainerComponent, SidenavItemComponent ]
+})
+export class SidenavModule {}
