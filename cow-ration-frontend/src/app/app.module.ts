@@ -6,11 +6,13 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { UserModuleModule } from "./user-module/user-module.module";
 import { LoginModule } from "./account-login/login/login.module";
+import { CounterComponent } from './UI/counter/counter.component';
 
 @NgModule({
   declarations:
     [
-      AppComponent
+      AppComponent,
+      CounterComponent
     ],
   imports:
     [
