@@ -1,0 +1,33 @@
+.card-text.border-bottom{
+    width: 100%;
+}
+
+.counter-text{
+    font-size: 50px;
+    color: #007bff;
+}
+
+.card.counter{
+    width: 100%;
+    border: 0px solid transparent;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #007bff!important;
+}
+
+.counter-arrow.left{
+    position: absolute;
+    left: 5%;
+    top: 40%;
+}
+
+.counter-arrow.right{
+    position: absolute;
+    right: 5%;
+    top: 40%;
+}
+
+.fa-2x {
+    font-size: 1.5em;
+}
