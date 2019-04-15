@@ -1,0 +1,38 @@
+.conteiner {
+  margin-left: 15%;
+  margin-top: 10%;
+}
+
+table {
+  text-align: center;
+  border-collapse: collapse;
+  background: #FBFBFB;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
+  color: #424242;
+}
+
+.row-table {
+  height: 70px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: normal;
+}
+
+.header-table>th {
+  width: auto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: normal;
+  padding: 20px 50px 30px 50px;
+}
+
+tr:nth-child(odd) {
+  background: rgba(38, 198, 218, 0.1);
+  
+}
+tr.header-table{
+    background: initial;
+}

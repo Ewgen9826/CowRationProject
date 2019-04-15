@@ -2,7 +2,8 @@
   <img class="loading-img" src="assets/img/cow.png">
   <span class=loading-text>Cow Ration</span>
   <div class="loading-progress">
-    <input class="slider" type="range" min="0" max="100" value="50">
-    <span>50%</span>
+      <input class="slider" type="range" min="0" max="100" [value]="progress" disabled>
+      <span>{{progress}}%</span>
   </div>
 </div>
+
