@@ -38,5 +38,8 @@ export class AppComponent implements OnInit {
       .subscribe((event) => this.titleService.setTitle(event["title"]));
 
     this.loadingService.show();
+    setTimeout( () => {
+      this.loadingService.hide()
+    }, 300 );
   }
 }

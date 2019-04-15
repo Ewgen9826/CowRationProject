@@ -6,21 +6,35 @@ import { LaboratoryFeedComponent } from "./pages/laboratory-feed/laboratory-feed
 
 const routes: Routes = [
   {
+    path: "",
+    redirectTo: "selection-feel",
+    pathMatch: "full"
+  },
+  {
     path: "selection-feel",
-    component: SelectionFeedComponent
+    component: SelectionFeedComponent,
+    data: { title: "Выбор кормов" }
   },
   {
     path: "category-feel",
-    component: CategoryFeedComponent
+    component: CategoryFeedComponent,
+    data: { title: "Категория кормления" }
   },
   {
     path: "laboratory-fell",
-    component: LaboratoryFeedComponent
+    component: LaboratoryFeedComponent,
+    data: { title: "Данные лаборатории" }
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  imports:
+    [
+      RouterModule.forChild(routes)
+    ],
+  exports:
+    [
+      RouterModule
+    ]
 })
-export class RationRoutingModule { }
+export class RationRoutingModule {}
