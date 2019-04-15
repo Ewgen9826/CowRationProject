@@ -54,7 +54,13 @@
   margin: 0 10px;
   flex:1;
 }
+.active-item{
+  color: #26c6da;
+}
 .active-item::before{
+  background-color: #26c6da;
+}
+.active-item::after{
   background-color: #26c6da;
 }
 

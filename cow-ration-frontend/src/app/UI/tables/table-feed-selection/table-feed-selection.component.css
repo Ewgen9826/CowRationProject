@@ -1,6 +1,7 @@
-.conteiner {
-  margin-left: 15%;
-  margin-top: 10%;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 table {

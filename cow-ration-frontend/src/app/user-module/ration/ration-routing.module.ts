@@ -3,11 +3,12 @@ import { Routes, RouterModule } from "@angular/router";
 import { SelectionFeedComponent } from "./pages/selection-feed/selection-feed.component";
 import { CategoryFeedComponent } from "./pages/category-feed/category-feed.component";
 import { LaboratoryFeedComponent } from "./pages/laboratory-feed/laboratory-feed.component";
+import { CountCowComponent } from "./pages/count-cow/count-cow.component";
 
 const routes: Routes = [
   {
     path: "",
-    redirectTo: "selection-feel",
+    redirectTo: "count-cow",
     pathMatch: "full"
   },
   {
@@ -21,9 +22,14 @@ const routes: Routes = [
     data: { title: "Категория кормления" }
   },
   {
-    path: "laboratory-fell",
+    path: "laboratory-feel",
     component: LaboratoryFeedComponent,
     data: { title: "Данные лаборатории" }
+  },
+  {
+    path: "count-cow",
+    component: CountCowComponent,
+    data: {title: "Количество голов"}
   }
 ];
 

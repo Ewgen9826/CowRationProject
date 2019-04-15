@@ -11,7 +11,7 @@ import { Component, OnInit, Input } from "@angular/core";
 export class StepperItemComponent implements OnInit {
 
   @Input() header: string;
-
+  @Input() link: string;
   constructor() {}
 
   ngOnInit() {}

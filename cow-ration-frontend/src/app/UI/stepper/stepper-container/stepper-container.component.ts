@@ -14,6 +14,8 @@ export class StepperContainerComponent implements OnInit {
   @Input() headerFirstItem: string;
   @Input() headerLastItem: string;
   @Input() headerStepper: string;
+  @Input() firstLinkStepper: string;
+  @Input() lastLinkStepper: string;
 
   constructor() {}
 

@@ -1,7 +1,11 @@
 <app-stepper-container [headerStepper]="['Рассчет рациона']"
                        [headerFirstItem]="['Количество голов']"
-                       [headerLastItem]="['Результаты анализов']">
-  <app-stepper-item [header]="['Выбор кормов']"></app-stepper-item>
-  <app-stepper-item [header]="['Категория кормления']"></app-stepper-item>
+                       [headerLastItem]="['Результаты анализов']"
+                       [firstLinkStepper]="['count-cow']"
+                       [lastLinkStepper]="['laboratory-feel']">
+  <app-stepper-item [header]="['Выбор кормов']"
+                    [link]="['selection-feel']"></app-stepper-item>
+  <app-stepper-item [header]="['Категория кормления']"
+                    [link]="['category-feel']"></app-stepper-item>
 </app-stepper-container>
 <router-outlet></router-outlet>

@@ -6,8 +6,6 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { UserModuleModule } from "./user-module/user-module.module";
 import { LoginModule } from "./account-login/login/login.module";
-import { TablesModule } from "./UI/tables/tables.module";
-import { ControlsModule } from "./UI/controls/controls.module";
 
 @NgModule({
   declarations:
@@ -21,9 +19,7 @@ import { ControlsModule } from "./UI/controls/controls.module";
       BrowserAnimationsModule,
       UserModuleModule,
       LoginModule,
-      LoadingPageModule,
-      TablesModule,
-      ControlsModule
+      LoadingPageModule
     ],
   providers: [],
   bootstrap:
