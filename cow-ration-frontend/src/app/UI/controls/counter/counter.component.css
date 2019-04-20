@@ -1,0 +1,33 @@
+input{
+    text-align: center;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: normal;
+    outline:none;
+    color: #424242;
+    height: 40px;
+    width: 100px;
+    background: #FBFBFB;
+    border: none;
+    border-bottom: 2px solid #E0E0E0;
+}
+input:focus{
+    border-bottom: 2px solid #26C6DA;
+   
+}
+.counter{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.button-left, .button-right{
+    cursor: pointer;
+}
+.button-right> img{
+    transform: rotate(180deg);
+}
+.button-left:hover, .button-right:hover{
+    filter: invert(55%) sepia(59%) saturate(582%) hue-rotate(139deg) brightness(107%) contrast(86%);
+}

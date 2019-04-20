@@ -4,8 +4,9 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding:20px 0;
+  padding:25px 0;
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
+  background: #FBFBFB;  
 }
 .header-stepper{
   font-size: 32px;
