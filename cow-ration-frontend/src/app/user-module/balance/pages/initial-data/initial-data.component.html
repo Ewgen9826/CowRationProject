@@ -1,1 +1,10 @@
-<p>Показатели рациона</p>
+<div class="container">
+    <app-table-balance [headerFirstBalance]="['Вид корма']"
+                    [headerSecondBalance]="['Количество дней']">
+    </app-table-balance>
+    <div class="square">
+        <app-square-block [blockHeaderName]="['Кормов будет достаточно на (при данном рационе)']">
+        </app-square-block>
+        <span>5 <span>дней</span></span> 
+    </div>
+</div>
