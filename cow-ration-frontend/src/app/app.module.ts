@@ -19,7 +19,7 @@ import { LoginModule } from "./account-login/login/login.module";
       BrowserAnimationsModule,
       UserModuleModule,
       LoginModule,
-      LoadingPageModule
+      LoadingPageModule,
     ],
   providers: [],
   bootstrap:

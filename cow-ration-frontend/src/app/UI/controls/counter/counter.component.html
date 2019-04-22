@@ -1,10 +1,11 @@
 <div class="counter">
-  <div class="button-left">
+  <div class="button-left" (click)=decreaseInNumber()>
     <img src="../assets/img/button-counter.svg" alt="">
   </div>
   <div>
-  <input type="text" value="0"></div>
-  <div class="button-right">
+  <input type="text" [(ngModel)]="days">
+</div>
+  <div class="button-right" (click)=increaseInNumber()>
     <img src="../assets/img/button-counter.svg" alt="">
   </div>
 </div>
