@@ -1,9 +1,9 @@
 <div class="table-field">
-  <div class="button-top">
+  <div class="button-top" (click)="scrollTop()">
     <img src="../assets/img/table-button.svg" alt="">
   </div>  
     <table >
-        <div class="scrol">
+        <div #widgetsContent class="scrol">
           <thead>
             <tr class="header-table">
               <th>{{headerFirstBalance}}</th>
@@ -18,7 +18,8 @@
           </tbody>
       </div>
     </table>   
-  <div class="button-bottom">
+
+  <div class="button-bottom" (click)="scrollBotton()" >
       <img src="../assets/img/table-button.svg" alt="">     
   </div>   
 </div>
