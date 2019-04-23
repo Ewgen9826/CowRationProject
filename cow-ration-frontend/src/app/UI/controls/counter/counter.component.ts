@@ -18,4 +18,10 @@ export class CounterComponent implements OnInit {
   increaseInNumber(): void {
     this.days++;
   }
+  public inputValidator(event: any) {
+    const pattern = /^[Z0-9]*$/;   
+    if (!pattern.test(event.target.value)) {
+      event.target.value = event.target.value.replace(/[^Z0-9]/g, "");
+    }
+  }
 }
