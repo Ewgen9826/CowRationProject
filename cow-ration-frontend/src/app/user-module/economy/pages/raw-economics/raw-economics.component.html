@@ -1,3 +1,13 @@
-<p>
-  raw-economics works!
-</p>
+<div class="container">
+    <span>Исходные данные</span>
+    <p>введите параметры для более точного расчета</p>
+    <app-initial-parameters-block [nameParameter]='["Общий объем проданного молока за пред. год"]'
+                                  [parameterUnit]='["(т)"]'
+    ></app-initial-parameters-block>
+    <app-initial-parameters-block [nameParameter]='["Средний суточный удой за пред. год"]'
+                                  [parameterUnit]='["(кг)"]'
+    ></app-initial-parameters-block>
+    <app-initial-parameters-block [nameParameter]='["Фактическая жирность молока"]'
+                                  [parameterUnit]='["(%)"]'
+    ></app-initial-parameters-block>
+</div>

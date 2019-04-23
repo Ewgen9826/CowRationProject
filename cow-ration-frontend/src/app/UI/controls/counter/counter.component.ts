@@ -19,9 +19,9 @@ export class CounterComponent implements OnInit {
     this.days++;
   }
   public inputValidator(event: any) {
-    const pattern = /^[Z0-9]*$/;   
+    const pattern = /^[0-9]*$/;   
     if (!pattern.test(event.target.value)) {
-      event.target.value = event.target.value.replace(/[^Z0-9]/g, "");
+      event.target.value = event.target.value.replace(/[^0-9]/g, "");
     }
   }
 }

@@ -6,6 +6,7 @@ import { ButtonChoiceComponent } from './button-choice/button-choice.component';
 import { ButtonSortingComponent } from './button-sorting/button-sorting.component';
 import { SquareBlockComponent } from './square-block/square-block.component';
 import { CounterComponent } from './counter/counter.component';
+import { InitialParametersBlockComponent } from './initial-parameters-block/initial-parameters-block.component';
 
 @NgModule({
   declarations: 
@@ -14,7 +15,9 @@ import { CounterComponent } from './counter/counter.component';
     ButtonChoiceComponent,
     ButtonSortingComponent, 
     SquareBlockComponent, 
-    CounterComponent],
+    CounterComponent, 
+    InitialParametersBlockComponent
+  ],
   imports: [
     CommonModule,
     FormsModule
@@ -25,6 +28,8 @@ import { CounterComponent } from './counter/counter.component';
     ButtonChoiceComponent, 
     ButtonSortingComponent, 
     SquareBlockComponent, 
-    CounterComponent]
+    CounterComponent,
+    InitialParametersBlockComponent
+  ]
 })
 export class ControlsModule { }
