@@ -1,0 +1,11 @@
+<app-stepper-container [headerStepper]="['Экономика']"
+                       [headerFirstItem]="['Исходные данные']"
+                       [headerLastItem]="['Планируемые паказатели']"
+                       [firstLinkStepper]="['raw-economics']"
+                       [lastLinkStepper]="['planned-indicators']">
+  <app-stepper-item [header]="['Характеристика молока']"
+                    [link]="['milk-characteristic']"></app-stepper-item>
+  <app-stepper-item [header]="['Затраты']"
+                    [link]="['expenses']"></app-stepper-item>
+</app-stepper-container>
+<router-outlet></router-outlet>

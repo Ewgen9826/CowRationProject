@@ -7,6 +7,8 @@ import { UserAccountModule } from "./user-account/user-account.module";
 
 import { BalanceComponent } from './balance/balance.component';
 import { BalanceModule } from './balance/balance.module';
+import { EconomyComponent } from './economy/economy.component';
+import { EconomyModule } from './economy/economy.module';
 const rationRoutes: Routes = [
 	{
 		path: "",
@@ -21,6 +23,11 @@ const rationRoutes: Routes = [
 		path: "balance",
 		component: BalanceComponent,
 		loadChildren: () => BalanceModule
+	},
+	{
+		path: "economy",
+		component: EconomyComponent,
+		loadChildren: () => EconomyModule
 	}
 ];
 
