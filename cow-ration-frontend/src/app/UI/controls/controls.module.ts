@@ -9,6 +9,8 @@ import { CounterComponent } from './counter/counter.component';
 import { InitialParametersBlockComponent } from './initial-parameters-block/initial-parameters-block.component';
 import { ButtonComponent } from './button/button.component';
 import { RouterModule } from '@angular/router';
+import { TextboxComponent } from './textbox/textbox.component';
+import { VerticalSliderComponent } from './vertical-slider/vertical-slider.component';
 
 @NgModule({
   declarations: 
@@ -19,7 +21,7 @@ import { RouterModule } from '@angular/router';
     SquareBlockComponent, 
     CounterComponent, 
     InitialParametersBlockComponent, 
-    ButtonComponent
+    ButtonComponent, TextboxComponent, VerticalSliderComponent
   ],
   imports: [
     CommonModule,
