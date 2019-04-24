@@ -1,0 +1,27 @@
+<div class="table-field">
+    <div class="button-top" (click)="scrollTop()">
+      <img src="../assets/img/table-button.svg" alt="">
+    </div>  
+      <table >
+          <div #widgetsContent class="scrol">
+            <thead>
+              <tr class="header-table">
+                <th>{{headerFirstBalance}}</th>
+                <th>{{headerSecondBalance}}</th>
+                <th>{{headerThirdBalance}}</th>
+              </tr>
+            </thead>    
+            <tbody>
+              <tr *ngFor="let el of elements" class="g">
+                <th scope="row" class="row-table">{{el.firstColumn}}</th>
+                <td>{{el.secondColumn}}</td>   
+                <td>{{el.thirdColumn}}</td>     
+              </tr>
+            </tbody>
+        </div>
+      </table>   
+  
+    <div class="button-bottom" (click)="scrollBotton()" >
+        <img src="../assets/img/table-button.svg" alt="">     
+    </div>   
+  </div>

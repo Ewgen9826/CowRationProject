@@ -9,6 +9,7 @@ import { PlannedIndicatorsComponent } from './pages/planned-indicators/planned-i
 import { EconomyComponent } from './economy.component';
 import { StepperModule } from 'src/app/UI/stepper/stepper.module';
 import { ControlsModule } from 'src/app/UI/controls/controls.module';
+import { TablesModule } from 'src/app/UI/tables/tables.module';
 
 @NgModule({
   declarations: 
@@ -24,7 +25,8 @@ import { ControlsModule } from 'src/app/UI/controls/controls.module';
     CommonModule,
     EconomyRoutingModule,
     StepperModule,
-    ControlsModule
+    ControlsModule,
+    TablesModule
   ]
 })
 export class EconomyModule { }

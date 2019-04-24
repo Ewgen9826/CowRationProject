@@ -1,3 +1,11 @@
-<p>
-  expenses works!
-</p>
+<div class="container">
+        <app-table-economy [headerFirstBalance]="['Стать затрат']"
+                            [headerSecondBalance]="['Сумма']"
+                            [headerThirdBalance]="['%']"
+        ></app-table-economy>
+        <div class="square">
+                <app-square-block [blockHeaderName]="['Затраты на общий объем молока']">
+                </app-square-block>
+                
+        </div>
+</div>

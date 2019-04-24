@@ -30,8 +30,9 @@ input{
     font-weight: 600;
     outline:none;
 }
-
-
+input:required:invalid:focus {
+    border-bottom: 2px solid #26C6DA;
+}
 .name-parameter{
     text-align: left;
 }

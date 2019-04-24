@@ -7,6 +7,8 @@ import { ButtonSortingComponent } from './button-sorting/button-sorting.componen
 import { SquareBlockComponent } from './square-block/square-block.component';
 import { CounterComponent } from './counter/counter.component';
 import { InitialParametersBlockComponent } from './initial-parameters-block/initial-parameters-block.component';
+import { ButtonComponent } from './button/button.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: 
@@ -16,11 +18,13 @@ import { InitialParametersBlockComponent } from './initial-parameters-block/init
     ButtonSortingComponent, 
     SquareBlockComponent, 
     CounterComponent, 
-    InitialParametersBlockComponent
+    InitialParametersBlockComponent, 
+    ButtonComponent
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   exports: 
   [
@@ -29,7 +33,8 @@ import { InitialParametersBlockComponent } from './initial-parameters-block/init
     ButtonSortingComponent, 
     SquareBlockComponent, 
     CounterComponent,
-    InitialParametersBlockComponent
+    InitialParametersBlockComponent,
+    ButtonComponent
   ]
 })
 export class ControlsModule { }

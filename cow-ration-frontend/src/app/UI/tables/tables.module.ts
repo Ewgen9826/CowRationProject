@@ -5,12 +5,14 @@ import { ControlsModule } from '../controls/controls.module';
 import { TableBalanceComponent } from './table-balance/table-balance.component';
 import { RouterModule } from "@angular/router";
 import { StepperService } from '../stepper/services/stepper.service';
+import { TableEconomyComponent } from './table-economy/table-economy.component';
 
 @NgModule({
   declarations: 
     [
       TableFeedSelectionComponent, 
-      TableBalanceComponent
+      TableBalanceComponent, 
+      TableEconomyComponent
     ],
   imports: 
     [
@@ -22,7 +24,8 @@ import { StepperService } from '../stepper/services/stepper.service';
   exports: 
     [
       TableFeedSelectionComponent, 
-      TableBalanceComponent 
+      TableBalanceComponent,
+      TableEconomyComponent 
     ]
 })
 export class TablesModule { }
