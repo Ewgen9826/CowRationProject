@@ -6,7 +6,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { UserModuleModule } from "./user-module/user-module.module";
 import { LoginModule } from "./account-login/login/login.module";
-
+import { Ng5SliderModule } from 'ng5-slider';
 @NgModule({
   declarations:
     [
@@ -20,6 +20,7 @@ import { LoginModule } from "./account-login/login/login.module";
       UserModuleModule,
       LoginModule,
       LoadingPageModule,
+      Ng5SliderModule
     ],
   providers: [],
   bootstrap:
