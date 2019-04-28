@@ -5,10 +5,10 @@ import { Options } from 'ng5-slider';
   selector: 'app-vertical-slider',
   templateUrl: './vertical-slider.component.html',
   styleUrls: ['./vertical-slider.component.css'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.Native
 })
 export class VerticalSliderComponent implements OnInit {
-  value: number = 50;
+  value: number = 0;
   
   options: Options = {
     showSelectionBar: true,

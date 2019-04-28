@@ -1,0 +1,20 @@
+input[type='text']{
+    background: initial;
+    border: none;
+    border-bottom: 2px solid #E0E0E0;
+    text-align: center;
+    margin-bottom: 21px;
+    margin-top: 10px;
+}
+input[type='text']:focus{
+    outline: none;
+}
+input[type='text']:required {
+    border-bottom: 2px solid #26C6DA;
+}
+input[type='text']:required:invalid {
+    border-bottom: 2px solid #E0E0E0;
+}
+input[type='text']:required:invalid:focus {
+    border-bottom: 2px solid #26C6DA;
+}

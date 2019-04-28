@@ -1,18 +1,14 @@
 .button{
     display: flex;
     align-items: center;
-    padding: 15px 70px;
-    text-align: center;
-
+    justify-content: center;
+    width: 230px;
+    height: 55px;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
 }
 span{
     color: #FFFFFF;
     font-size: 22px;
-    line-height: normal;
-    text-align: center;
-    margin: 0px;
+    line-height: 30px;
     font-weight: 500;
-}
-.button:hover{
-    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
 }
