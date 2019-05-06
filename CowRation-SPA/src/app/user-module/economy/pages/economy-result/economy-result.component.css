@@ -1,0 +1,53 @@
+.container {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-block {
+  display: flex;
+}
+
+.button-block {
+  display: flex;
+  margin-top: 50px;
+}
+
+.results {
+  font-size: 35px;
+  color: #26C6DA;
+  font-weight: 600;
+  margin: 15px 0px 15px 0px;
+}
+
+.results>span {
+  font-size: 35px;
+}
+
+.square {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  background: #FBFBFB;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
+  height: 300px;
+  padding: 0px 30px 0px 30px;
+  margin: 0px 25px 0px 25px;
+}
+
+app-square-block {
+  font-size: 24px;
+  width: 250px;
+  line-height: 1.1;
+  font-style: normal;
+  font-weight: 550;
+}
+
+span {
+  font-style: normal;
+  font-weight: 550;
+  font-size: 20px;
+}
