@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/alertifyjs/build/css/alertify.min.css";
+@import "../node_modules//alertifyjs//build//css/themes/bootstrap.min.css";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,800');
+* {
+  font-family: Open Sans;
+  transition: 0.2s ease;
+  margin: 0;
+  padding: 0;
+}
+a {
+	text-decoration: none;
+}
