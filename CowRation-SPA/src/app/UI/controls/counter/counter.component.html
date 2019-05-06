@@ -3,7 +3,17 @@
     <img src="../assets/img/button-counter.svg" alt="">
   </div>
   <div>
-  <input (input)="inputValidator($event)" type="text" [(ngModel)]="days" >
+  <input 
+    (input)="inputValidator($event)" 
+    type="text" 
+    [(ngModel)]="days"
+    [style.font-size]="fontSize"
+    [style.color]="colorText" 
+    [style.font-weight]="fontWeight"
+    [style.font-style]="fontStyle"
+    [style.line-height]="lineHeight"
+    [style.width]="width"
+    [style.height]="height" >
 </div>
   <div class="button-right" (click)=increaseInNumber()>
     <img src="../assets/img/button-counter.svg" alt="">

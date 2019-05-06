@@ -9,6 +9,7 @@ import { CategoryFeedComponent } from "./pages/category-feed/category-feed.compo
 import { LaboratoryFeedComponent } from "./pages/laboratory-feed/laboratory-feed.component";
 import { TablesModule } from "src/app/UI/tables/tables.module";
 import { CountCowComponent } from "./pages/count-cow/count-cow.component";
+import { ControlsModule } from 'src/app/UI/controls/controls.module';
 
 @NgModule({
   declarations:
@@ -24,7 +25,8 @@ import { CountCowComponent } from "./pages/count-cow/count-cow.component";
       CommonModule,
       RationRoutingModule,
       StepperModule,
-      TablesModule
+      TablesModule,
+      ControlsModule
     ]
 })
 export class RationModule {}

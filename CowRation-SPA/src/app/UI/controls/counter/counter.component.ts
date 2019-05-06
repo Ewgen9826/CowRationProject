@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-counter',
@@ -6,6 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./counter.component.css']
 })
 export class CounterComponent implements OnInit {
+  @Input() fontSize: string;
+  @Input() colorText: string;
+  @Input() fontWeight: string;
+  @Input() fontStyle: string;
+  @Input() lineHeight: string;
+  @Input() width: string;
+  @Input() height: string;
   days:number = 0;
   constructor() { }
 
