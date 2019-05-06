@@ -11,7 +11,7 @@ import { ButtonComponent } from "./button/button.component";
 import { RouterModule } from "@angular/router";
 import { TextboxComponent } from "./textbox/textbox.component";
 import { VerticalSliderComponent } from "./vertical-slider/vertical-slider.component";
-
+import { Ng5SliderModule } from 'ng5-slider';
 @NgModule({
   declarations: [
     ButtonCloseComponent,
@@ -24,7 +24,7 @@ import { VerticalSliderComponent } from "./vertical-slider/vertical-slider.compo
     TextboxComponent,
     VerticalSliderComponent
   ],
-  imports: [CommonModule, FormsModule, RouterModule],
+  imports: [CommonModule, FormsModule, RouterModule, Ng5SliderModule],
   exports: [
     ButtonCloseComponent,
     ButtonChoiceComponent,
@@ -34,7 +34,8 @@ import { VerticalSliderComponent } from "./vertical-slider/vertical-slider.compo
     InitialParametersBlockComponent,
     ButtonComponent,
     VerticalSliderComponent,
-    TextboxComponent
+    TextboxComponent,
+    Ng5SliderModule
   ]
 })
 export class ControlsModule {}

@@ -3,7 +3,6 @@ import { Routes, RouterModule } from "@angular/router";
 import { RawEconomicsComponent } from "./pages/raw-economics/raw-economics.component";
 import { MilkCharacteristicComponent } from "./pages/milk-characteristic/milk-characteristic.component";
 import { ExpensesComponent } from "./pages/expenses/expenses.component";
-import { PlannedIndicatorsComponent } from "./pages/planned-indicators/planned-indicators.component";
 import { RationResultComponent } from "./pages/ration-result/ration-result.component";
 import { EconomyResultComponent } from "./pages/economy-result/economy-result.component";
 
@@ -27,11 +26,6 @@ const routes: Routes = [
     path: "expenses",
     component: ExpensesComponent,
     data: { title: "Затраты" }
-  },
-  {
-    path: "planned-indicators",
-    component: PlannedIndicatorsComponent,
-    data: { title: "Планируемые показатели" }
   },
   {
     path: "ration-result",

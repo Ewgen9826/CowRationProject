@@ -1,24 +1,48 @@
 .container {
-    margin-top: 40px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  .square{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    background: #FBFBFB;
-    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
-    height: 374px;
-    padding: 0px 70px 0px 70px;
-  }
-  app-square-block{
-    font-size: 24px;
-    width: 250px;
-    line-height: 1.5;    
-    font-style: normal;
-    font-weight: normal;
-    line-height: normal;
-  }
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-block {
+  display: flex;
+}
+
+.button-block {
+  display: flex;
+  margin-top: 27px;
+}
+
+.square {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  background: #FBFBFB;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
+  height: 374px;
+  padding: 0px 70px 0px 70px;
+
+}
+
+app-square-block {
+  font-size: 24px;
+  width: 250px;
+  line-height: 1.5;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 33px;
+}
+
+span {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 23px;
+  line-height: 33px;
+}
+
+app-button {
+  margin: 0px 15px 0px 15px;
+}

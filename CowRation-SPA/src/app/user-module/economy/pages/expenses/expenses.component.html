@@ -1,11 +1,31 @@
 <div class="container">
-        <app-table-economy [headerFirstBalance]="['Стать затрат']"
-                            [headerSecondBalance]="['Сумма']"
-                            [headerThirdBalance]="['%']"
-        ></app-table-economy>
-        <div class="square">
-                <app-square-block [blockHeaderName]="['Затраты на общий объем молока']">
-                </app-square-block>
-                
+        <div class="content-block">
+                <app-table-economy [headerFirstBalance]="['Стать затрат']"
+                                [headerSecondBalance]="['Сумма (руб)']"
+                                [headerThirdBalance]="['%']"
+                ></app-table-economy>
+                <div class="square">
+                        <app-square-block [blockHeaderName]="['Затраты на общий объем молока']">
+                        </app-square-block> 
+                        <app-textbox  [fontSize]="['30px']"
+                                [colorText]="['#333333']"
+                                [fontWeight]="['normal']"
+                                [fontStyle]="['normal']"
+                                [lineHeight]="['49px']"
+                                [width]="['188px']"
+                                [height]="['49px']">
+                        </app-textbox>    
+                        <span>(тыс. / руб.)</span>           
+                </div>
         </div>
+        <div class="button-block">
+                <app-button [btnText]="['Назад']"
+                            [btnColor]="['linear-gradient(192.69deg, #2CC9DE 0.45%, #228794 100%)']"
+                            [link]="['/economy/milk-characteristic']">
+                </app-button>
+                <app-button [btnText]="['Рассчитать']"
+                            [btnColor]="['linear-gradient(192.58deg, #F1A139 0%, #DE8A1E 100%)']"
+                            [link]="['/economy/planned-indicators']">
+                </app-button>
+        </div>    
 </div>

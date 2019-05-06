@@ -24,6 +24,7 @@
     "angular-font-awesome": "^3.1.2",
     "core-js": "^2.5.4",
     "font-awesome": "^4.7.0",
+    "ng5-slider": "^1.1.14",
     "ngx-spinner": "^7.0.0",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",

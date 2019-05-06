@@ -1,10 +1,9 @@
-import { Component, OnInit, Input, ViewEncapsulation, } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-initial-parameters-block',
   templateUrl: './initial-parameters-block.component.html',
   styleUrls: ['./initial-parameters-block.component.css'],
-  encapsulation: ViewEncapsulation.None
 })
 export class InitialParametersBlockComponent implements OnInit {
   @Input() nameParameter: string;
