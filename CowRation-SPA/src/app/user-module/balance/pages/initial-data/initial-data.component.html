@@ -1,10 +1,18 @@
 <div class="container">
-    <app-table-balance [headerFirstBalance]="['Вид корма']"
-                    [headerSecondBalance]="['Количество дней']">
-    </app-table-balance>
-    <div class="square">
-        <app-square-block [blockHeaderName]="['Кормов будет достаточно на (при данном рационе)']">
-        </app-square-block>
-        <span>5 <span>дней</span></span> 
+    <div class="content-block">
+        <app-table-balance [headerFirstBalance]="['Вид корма']"
+                        [headerSecondBalance]="['Количество дней']">
+        </app-table-balance>
+        <div class="square">
+            <app-square-block [blockHeaderName]="['Кормов будет достаточно на (при данном рационе)']">
+            </app-square-block>
+            <span>5 <span>дней</span></span> 
+        </div>
     </div>
+    <div class="button-block">
+        <app-button [btnText]="['Назад']"
+                    [btnColor]="['linear-gradient(192.58deg, #EE6C3B 0%, #C94A1A 100%)']"
+                    [link]="['/company/balance/dietary-indicators']">
+        </app-button>
+    </div>  
 </div>

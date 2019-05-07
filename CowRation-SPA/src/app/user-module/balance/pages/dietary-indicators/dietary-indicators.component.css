@@ -1,8 +1,17 @@
 .container {
     margin-top: 40px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+  }
+  .content-block{
+    display: flex;
+  }
+  .button-block {
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 40px;
   }
   .square{
     display: flex;
