@@ -1,0 +1,27 @@
+.container {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .button-block {
+    display: flex;
+    margin-top: 20px;
+  }
+  .square-block{
+    display: flex;
+  }
+  .square{
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
+    padding: 0px 10px 0px 10px;
+    margin: 20px 15px 20px 15px;
+    background: #FBFBFB;
+  }
+
+  app-square-block{
+    font-size: 18px;
+    color: #000;
+    font-style: normal;
+    font-weight: bold;
+  }

@@ -11,6 +11,8 @@ import { TablesModule } from "src/app/UI/tables/tables.module";
 import { CountCowComponent } from "./pages/count-cow/count-cow.component";
 import { ControlsModule } from 'src/app/UI/controls/controls.module';
 import { FeedingParametersCardModule } from 'src/app/UI/feeding-parameters-card/feeding-parameters-card.module';
+import { CostRationComponent } from './pages/cost-ration/cost-ration.component';
+import { RationResultComponent } from './pages/ration-result/ration-result.component';
 
 @NgModule({
   declarations:
@@ -19,7 +21,9 @@ import { FeedingParametersCardModule } from 'src/app/UI/feeding-parameters-card/
       CategoryFeedComponent,
       LaboratoryFeedComponent,
       CountCowComponent,
-      RationComponent
+      RationComponent,
+      CostRationComponent,
+      RationResultComponent
     ],
   imports:
     [

@@ -7,6 +7,7 @@ import { RouterModule } from "@angular/router";
 import { StepperService } from '../stepper/services/stepper.service';
 import { TableEconomyComponent } from './table-economy/table-economy.component';
 import { TableLabTestResultsComponent } from './table-lab-test-results/table-lab-test-results.component';
+import { TableCostRationComponent } from './table-cost-ration/table-cost-ration.component';
 
 @NgModule({
   declarations: 
@@ -14,7 +15,8 @@ import { TableLabTestResultsComponent } from './table-lab-test-results/table-lab
       TableFeedSelectionComponent, 
       TableBalanceComponent, 
       TableEconomyComponent, 
-      TableLabTestResultsComponent
+      TableLabTestResultsComponent, 
+      TableCostRationComponent
     ],
   imports: 
     [
@@ -28,7 +30,8 @@ import { TableLabTestResultsComponent } from './table-lab-test-results/table-lab
       TableFeedSelectionComponent, 
       TableBalanceComponent,
       TableEconomyComponent,
-      TableLabTestResultsComponent 
+      TableLabTestResultsComponent,
+      TableCostRationComponent 
     ]
 })
 export class TablesModule { }

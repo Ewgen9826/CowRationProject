@@ -4,7 +4,7 @@ import { Component, OnInit, Input, ViewEncapsulation, ViewChild, ElementRef } fr
   selector: 'app-table-lab-test-results',
   templateUrl: './table-lab-test-results.component.html',
   styleUrls: ['./table-lab-test-results.component.css'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.Native
 })
 export class TableLabTestResultsComponent implements OnInit {
   @Input() headerFirstBalance: string;
