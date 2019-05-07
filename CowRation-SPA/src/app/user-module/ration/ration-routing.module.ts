@@ -24,7 +24,7 @@ const routes: Routes = [
   {
     path: "laboratory-feel",
     component: LaboratoryFeedComponent,
-    data: { title: "Данные лаборатории" }
+    data: { title: "Результаты анализов" }
   },
   {
     path: "count-cow",

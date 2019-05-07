@@ -7,9 +7,10 @@ import { AccountComponent } from "./account/account.component";
 import { NotificationsComponent } from "./notifications/notifications.component";
 import { SettingsComponent } from "./settings/settings.component";
 import { DashboardCardModule } from "src/app/UI/dashboard-card/dashboard-card.module";
+import { FeedingParametersCardModule } from 'src/app/UI/feeding-parameters-card/feeding-parameters-card.module';
 
 @NgModule({
 	declarations: [ HomeComponent, AccountComponent, NotificationsComponent, SettingsComponent ],
-	imports: [ CommonModule, UserAccountRoutingModule, DashboardCardModule ]
+	imports: [ CommonModule, UserAccountRoutingModule, DashboardCardModule,FeedingParametersCardModule ]
 })
 export class UserAccountModule {}

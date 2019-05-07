@@ -10,6 +10,7 @@ import { LaboratoryFeedComponent } from "./pages/laboratory-feed/laboratory-feed
 import { TablesModule } from "src/app/UI/tables/tables.module";
 import { CountCowComponent } from "./pages/count-cow/count-cow.component";
 import { ControlsModule } from 'src/app/UI/controls/controls.module';
+import { FeedingParametersCardModule } from 'src/app/UI/feeding-parameters-card/feeding-parameters-card.module';
 
 @NgModule({
   declarations:
@@ -26,7 +27,8 @@ import { ControlsModule } from 'src/app/UI/controls/controls.module';
       RationRoutingModule,
       StepperModule,
       TablesModule,
-      ControlsModule
+      ControlsModule,
+      FeedingParametersCardModule
     ]
 })
 export class RationModule {}
