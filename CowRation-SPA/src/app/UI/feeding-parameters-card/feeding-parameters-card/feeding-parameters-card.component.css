@@ -1,0 +1,18 @@
+.feeding-parameters-card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 250px;
+    height: 250px;
+    background: #FBFBFB;
+    box-shadow: 1px 1px 10px rgba(45, 40, 40, 0.102);
+    border: 1px solid #F1F1F1;
+}
+span{
+    font-size: 24px;
+    line-height: 33px;
+    text-align: center;
+    font-weight: 600;
+    color: #26C6DA;
+}

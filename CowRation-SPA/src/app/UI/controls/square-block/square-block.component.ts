@@ -5,12 +5,14 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
   templateUrl: './square-block.component.html',
   styleUrls: ['./square-block.component.css'],
 
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.Native
 })
 export class SquareBlockComponent implements OnInit {
 
   @Input() blockHeaderName: string;
-
+  @Input() blocksectionName: string;
+  @Input() height: string;
+  @Input() width: string;
   constructor() { }
 
   ngOnInit() {

@@ -10,8 +10,7 @@
   }
   .button-block {
     display: flex;
-    margin-top: 50px;
-    margin-bottom: 40px;
+    margin-top: 35px;
   }
   .square{
     display: flex;
@@ -20,20 +19,14 @@
     justify-content: center;
     background: #FBFBFB;
     box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
-    padding: 0px 55px 0px 55px;
-    font-size: 20px;
+    height: auto;
+    padding: 0px 70px 0px 70px;
+  }
+  app-square-block{
+    font-size: 24px;
+    width: 250px;
     line-height: 1.5;    
     font-style: normal;
     font-weight: normal;
     line-height: normal;
-    color: #000;
-  }
-
-  span{
-    margin-top: 10px;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 30px;
-    line-height: normal;
-    color: #26C6DA;
   }

@@ -1,14 +1,7 @@
 input{
     text-align: center;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 30px;
-    line-height: normal;
     outline:none;
-    color: #424242;
-    height: 40px;
-    width: 100px;
-    background: #FBFBFB;
+    background: initial;
     border: none;
     border-bottom: 2px solid #E0E0E0;
 }
@@ -23,6 +16,8 @@ input:focus{
 }
 .button-left, .button-right{
     cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 .button-right> img{
     transform: rotate(180deg);

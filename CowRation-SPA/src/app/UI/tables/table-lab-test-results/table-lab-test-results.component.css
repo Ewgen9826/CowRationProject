@@ -1,0 +1,45 @@
+.table-field {
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    width: initial;
+  }
+  table {
+    width: 100%;
+    text-align: center;
+    background: #FBFBFB;
+    border-collapse: collapse;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
+    color: #424242;
+  }
+  .row-table {
+    height: 65px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: normal;
+   
+  }
+  .section-table>th, .section-table>td{
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  .header-table>th {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: normal;
+    padding: 20px 70px 20px 70px;
+  }
+  
+  tr:nth-child(odd) {
+    background: rgba(38, 198, 218, 0.1);
+  
+  }
+  
+  tr.header-table {
+    background: initial;
+  }
+  
+  
+  

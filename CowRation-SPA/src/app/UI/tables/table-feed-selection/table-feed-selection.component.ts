@@ -10,6 +10,14 @@ export class TableFeedSelectionComponent implements OnInit {
     {feedName: 'Солома ячменная', price: '0.06'},
     {feedName: 'Сенаж злаковый', price: '0.06' },
     {feedName: 'Силож кукурузный', price: '0.06' },
+    {feedName: 'Патока кормовая', price: '0.06' },
+    {feedName: 'Солома ячменная', price: '0.06'},
+    {feedName: 'Сенаж злаковый', price: '0.06' },
+    {feedName: 'Силож кукурузный', price: '0.06' },
+    {feedName: 'Патока кормовая', price: '0.06' },
+    {feedName: 'Солома ячменная', price: '0.06'},
+    {feedName: 'Сенаж злаковый', price: '0.06' },
+    {feedName: 'Силож кукурузный', price: '0.06' },
     {feedName: 'Патока кормовая', price: '0.06' }
     
   ];

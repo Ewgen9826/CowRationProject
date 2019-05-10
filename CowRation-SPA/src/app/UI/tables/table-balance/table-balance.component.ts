@@ -4,7 +4,7 @@ import { Component, OnInit, Input, ViewEncapsulation, ViewChild, ElementRef  } f
   selector: 'app-table-balance',
   templateUrl: './table-balance.component.html',
   styleUrls: ['./table-balance.component.css'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.Native
 })
 export class TableBalanceComponent implements OnInit {
   intervalBotton;

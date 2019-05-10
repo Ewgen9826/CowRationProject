@@ -9,6 +9,10 @@ import { CategoryFeedComponent } from "./pages/category-feed/category-feed.compo
 import { LaboratoryFeedComponent } from "./pages/laboratory-feed/laboratory-feed.component";
 import { TablesModule } from "src/app/UI/tables/tables.module";
 import { CountCowComponent } from "./pages/count-cow/count-cow.component";
+import { ControlsModule } from 'src/app/UI/controls/controls.module';
+import { FeedingParametersCardModule } from 'src/app/UI/feeding-parameters-card/feeding-parameters-card.module';
+import { CostRationComponent } from './pages/cost-ration/cost-ration.component';
+import { RationResultComponent } from './pages/ration-result/ration-result.component';
 
 @NgModule({
   declarations:
@@ -17,14 +21,18 @@ import { CountCowComponent } from "./pages/count-cow/count-cow.component";
       CategoryFeedComponent,
       LaboratoryFeedComponent,
       CountCowComponent,
-      RationComponent
+      RationComponent,
+      CostRationComponent,
+      RationResultComponent
     ],
   imports:
     [
       CommonModule,
       RationRoutingModule,
       StepperModule,
-      TablesModule
+      TablesModule,
+      ControlsModule,
+      FeedingParametersCardModule
     ]
 })
 export class RationModule {}

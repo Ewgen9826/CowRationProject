@@ -1,0 +1,35 @@
+.container {
+    width: 100%;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .card-feeding{
+    display: flex;
+
+  }
+  span {
+    font-size: 24px;
+    font-weight: 600;
+    color: #424242;
+  }
+  
+  p {
+    color: #424242;
+    margin-bottom: 40px;
+    font-size: 18px;
+  }
+  .button-block {
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 40px;
+  }
+  
+  app-button {
+    margin: 0px 15px 0px 15px;
+  }
+
+  app-feeding-parameters-card{
+    margin: 0px 10px 0px 10px;
+  }

@@ -4,6 +4,8 @@ import { SelectionFeedComponent } from "./pages/selection-feed/selection-feed.co
 import { CategoryFeedComponent } from "./pages/category-feed/category-feed.component";
 import { LaboratoryFeedComponent } from "./pages/laboratory-feed/laboratory-feed.component";
 import { CountCowComponent } from "./pages/count-cow/count-cow.component";
+import { CostRationComponent } from './pages/cost-ration/cost-ration.component';
+import { RationResultComponent } from './pages/ration-result/ration-result.component';
 
 const routes: Routes = [
   {
@@ -24,13 +26,23 @@ const routes: Routes = [
   {
     path: "laboratory-feel",
     component: LaboratoryFeedComponent,
-    data: { title: "Данные лаборатории" }
+    data: { title: "Результаты анализов" }
   },
   {
     path: "count-cow",
     component: CountCowComponent,
     data: {title: "Количество голов"}
-  }
+  },
+  {
+    path: "cost-ration",
+    component: CostRationComponent,
+    data: { title: "Стоимость рациона" }
+  },
+  {
+    path: "ration-result",
+    component: RationResultComponent,
+    data: { title: "Рацион" }
+  },
 ];
 
 @NgModule({

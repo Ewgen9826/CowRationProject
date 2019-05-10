@@ -1,0 +1,24 @@
+<div class="table-field">
+  <table >
+      <div class="scrol">
+          <thead>
+              <tr class="header-table">
+              <th>{{headerFirstBalance}}</th>
+              <th>{{headerSecondBalance}}</th>
+              <th>{{headerThirdBalance}}</th>
+              <th>{{headerFourthBalance}}</th>
+              <th>{{headerFifthBalance}}</th>
+              </tr>
+          </thead>    
+          <tbody>
+              <tr *ngFor="let el of elements" class="section-table">
+              <th scope="row" class="row-table">{{el.firstColumn}}</th>
+              <td>{{el.secondColumn}}</td>   
+              <td>{{el.thirdColumn}}</td>     
+              <td>{{el.fourthColumn}}</td>   
+              <td>{{el.fifthColumn}}</td> 
+              </tr>
+          </tbody>
+      </div>
+  </table>                       
+</div>  

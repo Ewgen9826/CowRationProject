@@ -4,7 +4,7 @@ import { Component, OnInit, Input, ViewEncapsulation, ViewChild, ElementRef } fr
   selector: 'app-table-economy',
   templateUrl: './table-economy.component.html',
   styleUrls: ['./table-economy.component.css'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.Native
 })
 export class TableEconomyComponent implements OnInit {
   intervalBotton;
