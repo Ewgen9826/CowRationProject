@@ -6,6 +6,8 @@ import { SignInComponent } from "./account-login/login/sign-in/sign-in.component
 import { RegisterComponent } from "./account-login/login/register/register.component";
 import { UserModuleModule } from "./user-module/user-module.module";
 import { AuthGuard } from "./core/guards/auth.guard";
+import { AdminPanelComponent } from "./admin-panel/admin-panel.component";
+import { AdminPanelModule } from "./admin-panel/admin-panel.module";
 
 const routes: Routes = [
   {
@@ -26,9 +28,14 @@ const routes: Routes = [
   {
     path: "company",
     component: UserModuleComponent,
-    //runGuardsAndResolvers: "always",
-    //canActivate: [AuthGuard],
+    runGuardsAndResolvers: "always",
+    canActivate: [AuthGuard],
     loadChildren: () => UserModuleModule
+  },
+  {
+    path: "admin",
+    component: AdminPanelComponent,
+    loadChildren: () => AdminPanelModule
   }
 ];
 

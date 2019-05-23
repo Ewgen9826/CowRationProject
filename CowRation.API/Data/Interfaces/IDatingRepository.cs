@@ -11,6 +11,7 @@ namespace CowRation.API.Data
         Task<bool> SaveAll();
         Task<IEnumerable<User>> GetUsers();
         Task<User> GetUser(int id);
+        void AddKormToUser(int userId, int kormId);
 
     }
 }

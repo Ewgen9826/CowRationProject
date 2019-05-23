@@ -27,16 +27,23 @@ namespace CowRation.API.Data
 
         public async Task<User> GetUser(int id)
         {
-            var user = await context.Users.Include(k => k.Korms).FirstOrDefaultAsync(u => u.Id == id);
+            var user = await context.Users.Include(k => k.KormUsers).FirstOrDefaultAsync(u => u.Id == id);
             return user;
         }
 
         public async Task<IEnumerable<User>> GetUsers()
         {
-            var users = await context.Users.Include(k => k.Korms).ToListAsync();
+            var users = await context.Users.Include(k => k.KormUsers).ToListAsync();
             return users;
         }
-
+        public async void AddKormToUser(int userId, int kormId)
+        {
+            var user = await context.Users.Include(k => k.KormUsers).FirstOrDefaultAsync();
+            var korm = await context.Korms.FirstOrDefaultAsync();
+            if(user==null || korm==null)
+                return;
+            user.KormUsers.Add(new KormUser { KormId = kormId, UserId = userId });
+        }
         public async Task<bool> SaveAll()
         {
             return await context.SaveChangesAsync() > 0;

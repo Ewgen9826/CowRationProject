@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace CowRation.API.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
-    public class UsersController:ControllerBase
+    public class UsersController : ControllerBase
     {
         private readonly IDatingRepository repository;
         private readonly IMapper mapper;
@@ -40,6 +40,13 @@ namespace CowRation.API.Controllers
             var userToReturn = mapper.Map<UserForDetailDto>(user);
 
             return Ok(userToReturn);
+        }
+
+        [HttpPost("AddKorm")]
+        public IActionResult AddKormToUser(int userId, int kormId)
+        {
+            repository.AddKormToUser(userId, kormId);
+            return Ok();
         }
     }
 }

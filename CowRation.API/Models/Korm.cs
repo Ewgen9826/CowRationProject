@@ -9,7 +9,13 @@ namespace CowRation.API.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public decimal Price { get; set; }
-        public ICollection<KormUser> Users { get; set; }
+        public double Price { get; set; }
+        public List<KormUser> KormUsers { get; set; }
+        public List<KormStorage> KormStorages { get; set; }
+        public Korm()
+        {
+            KormStorages = new List<KormStorage>();
+            KormUsers = new List<KormUser>();
+        }
     }
 }

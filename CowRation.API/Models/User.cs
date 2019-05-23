@@ -8,7 +8,17 @@ namespace CowRation.API.Models
         public byte[] PasswordHash { get; set; }
         public byte[] PasswordSalt { get; set; }
         public string FirstName { get; set; }
-        public string LastName { get; set; } 
-        public ICollection<KormUser> Korms { get; set; }
+        public string LastName { get; set; }
+
+        public Storage Storage { get; set; }
+
+        public List<KormUser> KormUsers { get; set; }
+        public List<RationResult> RationResults { get; set; }
+
+        public User()
+        {
+            KormUsers = new List<KormUser>();
+            RationResults = new List<RationResult>();
+        }
     }
 }

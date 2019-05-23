@@ -6,7 +6,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./user-module.component.css"]
 })
 export class UserModuleComponent implements OnInit {
-
+  
   constructor() { }
 
   ngOnInit() {

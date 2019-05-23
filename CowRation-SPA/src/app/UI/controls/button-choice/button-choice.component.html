@@ -1,6 +1,6 @@
 <div class="button-choice">
-  <label class="toggle-btn">
-    <input type="checkbox" checked="true" />
+    <label class="toggle-btn">
+      <input type="checkbox" [ngModel]="value" (ngModelChange)="onValueChange($event)">
     <span class="toggle-slider"></span>
   </label>
 </div>

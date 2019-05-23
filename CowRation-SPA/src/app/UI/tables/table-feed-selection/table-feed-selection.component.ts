@@ -1,30 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
+import { KormSelect } from "src/app/core/models/korm-select";
 
 @Component({
-  selector: 'app-table-feed-selection',
-  templateUrl: './table-feed-selection.component.html',
-  styleUrls: ['./table-feed-selection.component.css']
+  selector: "app-table-feed-selection",
+  templateUrl: "./table-feed-selection.component.html",
+  styleUrls: ["./table-feed-selection.component.css"]
 })
 export class TableFeedSelectionComponent implements OnInit {
-  elements: any = [
-    {feedName: 'Солома ячменная', price: '0.06'},
-    {feedName: 'Сенаж злаковый', price: '0.06' },
-    {feedName: 'Силож кукурузный', price: '0.06' },
-    {feedName: 'Патока кормовая', price: '0.06' },
-    {feedName: 'Солома ячменная', price: '0.06'},
-    {feedName: 'Сенаж злаковый', price: '0.06' },
-    {feedName: 'Силож кукурузный', price: '0.06' },
-    {feedName: 'Патока кормовая', price: '0.06' },
-    {feedName: 'Солома ячменная', price: '0.06'},
-    {feedName: 'Сенаж злаковый', price: '0.06' },
-    {feedName: 'Силож кукурузный', price: '0.06' },
-    {feedName: 'Патока кормовая', price: '0.06' }
-    
-  ];
-  headElements = ['Название корма', 'Цена (руб/кг)', 'Сортировать', 'Выбор', 'Действие'];
-  constructor() { }
+  @Input() korms: KormSelect[];
 
-  ngOnInit() {
+  headElements = ["Название корма", "Цена (руб/кг)", "Сортировать", "Выбор"];
+  constructor() {}
+  ngOnInit() { }
+  choice( korm: KormSelect ) {
+    this.korms.find( k => k == korm ).select = !this.korms.find( k => k == korm ).select;
   }
-
 }

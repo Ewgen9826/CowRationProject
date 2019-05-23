@@ -9,6 +9,8 @@ import { environment } from "src/environments/environment";
 export class AuthService {
   baseUrl = environment.apiUrl + "/auth/";
   jwtHelper = new JwtHelperService();
+  decodedToken: any;
+
   constructor(private http: HttpClient) {}
 
   login(model: any) {
@@ -16,7 +18,9 @@ export class AuthService {
       map((response: any) => {
         const user = response;
         if (user) {
-          localStorage.setItem("token", user.token);
+          localStorage.setItem( "token", user.token );
+          this.decodedToken = this.jwtHelper.decodeToken( user.token );
+          console.log( this.decodedToken );
         }
       })
     );

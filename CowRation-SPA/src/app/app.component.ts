@@ -3,6 +3,8 @@ import { Router, NavigationEnd, ActivatedRoute } from "@angular/router";
 import { Title } from "@angular/platform-browser";
 import { LoadingService } from "./UI/loading-page/services/loading.service";
 import { filter, map, mergeMap } from "rxjs/operators";
+import { JwtHelperService } from "@auth0/angular-jwt";
+import { AuthService } from "./core/authentication/auth.service";
 
 @Component({
   selector: "app-root",
@@ -13,11 +15,13 @@ import { filter, map, mergeMap } from "rxjs/operators";
     ]
 })
 export class AppComponent implements OnInit {
+  jwtHelper = new JwtHelperService();
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private titleService: Title,
-    private loadingService: LoadingService
+    private loadingService: LoadingService,
+    private authService: AuthService
   ) {}
   ngOnInit() {
     this.router.events
@@ -41,5 +45,12 @@ export class AppComponent implements OnInit {
     setTimeout( () => {
       this.loadingService.hide()
     }, 300 );
+
+
+    const token = localStorage.getItem( "token" );
+    if ( token ) {
+      this.authService.decodedToken = this.jwtHelper.decodeToken( token );
+    }
+
   }
 }

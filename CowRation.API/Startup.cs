@@ -6,7 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using CowRation.API.Data;
+using CowRation.API.Data.Repository;
 using CowRation.API.Helpers;
+using CowRation.API.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
@@ -46,6 +48,7 @@ namespace CowRation.API
             services.AddAutoMapper();
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<IDatingRepository, DatingRepository>();
+            services.AddScoped<IKormReposotory, KormRepository>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                    options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters

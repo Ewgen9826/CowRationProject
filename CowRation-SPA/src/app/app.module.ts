@@ -10,6 +10,7 @@ import { ErrorInterceptorProvider } from "./core/utils/error.interceptor";
 import { HttpClientModule } from "@angular/common/http";
 import { AlertifyService } from "./core/utils/alertify.service";
 import { AuthGuard } from "./core/guards/auth.guard";
+import { AdminPanelModule } from "./admin-panel/admin-panel.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +20,7 @@ import { AuthGuard } from "./core/guards/auth.guard";
     BrowserAnimationsModule,
     HttpClientModule,
     UserModuleModule,
+    AdminPanelModule,
     LoginModule,
     LoadingPageModule
   ],

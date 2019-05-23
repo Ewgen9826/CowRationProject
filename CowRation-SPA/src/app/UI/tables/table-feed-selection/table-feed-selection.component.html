@@ -1,20 +1,21 @@
 <div class="container">
-  <table mdbTable>
-    <thead>
-      <tr class="header-table">
-        <th *ngFor="let head of headElements" scope="col">{{head}} </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr mdbTableCol *ngFor="let el of elements" >
-        <th scope="row" class="row-table">{{el.feedName}}</th>
-        <td>{{el.price}}</td>        
-        <td><app-button-sorting></app-button-sorting></td>
-        <td><app-button-choice></app-button-choice></td>
-        <td><app-button-close></app-button-close></td>
-      </tr>
-    </tbody>
-  </table>  
+    <table mdbTable>
+        <thead>
+            <tr class="header-table">
+                <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr mdbTableCol *ngFor="let korm of korms">
+                <th scope="row" class="row-table">{{korm.name}}</th>
+                <td>{{korm.price}}</td>
+                <td>
+                    <app-button-sorting></app-button-sorting>
+                </td>
+                <td>
+                    <app-button-choice [value]="korm.select" (valueChange)="choice(korm)"></app-button-choice>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
-
- 

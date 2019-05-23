@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { FormsModule } from '@angular/forms';
 
 import { StepperModule } from "../../UI/stepper/stepper.module";
 import { RationRoutingModule } from "./ration-routing.module";
@@ -32,7 +33,8 @@ import { RationResultComponent } from './pages/ration-result/ration-result.compo
       StepperModule,
       TablesModule,
       ControlsModule,
-      FeedingParametersCardModule
+      FeedingParametersCardModule,
+      FormsModule
     ]
 })
 export class RationModule {}
