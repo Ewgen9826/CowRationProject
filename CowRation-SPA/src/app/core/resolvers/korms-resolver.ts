@@ -5,7 +5,6 @@ import { KormService } from "../services/korm.service";
 import { AlertifyService } from "../utils/alertify.service";
 import { Observable, of } from "rxjs";
 import { catchError } from "rxjs/operators";
-6;
 
 @Injectable()
 export class KormsResolver implements Resolve<KormSelect[]> {

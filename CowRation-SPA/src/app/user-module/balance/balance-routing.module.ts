@@ -2,6 +2,7 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { DietaryIndicatorsComponent } from './pages/dietary-indicators/dietary-indicators.component';
 import { InitialDataComponent } from './pages/initial-data/initial-data.component';
+import { KormsStorageResolver } from "src/app/core/resolvers/korms-storage-resolver";
 
 const routes: Routes = [
   {
@@ -12,7 +13,8 @@ const routes: Routes = [
   {
     path: "dietary-indicators",
     component: DietaryIndicatorsComponent,
-    data: { title: "Исходные данные" }
+    data: { title: "Исходные данные" },
+    resolve: {storageKorms: KormsStorageResolver}
   },
   {
     path: "initial-data",

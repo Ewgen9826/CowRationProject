@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, ViewEncapsulation, ViewChild, ElementRef  } from '@angular/core';
+import { KormStorage } from "src/app/core/models/korm-storage";
 
 @Component({
   selector: 'app-table-balance',
@@ -12,6 +13,7 @@ export class TableBalanceComponent implements OnInit {
 
   @Input() headerFirstBalance: string;
   @Input() headerSecondBalance: string;
+  @Input() korms: KormStorage[];
   @ViewChild('widgetsContent', { read: ElementRef }) public widgetsContent: ElementRef<any>;
   public scrollTop(): void {
     this.intervalTop = 200;
@@ -23,22 +25,6 @@ export class TableBalanceComponent implements OnInit {
     this.widgetsContent.nativeElement.scrollTo({ top: (this.widgetsContent.nativeElement.scrollTop + this.intervalBotton), behavior: 'smooth' });
     this.intervalTop = 0;    
   }
-
-  elements: any = [
-    {firstColumn: 'Солома ячменная', secondColumn: '85'},
-    {firstColumn: 'Сенаж злаковый', secondColumn: '837' },
-    {firstColumn: 'Силож кукурузный', secondColumn: '8874' },
-    {firstColumn: 'Солома ячменная', secondColumn: '85'},
-    {firstColumn: 'Сенаж злаковый', secondColumn: '837' },
-    {firstColumn: 'Силож кукурузный', secondColumn: '8874' },
-    {firstColumn: 'Солома ячменная', secondColumn: '85'},
-    {firstColumn: 'Сенаж злаковый', secondColumn: '837' },
-    {firstColumn: 'Силож кукурузный', secondColumn: '8874' },
-    {firstColumn: 'Солома ячменная', secondColumn: '85'},
-    {firstColumn: 'Сенаж злаковый', secondColumn: '837' },
-    {firstColumn: 'Силож кукурузный', secondColumn: '8874' }
-  ];
-  
 
   constructor() { }
 

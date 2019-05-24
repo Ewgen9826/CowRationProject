@@ -1,36 +1,41 @@
 .sidenav {
-	height: 100vh;
-	width: 150px;
-	background: linear-gradient(259.83deg, #2cc9de 0.45%, #228794 100%);
-	display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  z-index: 1000;
+    height: 100vh;
+    width: 150px;
+    position: fixed;
+    background: linear-gradient(259.83deg, #2cc9de 0.45%, #228794 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1000;
 }
-.sidenav-content{
-  display: flex;
-  flex-direction:column;
-  margin-top:30px;
+
+.sidenav-content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
 }
-.btn-item{
-  align-self: flex-end;
-  width: 100%;
-  margin-bottom:30px;
-  display: flex;
-	flex-direction: row;
-  justify-content: center;
+
+.btn-item {
+    align-self: flex-end;
+    width: 100%;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
+
 .btn-toggle {
-	display: flex;
-	flex-direction: row;
-  justify-content: center;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  border:none;
-  overflow: hidden;
-  outline: none;
-  cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    overflow: hidden;
+    outline: none;
+    cursor: pointer;
 }
-.hide-menu .btn-icon{
-  display: none;
+
+.hide-menu .btn-icon {
+    display: none;
 }
