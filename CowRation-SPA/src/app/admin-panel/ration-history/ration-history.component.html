@@ -1,3 +1,14 @@
-<p>
-  ration-history works!
-</p>
+<div class="container">
+  <div class="preview-block">
+      <button class="button-arrow rounded-circle">
+              <img src="img/left-arrow.png" alt="">
+      </button>
+      <p>Управление кормами</p>
+  </div>
+  <div class="content-block">
+    <app-table-cost-ration [headerFirstBalance]="['Название корма']"
+                    [headerSecondBalance]="['Дата добавления']"
+                    [headerThirdBalance]="['Стоимость (руб)']">
+    </app-table-cost-ration>
+</div>
+</div>

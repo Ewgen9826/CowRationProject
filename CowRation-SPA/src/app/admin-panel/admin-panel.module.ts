@@ -8,9 +8,12 @@ import { UserManagmentComponent } from "./user-managment/user-managment.componen
 import { RationHistoryComponent } from "./ration-history/ration-history.component";
 import { AddAdminUserComponent } from "./add-admin-user/add-admin-user.component";
 import { AdminPanelRoutingModule } from "./admin-panel-routing.module";
+import { ControlsModule } from 'src/app/UI/controls/controls.module';
+
+import { TablesModule } from 'src/app/UI/tables/tables.module';
 
 @NgModule({
-  imports: [CommonModule, AdminPanelRoutingModule],
+  imports: [CommonModule, AdminPanelRoutingModule, ControlsModule, TablesModule],
   declarations: [
     AdminPanelComponent,
     MenuComponent,
@@ -18,6 +21,10 @@ import { AdminPanelRoutingModule } from "./admin-panel-routing.module";
     UserManagmentComponent,
     RationHistoryComponent,
     AddAdminUserComponent
-  ]
+  ],
+  exports: 
+    [
+      TablesModule 
+    ]
 })
 export class AdminPanelModule {}

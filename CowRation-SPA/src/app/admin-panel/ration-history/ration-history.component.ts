@@ -13,3 +13,4 @@ export class RationHistoryComponent implements OnInit {
   }
 
 }
+

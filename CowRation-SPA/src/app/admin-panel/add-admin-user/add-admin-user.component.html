@@ -1,3 +1,55 @@
-<p>
-  add-admin-user works!
-</p>
+<div class="container">
+    <div class="row pt-5 justify-content-center">
+        <div class="col-sm-12 col-md-10 col-lg-9">
+            <div class="preview-block">
+                <button class="button-arrow rounded-circle">
+                        <img src="img/left-arrow.png" width="30px" alt="">
+                </button>
+                <p>Добавить нового администратора</p>
+            </div>
+        </div>
+    </div>
+    <div class="row pt-3 justify-content-center">
+        <div class="col-sm-7 col-md-6 col-lg-4">
+            <div class="signup-user">
+                <div class="signup-block" id="addUser">
+                    <p class="add-user-text">Регистрация нового администратора</p>
+                    <div class="pt-4">
+                        <div class="wrap-input100 validate-input" data-validate = "Введите логин">
+                            <input class="input100" type="text" name="userlogin">
+                            <span class="focus-input100" data-placeholder="Введите логин"></span>
+                        </div>
+                        <div class="wrap-input100 validate-input" data-validate="Введите имя">
+                            <input class="input100" type="text" name="username">
+                            <span class="focus-input100" data-placeholder="Введите имя"></span>
+                        </div>
+                        <div class="wrap-input100 validate-input" data-validate="Введите фамилию">
+                            <input class="input100" type="text" name="userforname">
+                            <span class="focus-input100" data-placeholder="Введите фамилию"></span>
+                        </div>
+                        <div class="wrap-input100 validate-input" data-validate="Введите пароль">
+                            <input class="input100" type="text" name="userpass">
+                            <span class="focus-input100" data-placeholder="Введите пароль"></span>
+                        </div>
+                        <div class="wrap-input100 validate-input" data-validate="Повторите пароль">
+                            <input class="input100" type="text" name="userrepass">
+                            <span class="focus-input100" data-placeholder="Повторите пароль"></span>
+                        </div>
+                        <div class="wrap-add-btn">
+                            <input class="submit-btn-add" type="submit" value="Зарегистрировать">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row pt-5 pb-5 justify-content-center">
+        <div class="col-sm-3">
+            <div class="remove-user" id="remove-user" style="display: none;">
+                <h5>Вы действительно хотите удалить корм?</h5>
+                <button class="remove-btn" id="remove-btn">Да</button>
+                <button class="cancel-btn" id="cancel-btn">Нет</button>
+            </div>
+        </div>
+    </div>
+</div>

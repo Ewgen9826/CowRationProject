@@ -1,3 +1,17 @@
-<p>
-  user-managment works!
-</p>
+<div class="container">
+    <div class="preview-block">
+        <button class="button-arrow rounded-circle">
+                <img src="img/left-arrow.png" alt="">
+        </button>
+        <p>Управление кормами</p>
+    </div>
+    <div class="content-block">
+      <app-table-balance [headerFirstBalance]="['Пользователь']"
+                      [headerSecondBalance]="['Действие']">
+      </app-table-balance>
+      <div class="square">
+          <app-square-block [blockHeaderName]="['Добавить нового пользователя']">                
+          </app-square-block> 
+      </div>
+  </div> 
+</div>

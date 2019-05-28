@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-korms-managment',
@@ -13,3 +13,5 @@ export class KormsManagmentComponent implements OnInit {
   }
 
 }
+
+

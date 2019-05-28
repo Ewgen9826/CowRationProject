@@ -1,0 +1,148 @@
+.button-arrow{
+    display: inline-block;
+    background: linear-gradient(193.22deg, #2CC9DE 0.45%, #228794 100%);
+    border: 0px;
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.button-arrow img{
+    width: 60%;
+}
+
+
+.preview-block{
+    display: flex;
+    padding-bottom: 30px;
+    padding-right: 20px;
+    padding-left: 20px;
+    width: calc(93% - 2px);
+}
+
+.preview-block p{
+    font-size: 36px;
+    /* margin-top: -7px; */
+    font-weight: 500;
+}
+
+
+.table-field {
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    width: initial;
+  }
+  table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    background: #FBFBFB;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
+    color: #424242;
+  }
+  
+  .scrol {
+    overflow-y: scroll;
+    height: 325px;
+  }
+  
+  .scrol::-webkit-scrollbar {
+    width: 0 !important;
+  }
+  
+  .row-table {
+    height: 65px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: normal;
+  }
+  .section-table>th, .section-table>td{
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  .header-table>th {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: normal;
+    padding: 20px 60px 20px 60px;
+  }
+  
+  tr:nth-child(odd) {
+    background: rgba(38, 198, 218, 0.1);
+  
+  }
+  
+  tr.header-table {
+    background: initial;
+  }
+  
+  .button-top {
+    margin-bottom: 10px;
+  }
+  
+  .button-bottom {
+    margin-top: 10px;
+  }
+  
+  .button-top,
+  .button-bottom {
+    position: relative;
+    height: 47px;
+    background: #FBFBFB;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+  }
+  
+  .button-top img,
+  .button-bottom img {
+    position: absolute;
+    margin: auto;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+  }
+  
+  .button-bottom img {
+    transform: rotate(180deg);
+  }
+
+
+  .container {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .content-block{
+    display: flex;
+  }
+  .button-block {
+    display: flex;
+    margin-top: 35px;
+  }
+  .square{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    background: #FBFBFB;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
+    height: auto;
+    padding: 0px 70px 0px 70px;
+  }
+  app-square-block{
+    font-size: 24px;
+    width: 250px;
+    line-height: 1.5;    
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+  }
+  
