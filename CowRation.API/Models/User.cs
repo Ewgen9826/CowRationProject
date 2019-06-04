@@ -10,6 +10,8 @@ namespace CowRation.API.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
+        public string Role { get; set; }
+
         public Storage Storage { get; set; }
 
         public List<KormUser> KormUsers { get; set; }

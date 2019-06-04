@@ -4,13 +4,13 @@ import { ToggleService } from "../services/toggle.service";
 @Component({
 	selector: "app-sidenav-item",
 	templateUrl: "./sidenav-item.component.html",
-	styleUrls: [ "./sidenav-item.component.css" ]
+	styleUrls: ["./sidenav-item.component.css"]
 })
 export class SidenavItemComponent implements OnInit {
 	@Input() icon: string;
 	@Input() label: string;
 	@Input() link: string;
-	constructor(public toggleService: ToggleService) {}
+	constructor(public toggleService: ToggleService) { }
 
-	ngOnInit() {}
+	ngOnInit() { }
 }

@@ -1,7 +1,10 @@
 import { Component, OnInit } from "@angular/core";
-import { AuthService } from "src/app/core/authentication/auth.service";
-import { AlertifyService } from "src/app/core/utils/alertify.service";
+import { Observable, from } from "rxjs";
+import { AlertifyService } from "../../../core/utils/alertify.service";
 import { Router } from "@angular/router";
+import { Store } from "@ngrx/store";
+import { AppState } from "src/app/state/app.state";
+import { Login } from "../../state/authentication.actions";
 
 @Component({
   selector: "app-sign-in",
@@ -9,25 +12,27 @@ import { Router } from "@angular/router";
   styleUrls: ["./sign-in.component.css"]
 })
 export class SignInComponent implements OnInit {
-  model: any = {};
+  username: string;
+  password: string;
+  getState: Observable<any>;
+  token: Observable<any>;
+  errorMessage: string = null;
 
-  constructor(
-    private authService: AuthService,
-    private alertify: AlertifyService,
-    private router: Router
-  ) {}
+  constructor(private store: Store<AppState>
+  ) {
 
-  ngOnInit() {}
+  }
+
+  ngOnInit() {
+
+  }
 
   login() {
-    this.authService
-      .login(this.model)
-      .subscribe(
-        next => {
-          this.alertify.success( "Вы успешно авторизовались!" );
-          this.router.navigate( ['/company/home'] );
-        },
-        error => this.alertify.error(error)
-      );
+    const payload = {
+      username: this.username,
+      password: this.password
+    };
+
+    this.store.dispatch(new Login(payload));
   }
 }

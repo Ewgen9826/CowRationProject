@@ -7,8 +7,6 @@ import { SidenavModule } from "../UI/sidenav/sidenav.module";
 import { RationModule } from "./ration/ration.module";
 import { BalanceModule } from "./balance/balance.module";
 import { EconomyModule } from "./economy/economy.module";
-import { KormsResolver } from "../core/resolvers/korms-resolver";
-import { UserKormsResolver } from "../core/resolvers/user-korms-resolver";
 
 @NgModule({
   declarations: [UserModuleComponent],
@@ -20,6 +18,6 @@ import { UserKormsResolver } from "../core/resolvers/user-korms-resolver";
     BalanceModule,
     EconomyModule
   ],
-  providers: [KormsResolver, UserKormsResolver]
+  providers: []
 })
 export class UserModuleModule {}

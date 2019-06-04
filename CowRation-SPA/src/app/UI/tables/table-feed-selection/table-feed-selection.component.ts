@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
-import { KormSelect } from "src/app/core/models/korm-select";
+import { Observable } from "rxjs";
+import { Korm } from "src/app/user-module/ration/models/korm";
 
 @Component({
   selector: "app-table-feed-selection",
@@ -7,12 +8,12 @@ import { KormSelect } from "src/app/core/models/korm-select";
   styleUrls: ["./table-feed-selection.component.css"]
 })
 export class TableFeedSelectionComponent implements OnInit {
-  @Input() korms: KormSelect[];
-
+  @Input() korms: Korm[];
   headElements = ["Название корма", "Цена (руб/кг)", "Сортировать", "Выбор"];
-  constructor() {}
+  constructor() { }
   ngOnInit() { }
-  choice( korm: KormSelect ) {
-    this.korms.find( k => k == korm ).select = !this.korms.find( k => k == korm ).select;
+
+  toggle(korm: Korm) {
+    console.log(korm);
   }
 }

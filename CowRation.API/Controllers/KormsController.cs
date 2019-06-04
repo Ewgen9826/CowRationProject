@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using CowRation.API.Data;
+using CowRation.API.Dtos;
 using CowRation.API.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -14,35 +16,33 @@ namespace CowRation.API.Controllers
     public class KormsController : ControllerBase
     {
         private readonly IKormReposotory context;
+        private readonly IMapper mapper;
 
-        public KormsController(IKormReposotory context)
+        public KormsController(IKormReposotory context, IMapper mapper)
         {
+            this.mapper = mapper;
             this.context = context;
         }
         [HttpGet]
         public async Task<IActionResult> GetKorms()
         {
             var korms = await context.GetKorms();
-            return Ok(korms);
+            var kormsToReturn = mapper.Map<IEnumerable<KormForRation>>(korms);
+            return Ok(kormsToReturn);
         }
         [HttpGet("user/{userId}")]
         public async Task<IActionResult> GetUserKorms(int userId)
         {
             var korms = await context.GetUserKorms(userId);
-            return Ok(korms);
+            var kormsToReturn = mapper.Map<IEnumerable<KormForRation>>(korms);
+            return Ok(kormsToReturn);
         }
-        [HttpPost("user/{userId}/add")]
+        [HttpPost("user/{userId}/change")]
         public async Task<IActionResult> AddKormsForUser(int userId, IEnumerable<Korm> korms)
         {
-            await context.AddKormsForUser(userId, korms);
-            return Ok();
-        }
-
-        [HttpPost("user/{userId}/remove")]
-        public async Task<IActionResult> RemoveKormsForUser(int userId, IEnumerable<Korm> korms)
-        {
-            await context.RemoveKormsForUser(userId, korms);
-            return Ok();
+            var userKorms = await context.ChangeKormsForUser(userId, korms);
+            var kormsToReturn = mapper.Map<IEnumerable<KormForRation>>(userKorms);
+            return Ok(kormsToReturn);
         }
     }
 }

@@ -8,28 +8,33 @@ import { SettingsComponent } from "./settings/settings.component";
 const routes: Routes = [
 	{
 		path: "home",
-    component: HomeComponent,
-    data:{ title: "Главная"}
+		component: HomeComponent,
+		data: { title: "Главная" }
 	},
 	{
 		path: "account",
 		component: AccountComponent,
-    data:{ title: "Профиль"}
+		data: { title: "Профиль" }
 	},
 	{
 		path: "notifications",
 		component: NotificationsComponent,
-    data:{ title: "Уведомления"}
+		data: { title: "Уведомления" }
 	},
 	{
 		path: "settings",
-    component: SettingsComponent,
-    data:{ title: "Настройки"}
+		component: SettingsComponent,
+		data: { title: "Настройки" }
+	},
+	{
+		path: "**",
+		redirectTo: "home",
+		pathMatch: "full"
 	}
 ];
 
 @NgModule({
-	imports: [ RouterModule.forChild(routes) ],
-	exports: [ RouterModule ]
+	imports: [RouterModule.forChild(routes)],
+	exports: [RouterModule]
 })
-export class UserAccountRoutingModule {}
+export class UserAccountRoutingModule { }

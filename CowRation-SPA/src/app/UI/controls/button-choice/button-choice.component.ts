@@ -7,12 +7,15 @@ import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 })
 export class ButtonChoiceComponent implements OnInit {
   @Input() value: boolean;
-  @Output() valueChange = new EventEmitter<boolean>();
-  constructor() {}
+  @Output() valueChange = new EventEmitter();
+  constructor() { }
 
-  ngOnInit() {}
-  onValueChange( model: boolean ) {
-    this.value = model;
-    this.valueChange.emit( model );
+  ngOnInit() {
   }
+
+  toggle() {
+    this.value = !this.value;
+    this.valueChange.emit(this.value);
+  }
+
 }

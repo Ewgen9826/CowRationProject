@@ -9,7 +9,6 @@ namespace CowRation.API.Data {
         void UpdateKorm (int id, Korm korm);
         Task<IEnumerable<Korm>> GetKorms();
         Task<IEnumerable<Korm>> GetUserKorms(int id);
-        Task AddKormsForUser(int userId, IEnumerable<Korm> korms);
-        Task RemoveKormsForUser(int userId, IEnumerable<Korm> korms);
+        Task<IEnumerable<Korm>> ChangeKormsForUser(int userId, IEnumerable<Korm> korms);
     }
 }

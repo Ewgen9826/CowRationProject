@@ -1,13 +1,11 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { SelectionFeedComponent } from "./pages/selection-feed/selection-feed.component";
-import { CategoryFeedComponent } from "./pages/category-feed/category-feed.component";
-import { LaboratoryFeedComponent } from "./pages/laboratory-feed/laboratory-feed.component";
-import { CountCowComponent } from "./pages/count-cow/count-cow.component";
-import { CostRationComponent } from "./pages/cost-ration/cost-ration.component";
-import { RationResultComponent } from "./pages/ration-result/ration-result.component";
-import { KormsResolver } from "src/app/core/resolvers/korms-resolver";
-import { UserKormsResolver } from "src/app/core/resolvers/user-korms-resolver";
+import { SelectionFeedComponent } from "./components/selection-feed/selection-feed.component";
+import { CategoryFeedComponent } from "./components/category-feed/category-feed.component";
+import { LaboratoryFeedComponent } from "./components/laboratory-feed/laboratory-feed.component";
+import { CountCowComponent } from "./components/count-cow/count-cow.component";
+import { CostRationComponent } from "./components/cost-ration/cost-ration.component";
+import { RationResultComponent } from "./components/ration-result/ration-result.component";
 
 const routes: Routes = [
   {
@@ -19,7 +17,6 @@ const routes: Routes = [
     path: "selection-feel",
     component: SelectionFeedComponent,
     data: { title: "Выбор кормов" },
-    resolve: { korms: KormsResolver, userkorms: UserKormsResolver }
   },
   {
     path: "category-feel",

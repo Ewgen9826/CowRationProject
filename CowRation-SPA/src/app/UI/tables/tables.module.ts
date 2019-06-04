@@ -8,30 +8,36 @@ import { StepperService } from '../stepper/services/stepper.service';
 import { TableEconomyComponent } from './table-economy/table-economy.component';
 import { TableLabTestResultsComponent } from './table-lab-test-results/table-lab-test-results.component';
 import { TableCostRationComponent } from './table-cost-ration/table-cost-ration.component';
+import { TableComponent } from './table/table.component';
+import { TableRowComponent } from './table-row/table-row.component';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
-  declarations: 
+  declarations:
     [
-      TableFeedSelectionComponent, 
-      TableBalanceComponent, 
-      TableEconomyComponent, 
-      TableLabTestResultsComponent, 
-      TableCostRationComponent
-    ],
-  imports: 
-    [
-      CommonModule, 
-      ControlsModule,
-      RouterModule
-    ],
-  providers: [ StepperService ],
-  exports: 
-    [
-      TableFeedSelectionComponent, 
+      TableFeedSelectionComponent,
       TableBalanceComponent,
       TableEconomyComponent,
       TableLabTestResultsComponent,
-      TableCostRationComponent 
+      TableCostRationComponent, TableComponent, TableRowComponent
+    ],
+  imports:
+    [
+      CommonModule,
+      ControlsModule,
+      RouterModule,
+      FormsModule
+    ],
+  providers: [StepperService],
+  exports:
+    [
+      TableFeedSelectionComponent,
+      TableBalanceComponent,
+      TableEconomyComponent,
+      TableLabTestResultsComponent,
+      TableCostRationComponent,
+      TableComponent,
+      TableRowComponent
     ]
 })
 export class TablesModule { }
