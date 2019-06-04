@@ -1,10 +1,10 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { RawEconomicsComponent } from "./pages/raw-economics/raw-economics.component";
-import { MilkCharacteristicComponent } from "./pages/milk-characteristic/milk-characteristic.component";
-import { ExpensesComponent } from "./pages/expenses/expenses.component";
-import { RationResultComponent } from "./pages/ration-result/ration-result.component";
-import { EconomyResultComponent } from "./pages/economy-result/economy-result.component";
+import { RawEconomicsComponent } from "./components/raw-economics/raw-economics.component";
+import { MilkCharacteristicComponent } from "./components/milk-characteristic/milk-characteristic.component";
+import { ExpensesComponent } from "./components/expenses/expenses.component";
+import { RationResultComponent } from "./components/ration-result/ration-result.component";
+import { EconomyResultComponent } from "./components/economy-result/economy-result.component";
 
 const routes: Routes = [
   {
@@ -43,4 +43,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class EconomyRoutingModule {}
+export class EconomyRoutingModule { }

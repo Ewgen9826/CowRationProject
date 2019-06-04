@@ -20,7 +20,7 @@ namespace CowRation.API.Controllers
             this.repository = repository;
         }
         
-        [HttpGet("user/{id}/korms")]
+        [HttpGet("{id}/korms")]
         public async Task<IActionResult> GetKorms(int id)
         {
             var storage = await repository.GetUserStorage(id);

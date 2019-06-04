@@ -2,10 +2,15 @@ import { Injectable } from "@angular/core";
 import { Effect, Actions, ofType } from "@ngrx/effects";
 import { Observable, of } from "rxjs";
 import { Action } from "@ngrx/store";
-import { RationActionType, LoadKormsSuccess, LoadFail, LoadUserKorms, LoadUserKormsSuccess, ChangeUserKormsSuccess, ChangeUserKorms } from "./ration.actions";
+import {
+    RationActionType,
+    LoadKormsSuccess,
+    LoadFail,
+    LoadUserKormsSuccess,
+    ChangeUserKormsSuccess
+} from "./ration.actions";
 import { mergeMap, catchError, map, tap } from "rxjs/operators";
 import { KormService } from "../services/korm.service";
-import { Korm } from "../models/korm";
 import { AlertifyService } from "src/app/core/utils/alertify.service";
 
 @Injectable()
