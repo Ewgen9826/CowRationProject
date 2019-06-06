@@ -12,6 +12,7 @@ import { AlertifyService } from "./core/utils/alertify.service";
 import { AuthGuard } from "./core/guards/auth.guard";
 import { AdminPanelModule } from "./admin-panel/admin-panel.module";
 
+
 @NgModule({
   declarations: [AppComponent],
   imports: [

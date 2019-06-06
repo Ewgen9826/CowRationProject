@@ -4,6 +4,7 @@ import { MenuComponent } from "./menu/menu.component";
 import { UserManagmentComponent } from "./user-managment/user-managment.component";
 import { KormsManagmentComponent } from "./korms-managment/korms-managment.component";
 import { RationHistoryComponent } from "./ration-history/ration-history.component";
+import { AddAdminUserComponent } from './add-admin-user/add-admin-user.component';
 
 const rationRoutes: Routes = [
   {
@@ -21,6 +22,10 @@ const rationRoutes: Routes = [
   {
     path: "ration-history",
     component: RationHistoryComponent
+  },
+  {
+    path: "new-user-admin",
+    component: AddAdminUserComponent
   },
   {
     path: "",

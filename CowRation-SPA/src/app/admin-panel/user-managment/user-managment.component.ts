@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { User } from 'src/app/core/models/user';
 
 @Component({
   selector: 'app-user-managment',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserManagmentComponent implements OnInit {
 
-  constructor() { }
+  users: User[];
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    this.activatedRoute.data.subscribe(
+      data => this.users = data["users"]
+    );
   }
+ 
 
 }

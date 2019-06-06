@@ -1,3 +1,6 @@
+a{
+    text-decoration: none;
+}
 .button{
     display: flex;
     align-items: center;
@@ -11,4 +14,8 @@ span{
     font-size: 22px;
     line-height: 30px;
     font-weight: 500;
+}
+a:hover{
+    opacity: 0.7;
+    transition: 0.7;
 }
