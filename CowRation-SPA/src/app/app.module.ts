@@ -15,10 +15,6 @@ import { AuthenticationGuardService } from "./core/guards/authentication-guard.s
 import { RoleGuardService } from "./core/guards/role-guard.service";
 import { LoginGuardService } from "./core/guards/login-guard.service";
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
 @NgModule({
   declarations: [AppComponent],
   imports: [

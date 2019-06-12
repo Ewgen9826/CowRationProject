@@ -15,13 +15,9 @@ export const getUserToken = createSelector(
         const jwtHelper = new JwtHelperService();
         return jwtHelper.decodeToken(state.token).nameid;
     }
-<<<<<<< HEAD
 )
 
 export const getLoadingState = createSelector(
     selectAuthenticationState,
     state => state.loading
 );
-=======
-)
->>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7

@@ -33,7 +33,7 @@ const routes: Routes = [
   {
     path: "admin",
     component: AdminPanelComponent,
-    canActivate: [RoleGuardService],
+    //canActivate: [RoleGuardService],
     runGuardsAndResolvers: "always",
     loadChildren: () => AdminPanelModule,
     data: { expectedRole: "Admin" }

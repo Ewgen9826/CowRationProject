@@ -2,21 +2,14 @@
     <span>Результаты анализов</span>
     <p>результаты лабараторных анализов приведены в таблице</p>
     <div class="">
-        <app-table-lab-test-results [headerFirstBalance]="['Корм']"
-                                    [headerSecondBalance]="['СВ (кг)']"
-                                    [headerThirdBalance]="['СП (кг)']"
-                                    [headerFourthBalance]="['СЖ (кг)']"
-<<<<<<< HEAD
-                                    [headerFifthBalance]="['СК (кг)']"
-                                    [laboratoryIndicators]="laboratoryIndicators$ | async"></app-table-lab-test-results>        
-=======
-                                    [headerFifthBalance]="['СК (кг)']"></app-table-lab-test-results>        
->>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
+        <app-table-lab-test-results [headerFirstBalance]="['Корм']" [headerSecondBalance]="['СВ (кг)']"
+            [headerThirdBalance]="['СП (кг)']" [headerFourthBalance]="['СЖ (кг)']" [headerFifthBalance]="['СК (кг)']"
+            [laboratoryIndicators]="laboratoryIndicators$ | async"></app-table-lab-test-results>
     </div>
     <div class="button-block">
         <app-button [btnText]="['Показать стоимость']"
-                    [btnColor]="['linear-gradient(193.84deg, #63F304 5.47%, #6AD822 98.79%)']"
-                    [link]="['/company/ration/cost-ration']">
+            [btnColor]="['linear-gradient(193.84deg, #63F304 5.47%, #6AD822 98.79%)']"
+            [link]="['/company/ration/cost-ration']">
         </app-button>
-    </div>    
+    </div>
 </div>

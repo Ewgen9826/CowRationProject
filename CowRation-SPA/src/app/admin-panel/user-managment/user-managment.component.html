@@ -1,12 +1,7 @@
-<<<<<<< HEAD
-<p>
-  user-managment works!
-</p>
-=======
 <div class="container">
 
   <div class="preview-block">
-    <a class="btn-menu" routerLink="/menu"><img width="60%" height="auto" src="assets/img/preview-left-arrow.png"
+    <a class="btn-menu" routerLink="/admin/menu"><img width="60%" height="auto" src="assets/img/preview-left-arrow.png"
         alt=""></a>
     <h2>Управление пользователем</h2>
   </div>
@@ -15,15 +10,13 @@
 
 
     <div>
-      <app-tablet-users 
-      [headerFirstUser]="['Логин']"   
-      [headerSecondAction]="['Действие']" 
-      [users]="users">
+      <app-tablet-users [headerFirstUser]="['Логин']" [headerSecondAction]="['Действие']" [users]="users">
       </app-tablet-users>
     </div>
 
     <div>
-      <app-form-group-input blockHeaderNameSecond="Добавление нового пользователя" blockHeaderName="Добавить нового пользователя"></app-form-group-input>
+      <app-form-group-input blockHeaderNameSecond="Добавление нового пользователя"
+        blockHeaderName="Добавить нового пользователя"></app-form-group-input>
 
 
 
@@ -31,4 +24,3 @@
 
   </div>
 </div>
->>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7

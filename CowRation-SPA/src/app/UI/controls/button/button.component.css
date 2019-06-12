@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-=======
 a{
     text-decoration: none;
 }
->>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
 .button{
     display: flex;
     align-items: center;
@@ -17,11 +14,8 @@ span{
     font-size: 22px;
     line-height: 30px;
     font-weight: 500;
-<<<<<<< HEAD
-=======
 }
 a:hover{
     opacity: 0.7;
     transition: 0.7;
->>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
 }

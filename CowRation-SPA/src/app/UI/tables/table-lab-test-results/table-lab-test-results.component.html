@@ -11,47 +11,36 @@
                 </tr>
             </thead>
             <tbody>
-<<<<<<< HEAD
                 <tr *ngFor="let el of laboratoryIndicators" class="section-table">
                     <th scope="row" class="row-table">{{el.name}}</th>
 
-                    <th><app-textbox [model]="el.sv" [fontSize]="['18px']" [colorText]="['#333333']"
-=======
-                <tr *ngFor="let el of elements" class="section-table">
-                    <th scope="row" class="row-table">{{el.firstColumn}}</th>
+                    <th>
+                        <app-textbox [model]="el.sv" [fontSize]="['18px']" [colorText]="['#333333']"
+                            [fontWeight]="['normal']" [fontStyle]="['normal']" [lineHeight]="['25px']"
+                            [width]="['100px']" [height]="['30px']">
+                        </app-textbox>
+                    </th>
 
-                    <th><app-textbox [model]="el.secondColumn" [fontSize]="['18px']" [colorText]="['#333333']"
->>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
-                        [fontWeight]="['normal']" [fontStyle]="['normal']" [lineHeight]="['25px']" [width]="['100px']"
-                        [height]="['30px']">
-                    </app-textbox></th>
-                    
-<<<<<<< HEAD
-                    <th><app-textbox [model]="el.sp" [fontSize]="['18px']" [colorText]="['#333333']"
-=======
-                    <th><app-textbox [model]="el.thirdColumn" [fontSize]="['18px']" [colorText]="['#333333']"
->>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
-                        [fontWeight]="['normal']" [fontStyle]="['normal']" [lineHeight]="['25px']" [width]="['100px']"
-                        [height]="['30px']">
-                    </app-textbox></th>
+                    <th>
+                        <app-textbox [model]="el.sp" [fontSize]="['18px']" [colorText]="['#333333']"
+                            [fontWeight]="['normal']" [fontStyle]="['normal']" [lineHeight]="['25px']"
+                            [width]="['100px']" [height]="['30px']">
+                        </app-textbox>
+                    </th>
 
-<<<<<<< HEAD
-                    <th><app-textbox [model]="el.sg" [fontSize]="['18px']" [colorText]="['#333333']"
-=======
-                    <th><app-textbox [model]="el.fourthColumn" [fontSize]="['18px']" [colorText]="['#333333']"
->>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
-                        [fontWeight]="['normal']" [fontStyle]="['normal']" [lineHeight]="['25px']" [width]="['100px']"
-                        [height]="['30px']">
-                    </app-textbox></th>
+                    <th>
+                        <app-textbox [model]="el.sg" [fontSize]="['18px']" [colorText]="['#333333']"
+                            [fontWeight]="['normal']" [fontStyle]="['normal']" [lineHeight]="['25px']"
+                            [width]="['100px']" [height]="['30px']">
+                        </app-textbox>
+                    </th>
 
-<<<<<<< HEAD
-                    <th><app-textbox [model]="el.sk" [fontSize]="['18px']" [colorText]="['#333333']"
-=======
-                    <th><app-textbox [model]="el.fifthColumn" [fontSize]="['18px']" [colorText]="['#333333']"
->>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
-                        [fontWeight]="['normal']" [fontStyle]="['normal']" [lineHeight]="['25px']" [width]="['100px']"
-                        [height]="['30px']">
-                    </app-textbox></th>
+                    <th>
+                        <app-textbox [model]="el.sk" [fontSize]="['18px']" [colorText]="['#333333']"
+                            [fontWeight]="['normal']" [fontStyle]="['normal']" [lineHeight]="['25px']"
+                            [width]="['100px']" [height]="['30px']">
+                        </app-textbox>
+                    </th>
 
                 </tr>
             </tbody>

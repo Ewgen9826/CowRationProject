@@ -16,7 +16,6 @@ export const getKorms = createSelector(
 export const getUserKorms = createSelector(
     getRationFeatureState,
     state => state.userKorms
-<<<<<<< HEAD
 );
 
 export const getFeedingCategory = createSelector(
@@ -32,6 +31,4 @@ export const getLaboratoryIndicators = createSelector(
 export const getLoadingState = createSelector(
     getRationFeatureState,
     state => state.loading
-=======
->>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
 );

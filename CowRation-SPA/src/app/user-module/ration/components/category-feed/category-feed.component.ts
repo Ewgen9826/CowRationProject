@@ -1,13 +1,10 @@
 import { Component, OnInit } from "@angular/core";
-<<<<<<< HEAD
 import { FeedingCategory } from '../../models/feeding-category';
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/state/app.state';
 import { getFeedingCategory } from '../../state';
 import { LoadFeedingCategory, ChangeFeedingCategory } from '../../state/ration.actions';
 import { Router } from '@angular/router';
-=======
->>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
 
 @Component({
   selector: "app-category-feed",
@@ -15,7 +12,6 @@ import { Router } from '@angular/router';
   styleUrls: ["./category-feed.component.css"]
 })
 export class CategoryFeedComponent implements OnInit {
-<<<<<<< HEAD
   feedingCategory: FeedingCategory = {
     udoy: 0,
     fat: 0,
@@ -36,13 +32,7 @@ export class CategoryFeedComponent implements OnInit {
   }
 
   changeFeedingCategory() {
-      this.store.dispatch(new ChangeFeedingCategory(this.feedingCategory));
-=======
-
-  constructor() { }
-
-  ngOnInit() {
->>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
+    this.store.dispatch(new ChangeFeedingCategory(this.feedingCategory));
   }
 
 }

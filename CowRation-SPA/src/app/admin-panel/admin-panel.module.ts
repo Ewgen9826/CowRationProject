@@ -8,11 +8,6 @@ import { UserManagmentComponent } from "./user-managment/user-managment.componen
 import { RationHistoryComponent } from "./ration-history/ration-history.component";
 import { AddAdminUserComponent } from "./add-admin-user/add-admin-user.component";
 import { AdminPanelRoutingModule } from "./admin-panel-routing.module";
-<<<<<<< HEAD
-
-@NgModule({
-  imports: [CommonModule, AdminPanelRoutingModule],
-=======
 import { TablesModule } from '../UI/tables/tables.module';
 import { ControlsModule } from '../UI/controls/controls.module';
 
@@ -21,14 +16,13 @@ import { ControlsModule } from '../UI/controls/controls.module';
 
 @NgModule({
   imports: [
-    CommonModule, 
+    CommonModule,
     AdminPanelRoutingModule,
     TablesModule,
     ControlsModule,
-    
-   
+
+
   ],
->>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
   declarations: [
     AdminPanelComponent,
     MenuComponent,
@@ -36,11 +30,6 @@ import { ControlsModule } from '../UI/controls/controls.module';
     UserManagmentComponent,
     RationHistoryComponent,
     AddAdminUserComponent
-<<<<<<< HEAD
-=======
-   
-    
->>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
   ]
 })
-export class AdminPanelModule {}
+export class AdminPanelModule { }

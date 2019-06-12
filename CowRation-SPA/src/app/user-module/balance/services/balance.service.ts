@@ -12,11 +12,7 @@ import { of } from 'rxjs';
 })
 export class BalanceService {
 
-<<<<<<< HEAD
-  baseUrl = environment.apiUrl + "/storage/"+this.userId;
-=======
-  baseUrl = environment.apiUrl + "/storage/";
->>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
+  baseUrl = environment.apiUrl + "/storage/" + this.userId;
   constructor(private httpClient: HttpClient, private store: Store<AppState>) { }
 
   get userId(): number {
@@ -28,11 +24,7 @@ export class BalanceService {
   }
 
   getStorageKorms() {
-<<<<<<< HEAD
     return this.httpClient.get<KormStorage[]>(this.baseUrl);
-=======
-    return this.httpClient.get(this.baseUrl + this.userId + "/korms/");
->>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
   }
 
   getHowManyDay(korms: KormStorage[]) {

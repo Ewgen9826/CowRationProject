@@ -19,10 +19,7 @@ import { reducer } from "./state/ration.reducer";
 import { StoreModule } from "@ngrx/store";
 import { EffectsModule } from "@ngrx/effects";
 import { RationEffects } from "./state/ration.effect";
-<<<<<<< HEAD
 import { LoadingPageModule } from 'src/app/UI/loading-page/loading-page.module';
-=======
->>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
 
 @NgModule({
   declarations:
@@ -44,10 +41,7 @@ import { LoadingPageModule } from 'src/app/UI/loading-page/loading-page.module';
       ControlsModule,
       FeedingParametersCardModule,
       FormsModule,
-<<<<<<< HEAD
       LoadingPageModule,
-=======
->>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
       StoreModule.forFeature("ration", reducer),
       EffectsModule.forFeature([RationEffects]),
     ],
