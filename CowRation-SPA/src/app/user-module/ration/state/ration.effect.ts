@@ -7,6 +7,7 @@ import {
     LoadKormsSuccess,
     LoadFail,
     LoadUserKormsSuccess,
+<<<<<<< HEAD
     ChangeUserKormsSuccess,
     LoadFeedingCategorySuccess,
     LoadFeedingCategoryFail,
@@ -21,16 +22,27 @@ import { FeedingService } from '../services/feeding.service';
 import { FeedingCategory } from '../models/feeding-category';
 import { Router } from '@angular/router';
 import { LaboratoryService } from '../services/laboratory.service';
+=======
+    ChangeUserKormsSuccess
+} from "./ration.actions";
+import { mergeMap, catchError, map, tap } from "rxjs/operators";
+import { KormService } from "../services/korm.service";
+import { AlertifyService } from "src/app/core/utils/alertify.service";
+>>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
 
 @Injectable()
 export class RationEffects {
     constructor(
         private action$: Actions,
         private kormService: KormService,
+<<<<<<< HEAD
         private feeding: FeedingService,
         private laboratory: LaboratoryService,
         private alertifyService: AlertifyService,
         private router: Router
+=======
+        private alertifyService: AlertifyService
+>>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
     ) { }
 
     @Effect()
@@ -68,6 +80,7 @@ export class RationEffects {
         ofType(RationActionType.CHANGE_USER_KORMS_SUCCESS),
         tap((korms) => {
             this.alertifyService.success("Список кормов изменен!");
+<<<<<<< HEAD
             this.router.navigateByUrl("/company/ration/category-feel");
         })
     );
@@ -110,4 +123,8 @@ export class RationEffects {
                 catchError(err => of(new LoadLaboratoryFail(err)))
             ))
     );
+=======
+        })
+    );
+>>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
 }

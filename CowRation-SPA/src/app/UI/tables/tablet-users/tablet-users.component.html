@@ -1,0 +1,59 @@
+<div class="table-field">
+    <div class="button-top" (click)="scrollTop()">
+        <img src="../assets/img/table-button.svg" alt="">
+    </div>
+    <table>
+        <div #widgetsContent class="scrol">
+            <thead>
+                <tr class="header-table">
+                    <th>{{headerFirstUser}}</th>
+                    <th>{{headerSecondAction}}</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <!-- 
+                    !!!РАССКОМЕНТИТЬ ПОСЛЕ ПРОВЕРКИ
+
+                    <tr *ngFor="let user of users" class="g">
+                    <th scope="row" class="row-table">{{user.username}}</th>
+                     <td><a class="btn-delete" href=""><button>Удалить</button></a></td>
+                    </tr>
+            -->
+
+
+                <tr class="g">
+                    <th scope="row" class="row-table">Женя</th>
+                    <td><a class="btn-delete" href=""><button>Удалить</button></a></td>
+                </tr>
+                <tr class="g">
+                    <th scope="row" class="row-table">Беги</th>
+                    <td><a class="btn-delete" href=""><button>Удалить</button></a></td>
+                </tr>
+                <tr class="g">
+                    <th scope="row" class="row-table">В</th>
+                    <td><a class="btn-delete" href=""><button>Удалить</button></a></td>
+                </tr>
+                <tr class="g">
+                    <th scope="row" class="row-table">Поле</th>
+                    <td><a class="btn-delete" href=""><button>Удалить</button></a></td>
+                </tr>
+                <tr class="g">
+                    <th scope="row" class="row-table">А</th>
+                    <td><a class="btn-delete" href=""><button>Удалить</button></a></td>
+                </tr>
+                <tr class="g">
+                    <th scope="row" class="row-table">То</th>
+                    <td><a class="btn-delete" href=""><button>Удалить</button></a></td>
+                </tr>
+
+
+
+            </tbody>
+        </div>
+    </table>
+
+    <div class="button-bottom" (click)="scrollBotton()">
+        <img src="../assets/img/table-button.svg" alt="">
+    </div>
+</div>

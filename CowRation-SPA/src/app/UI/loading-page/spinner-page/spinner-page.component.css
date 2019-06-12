@@ -1,9 +1,17 @@
 .spinner-page-container {
+<<<<<<< HEAD
     width: 100%;
 	height: 100%;
 	position: absolute;
 	top: 0;
 	left: 0;
+=======
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+>>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
     background-color: #fff;
     z-index: 10000;
     display: flex;

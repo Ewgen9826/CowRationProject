@@ -1,0 +1,125 @@
+
+<div class="first-block" (click)="showNewBlock()" *ngIf="firstblock" >
+    
+      <img width="10%" height="auto" src="assets/img/plus.png" alt="Error">
+      <h4>{{blockHeaderName}}</h4>
+  
+</div>
+
+<div class="second-block" *ngIf="showBlock">
+  <h4>{{blockHeaderNameSecond}}</h4>
+  <ul>
+    <div>
+      <li>
+        <span>Логин</span>
+        <app-textbox-string
+        [placeholder] = "['Придумайте логин']"  
+        [type]="['text']" 
+        [fontSize]="['18px']"
+        [colorText]="['#333333']"
+        [fontWeight]="['normal']"
+        [fontStyle]="['normal']"
+        [lineHeight]="['29px']"
+        [width]="['188px']"
+        [height]="['29px']">
+  
+        </app-textbox-string>    
+    </li>
+  
+      <li>
+          <span>Имя</span>
+          <app-textbox-string  
+          [placeholder] = "['Введите имя']"  
+          [type]="['text']"
+          [fontSize]="['18px']"
+          [colorText]="['#333333']"
+          [fontWeight]="['normal']"
+          [fontStyle]="['normal']"
+          [lineHeight]="['29px']"
+          [width]="['188px']"
+          [height]="['29px']">
+    
+          </app-textbox-string> 
+          
+      </li>
+  
+      <li>
+          <span>Фамилия</span>
+          <app-textbox-string  
+          [placeholder] = "['Введите фамилию']"  
+          [type]="['text']"
+          [fontSize]="['18px']"
+          [colorText]="['#333333']"
+          [fontWeight]="['normal']"
+          [fontStyle]="['normal']"
+          [lineHeight]="['29px']"
+          [width]="['188px']"
+          [height]="['29px']">
+    
+          </app-textbox-string> 
+         
+      </li>
+    </div>
+    <div>
+        <li>
+            <span>Email</span>
+            <app-textbox-string  
+            [placeholder] = "['Введите email']"  
+            [type]="['email']"
+            [fontSize]="['18px']"
+            [colorText]="['#333333']"
+            [fontWeight]="['normal']"
+            [fontStyle]="['normal']"
+            [lineHeight]="['29px']"
+            [width]="['188px']"
+            [height]="['29px']">
+      
+            </app-textbox-string> 
+          
+        </li>
+        <li>
+            <span>Пароль</span>
+            <app-textbox-string  
+            [placeholder] = "['Придумайте пароль']"  
+            [type]="['password']"
+            [fontSize]="['18px']"
+            [colorText]="['#333333']"
+            [fontWeight]="['normal']"
+            [fontStyle]="['normal']"
+            [lineHeight]="['29px']"
+            [width]="['188px']"
+            [height]="['29px']">
+      
+            </app-textbox-string> 
+           
+        </li>
+        <li>
+            <span>Повторте пароль</span>
+            <app-textbox-string  
+            [placeholder] = "['Повторите пароль']"
+            [type]="['password']"
+            [fontSize]="['18px']"
+            [colorText]="['#333333']"
+            [fontWeight]="['normal']"
+            [fontStyle]="['normal']"
+            [lineHeight]="['29px']"
+            [width]="['188px']"
+            [height]="['29px']">
+      
+            </app-textbox-string> 
+           
+        </li>
+    </div>
+  </ul>
+  <div>
+      <app-button
+      btnText = "Зарегистрировать"
+      link = "/menu"
+      btnColor="linear-gradient(192.69deg, #2CC9DE 0.45%, #228794 100%)"
+      >
+
+
+      ></app-button>
+  </div>
+
+</div>

@@ -15,6 +15,7 @@ namespace CowRation.API.Data
         {
             this.context = context;
         }
+<<<<<<< HEAD
         public async Task<List<Korm>> GetUserStorage(int id)
         {
             var user = await context.Users
@@ -22,6 +23,16 @@ namespace CowRation.API.Data
                 .FirstOrDefaultAsync(u => u.Id == id);
             var korms = user.Storage.KormStorages.Select(ks => ks.Korm).ToList();
             return korms;
+=======
+        public async Task<Storage> GetUserStorage(int id)
+        {
+            var user = await context.Users
+                .Include(s => s.Storage)
+                .ThenInclude(k => k.KormStorages)
+                .ThenInclude(k => k.Korm)
+                .FirstOrDefaultAsync(u => u.Id == id);
+            return user.Storage;
+>>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
         }
     }
 }

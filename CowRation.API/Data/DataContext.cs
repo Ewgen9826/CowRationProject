@@ -3,7 +3,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CowRation.API.Data
 {
+<<<<<<< HEAD
     public class DataContext : DbContext
+=======
+    public class DataContext: DbContext
+>>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
@@ -17,8 +21,11 @@ namespace CowRation.API.Data
         public DbSet<RationResult> RationResults { get; set; }
         public DbSet<Ration> Rations { get; set; }
         public DbSet<LaboratoryIndexFood> LaboratoryIndexFoods { get; set; }
+<<<<<<< HEAD
         public DbSet<FeedingCategory> FeedingCategories { get; set; }
         public DbSet<Laboratory> Laboratories { get; set; }
+=======
+>>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -38,7 +45,11 @@ namespace CowRation.API.Data
 
             modelBuilder.Entity<KormStorage>()
                  .HasKey(t => new { t.KormId, t.StorageId });
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
             modelBuilder.Entity<KormStorage>()
                 .HasOne(ku => ku.Storage)
                 .WithMany(u => u.KormStorages)

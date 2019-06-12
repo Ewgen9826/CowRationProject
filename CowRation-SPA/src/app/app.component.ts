@@ -2,9 +2,12 @@ import { Component, OnInit } from "@angular/core";
 import { Router, NavigationEnd, ActivatedRoute } from "@angular/router";
 import { Title } from "@angular/platform-browser";
 import { filter, map, mergeMap } from "rxjs/operators";
+<<<<<<< HEAD
 import { Store, select } from '@ngrx/store';
 import { AppState } from './state/app.state';
 import { isAuthenticatedUser, getLoadingState } from './account-login/state';
+=======
+>>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
 
 @Component({
   selector: "app-root",
@@ -15,9 +18,14 @@ import { isAuthenticatedUser, getLoadingState } from './account-login/state';
     ]
 })
 export class AppComponent implements OnInit {
+<<<<<<< HEAD
   loading$;
   constructor(
     private store: Store<AppState>,
+=======
+  isAuth$;
+  constructor(
+>>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private titleService: Title
@@ -39,6 +47,9 @@ export class AppComponent implements OnInit {
         mergeMap((route) => route.data)
       )
       .subscribe((event) => this.titleService.setTitle(event["title"]));
+<<<<<<< HEAD
     this.loading$ = this.store.pipe(select(getLoadingState));
+=======
+>>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
   }
 }

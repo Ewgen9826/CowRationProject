@@ -1,0 +1,63 @@
+/*---First block---*/
+h4{
+   
+    margin: 0px;
+    font-size: 22px;
+    color: #26C6DA;
+    font-weight: bold;
+}
+.first-block, .second-block{
+    margin-left: 20px;
+}
+.first-block{
+    cursor: pointer;
+    background: #FBFBFB;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
+    width: 600px;
+    height: 374px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+.first-block h4{
+    margin-top: 40px;
+}
+.first-block:hover{
+    opacity: 0.7;
+    transition: 0.7s;
+}
+
+
+/*---Second block---*/
+
+
+
+.second-block{
+    
+    background: #FBFBFB;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
+    width: 600px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.second-block ul{
+    padding: 0;
+    display: flex;
+    list-style: none;
+    margin-top: 40px;
+
+}
+.second-block ul div li{
+    padding: 0 30px 0 30px;
+   
+
+}
+.second-block span{
+    font-weight: 600;
+}

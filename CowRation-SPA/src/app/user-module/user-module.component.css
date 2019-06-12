@@ -4,9 +4,17 @@
 }
 
 .navigation {
+<<<<<<< HEAD
     z-index: 100;
 }
 
 .main {
+=======
+    z-index: 10;
+}
+
+.main {
+    margin-left: 150px;
+>>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
     width: 100%;
 }

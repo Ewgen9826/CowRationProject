@@ -1,5 +1,8 @@
 import { Component, OnInit, Input, ViewEncapsulation, ViewChild, ElementRef } from '@angular/core';
+<<<<<<< HEAD
 import { KormStorage } from 'src/app/user-module/balance/models/korm-storage';
+=======
+>>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
 
 @Component({
   selector: 'app-table-balance',
@@ -14,8 +17,11 @@ export class TableBalanceComponent implements OnInit {
   @Input() headerFirstBalance: string;
   @Input() headerSecondBalance: string;
 
+<<<<<<< HEAD
   @Input() storageKorms: KormStorage[];
 
+=======
+>>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
   @ViewChild('widgetsContent', { read: ElementRef }) public widgetsContent: ElementRef<any>;
   public scrollTop(): void {
     this.intervalTop = 200;

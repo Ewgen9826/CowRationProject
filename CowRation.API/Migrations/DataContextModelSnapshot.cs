@@ -100,7 +100,11 @@ namespace CowRation.API.Migrations
                     b.ToTable("KormUser");
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("CowRation.API.Models.Laboratory", b =>
+=======
+            modelBuilder.Entity("CowRation.API.Models.LaboratoryIndexFood", b =>
+>>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -108,7 +112,11 @@ namespace CowRation.API.Migrations
 
                     b.Property<int>("CatalogIndexFoodId");
 
+<<<<<<< HEAD
                     b.Property<int?>("LaboratoryIndexFoodId");
+=======
+                    b.Property<int>("UserId");
+>>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
 
                     b.Property<double>("Value");
 
@@ -116,6 +124,7 @@ namespace CowRation.API.Migrations
 
                     b.HasIndex("CatalogIndexFoodId");
 
+<<<<<<< HEAD
                     b.HasIndex("LaboratoryIndexFoodId");
 
                     b.ToTable("Laboratories");
@@ -135,6 +144,8 @@ namespace CowRation.API.Migrations
 
                     b.HasIndex("KormId");
 
+=======
+>>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
                     b.HasIndex("UserId");
 
                     b.ToTable("LaboratoryIndexFoods");
@@ -221,6 +232,7 @@ namespace CowRation.API.Migrations
                     b.ToTable("Users");
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("FeedingCategory", b =>
                 {
                     b.Property<int>("Id")
@@ -245,6 +257,8 @@ namespace CowRation.API.Migrations
                     b.ToTable("FeedingCategories");
                 });
 
+=======
+>>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
             modelBuilder.Entity("CowRation.API.Models.CharacterizationIndexFood", b =>
                 {
                     b.HasOne("CowRation.API.Models.CatalogIndexFood", "CatalogIndexFood")
@@ -289,6 +303,7 @@ namespace CowRation.API.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("CowRation.API.Models.Laboratory", b =>
                 {
                     b.HasOne("CowRation.API.Models.CatalogIndexFood", "CatalogIndexFood")
@@ -310,6 +325,17 @@ namespace CowRation.API.Migrations
 
                     b.HasOne("CowRation.API.Models.User", "User")
                         .WithMany("LaboratoryIndexFoods")
+=======
+            modelBuilder.Entity("CowRation.API.Models.LaboratoryIndexFood", b =>
+                {
+                    b.HasOne("CowRation.API.Models.CatalogIndexFood", "GetCatalogIndexFood")
+                        .WithMany()
+                        .HasForeignKey("CatalogIndexFoodId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("CowRation.API.Models.User", "User")
+                        .WithMany()
+>>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
@@ -335,6 +361,7 @@ namespace CowRation.API.Migrations
                         .HasForeignKey("CowRation.API.Models.Storage", "UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
+<<<<<<< HEAD
 
             modelBuilder.Entity("FeedingCategory", b =>
                 {
@@ -343,6 +370,8 @@ namespace CowRation.API.Migrations
                         .HasForeignKey("FeedingCategory", "UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
+=======
+>>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
 #pragma warning restore 612, 618
         }
     }

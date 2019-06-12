@@ -12,4 +12,11 @@ export class TableFeedSelectionComponent implements OnInit {
   headElements = ["Название корма", "Цена (руб/кг)", "Сортировать", "Выбор"];
   constructor() { }
   ngOnInit() { }
+<<<<<<< HEAD
+=======
+
+  toggle(korm: Korm) {
+    console.log(korm);
+  }
+>>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
 }

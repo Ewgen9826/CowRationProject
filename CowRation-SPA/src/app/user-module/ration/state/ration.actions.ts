@@ -1,7 +1,10 @@
 import { Action } from "@ngrx/store";
 import { Korm } from "../models/korm";
+<<<<<<< HEAD
 import { FeedingCategory } from '../models/feeding-category';
 import { Laboratory } from '../models/laboratory';
+=======
+>>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
 
 export enum RationActionType {
     LOAD_KORMS = "[Ration] Load Korms",
@@ -9,6 +12,7 @@ export enum RationActionType {
     LOAD_KORMS_SUCCESS = "[Ration] Load Korms Success",
     LOAD_KORMS_USER_SUCCESS = "[Ration] Load User Korms Success",
     LOAD_FAIL = "[Ration] Fail",
+<<<<<<< HEAD
 
     CHANGE_USER_KORMS = "[Ration] Change user korms",
     CHANGE_USER_KORMS_SUCCESS = "[Ration] Change user korms success",
@@ -24,6 +28,10 @@ export enum RationActionType {
     LOAD_LABORATORY_SUCCESS="[Ration] Load laboratory success",
     LOAD_LABORATORY_FAIL="[Ration] Load laboratory fail",
 
+=======
+    CHANGE_USER_KORMS = "[Ration] Change user korms",
+    CHANGE_USER_KORMS_SUCCESS = "[Ration] Change user korms success"
+>>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
 }
 
 export class LoadKorms implements Action {
@@ -49,16 +57,25 @@ export class LoadFail implements Action {
     constructor(public payload: string) { }
 }
 
+<<<<<<< HEAD
 export class ChangeUserKorms implements Action {
+=======
+export class ChangeUserKorms implements Action{
+>>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
     readonly type = RationActionType.CHANGE_USER_KORMS;
     constructor(public payload: Korm[]) { }
 }
 
+<<<<<<< HEAD
 export class ChangeUserKormsSuccess implements Action {
+=======
+export class ChangeUserKormsSuccess implements Action{
+>>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
     readonly type = RationActionType.CHANGE_USER_KORMS_SUCCESS;
     constructor(public payload: Korm[]) { }
 }
 
+<<<<<<< HEAD
 export class LoadFeedingCategory implements Action {
     readonly type = RationActionType.LOAD_FEEDING_CATEGORY;
 }
@@ -112,3 +129,12 @@ export type RationActions = LoadKorms
     | LoadLaboratory
     | LoadLaboratorySuccess
     | LoadLaboratoryFail;
+=======
+export type RationActions = LoadKorms 
+| LoadKormsSuccess 
+| LoadUserKorms 
+| LoadUserKormsSuccess 
+| LoadFail
+| ChangeUserKorms
+| ChangeUserKormsSuccess;
+>>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7

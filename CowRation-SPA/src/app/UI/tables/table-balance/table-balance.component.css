@@ -11,9 +11,17 @@ table {
   background: #FBFBFB;
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
   color: #424242;
+<<<<<<< HEAD
 }
 
 .scrol {
+=======
+  
+}
+
+.scrol{
+ 
+>>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
   overflow-y: scroll;
   height: 260px;
 }

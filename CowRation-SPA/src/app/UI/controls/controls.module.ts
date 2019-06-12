@@ -12,6 +12,13 @@ import { RouterModule } from "@angular/router";
 import { TextboxComponent } from "./textbox/textbox.component";
 import { VerticalSliderComponent } from "./vertical-slider/vertical-slider.component";
 import { Ng5SliderModule } from 'ng5-slider';
+<<<<<<< HEAD
+=======
+import { FormGroupInputComponent } from './form-group-input/form-group-input.component';
+import { TextboxStringComponent } from './textbox-string/textbox-string.component';
+
+
+>>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
 @NgModule({
   declarations: [
     ButtonCloseComponent,
@@ -22,7 +29,15 @@ import { Ng5SliderModule } from 'ng5-slider';
     InitialParametersBlockComponent,
     ButtonComponent,
     TextboxComponent,
+<<<<<<< HEAD
     VerticalSliderComponent
+=======
+    VerticalSliderComponent,
+    FormGroupInputComponent,
+    TextboxStringComponent
+   
+  
+>>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
   ],
   imports: [CommonModule, FormsModule, RouterModule, Ng5SliderModule],
   exports: [
@@ -35,7 +50,14 @@ import { Ng5SliderModule } from 'ng5-slider';
     ButtonComponent,
     VerticalSliderComponent,
     TextboxComponent,
+<<<<<<< HEAD
     Ng5SliderModule
+=======
+    Ng5SliderModule,
+    FormGroupInputComponent
+    
+    
+>>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
   ]
 })
 export class ControlsModule {}

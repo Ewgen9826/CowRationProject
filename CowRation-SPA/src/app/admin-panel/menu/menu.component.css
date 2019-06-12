@@ -1,0 +1,31 @@
+
+.menu-block{
+    height: -webkit-fill-available;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ul{
+    text-align: center;
+}
+li{
+    padding: 10px 0 10px;
+    list-style: none;
+}
+li>a>button{
+    cursor: pointer;
+    border: 0;
+    width: 400px;
+    padding: 20px 0 20px 0;
+    background: linear-gradient(193.22deg, #2CC9DE 0.45%, #228794 100%);
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
+}
+li>a>button:hover{
+    opacity: 0.7;
+    transition: 0.5s;
+}
+a>button{
+    color: #ffffff;
+    font-size: 18px;
+}
+

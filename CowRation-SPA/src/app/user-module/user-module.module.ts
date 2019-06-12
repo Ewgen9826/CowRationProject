@@ -20,4 +20,8 @@ import { EconomyModule } from "./economy/economy.module";
   ],
   providers: []
 })
+<<<<<<< HEAD
 export class UserModuleModule { }
+=======
+export class UserModuleModule {}
+>>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7

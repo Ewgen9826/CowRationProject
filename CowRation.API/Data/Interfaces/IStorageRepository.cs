@@ -8,6 +8,10 @@ namespace CowRation.API.Data
 {
     public interface IStorageRepository
     {
+<<<<<<< HEAD
         Task<List<Korm>> GetUserStorage(int id);
+=======
+        Task<Storage> GetUserStorage(int id);
+>>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
     }
 }
