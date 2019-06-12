@@ -1,10 +1,14 @@
 .table-field {
+    margin: 0 485px 0 485px;
     padding-right: 20px;
     display: flex;
     flex-direction: column;
     width: initial;
   }
   table {
+    
+    display: flex;
+    justify-content: center;
     width: 100%;
     text-align: center;
     border-collapse: collapse;
@@ -15,7 +19,7 @@
   
   .scrol {
     overflow-y: scroll;
-    height: 520px;
+    height: 650px;
   }
   
   .scrol::-webkit-scrollbar {
@@ -85,20 +89,7 @@
   .button-bottom img {
     transform: rotate(180deg);
   }
-  .btn-delete button{
-    color: #424242;
-    background-color: transparent;
-    border: none;
-    height: 65px;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: normal;
-  }
-.btn-delete button:hover{
-    color: #26c6da;
-    transition: 0.7s;
-}
+ 
   
 
   

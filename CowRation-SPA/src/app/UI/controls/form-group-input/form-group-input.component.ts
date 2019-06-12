@@ -14,7 +14,9 @@ export class FormGroupInputComponent implements OnInit {
   @Input() firstblock = true;
   @Input() showBlock = false;
 
-  showNewBlock(){
+  @Input() type: any;
+
+  showNewBlock() {
     this.firstblock = false;
     this.showBlock = true;
     return this.firstblock && this.showBlock;

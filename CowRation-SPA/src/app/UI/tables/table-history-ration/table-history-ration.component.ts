@@ -1,19 +1,23 @@
 import { Component, OnInit, Input, ViewEncapsulation, ViewChild, ElementRef  } from '@angular/core';
-import { User } from 'src/app/core/models/user';
+import { Korms } from 'src/app/core/models/korms';
+
 
 @Component({
-  selector: 'app-tablet-users',
-  templateUrl: './tablet-users.component.html',
-  styleUrls: ['./tablet-users.component.css']
+  selector: 'app-table-history-ration',
+  templateUrl: './table-history-ration.component.html',
+  styleUrls: ['./table-history-ration.component.css']
 })
-export class TabletUsersComponent implements OnInit {
+export class TableHistoryRationComponent implements OnInit {
 
   intervalBotton;
   intervalTop;
 
   @Input() headerFirstUser: string;
-  @Input() headerSecondAction: string;
-  @Input() users: User[];
+  @Input() headerTime: string;
+  @Input() headerPriceRation: string;
+
+  @Input() korms: Korms[];
+
   @ViewChild('widgetsContent', { read: ElementRef }) public widgetsContent: ElementRef<any>;
   public scrollTop(): void {
     this.intervalTop = 200;
@@ -32,4 +36,5 @@ export class TabletUsersComponent implements OnInit {
 
   ngOnInit() {
   }
+
 }

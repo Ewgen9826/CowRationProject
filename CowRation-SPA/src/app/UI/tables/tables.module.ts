@@ -3,15 +3,16 @@ import { CommonModule } from '@angular/common';
 import { TableFeedSelectionComponent } from './table-feed-selection/table-feed-selection.component';
 import { ControlsModule } from '../controls/controls.module';
 import { TableBalanceComponent } from './table-balance/table-balance.component';
-import { RouterModule } from "@angular/router";
+import { RouterModule } from '@angular/router';
 import { StepperService } from '../stepper/services/stepper.service';
 import { TableEconomyComponent } from './table-economy/table-economy.component';
 import { TableLabTestResultsComponent } from './table-lab-test-results/table-lab-test-results.component';
 import { TableCostRationComponent } from './table-cost-ration/table-cost-ration.component';
 import { TableComponent } from './table/table.component';
 import { TableRowComponent } from './table-row/table-row.component';
-import { FormsModule } from "@angular/forms";
+import { FormsModule } from '@angular/forms';
 import { TabletUsersComponent } from './tablet-users/tablet-users.component';
+import { TableHistoryRationComponent } from './table-history-ration/table-history-ration.component';
 @NgModule({
       declarations:
             [
@@ -20,7 +21,7 @@ import { TabletUsersComponent } from './tablet-users/tablet-users.component';
                   TableEconomyComponent,
                   TableLabTestResultsComponent,
                   TabletUsersComponent,
-                  TableCostRationComponent, TableComponent, TableRowComponent
+                  TableCostRationComponent, TableComponent, TableRowComponent, TableHistoryRationComponent
             ],
       imports:
             [
@@ -39,7 +40,8 @@ import { TabletUsersComponent } from './tablet-users/tablet-users.component';
                   TableCostRationComponent,
                   TableComponent,
                   TabletUsersComponent,
-                  TableRowComponent
+                  TableRowComponent,
+                  TableHistoryRationComponent
             ]
 })
 export class TablesModule { }
