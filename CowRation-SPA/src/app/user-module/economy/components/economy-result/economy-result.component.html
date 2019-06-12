@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="content-block">      
+    <div class="square">
+        <app-square-block [blockHeaderName]="['Выручка:']">
+        </app-square-block>
+        <span class="results">5403.23</span>
+        <span>(тыс/руб)</span>
+    </div>
+    <div class="square">
+        <app-square-block [blockHeaderName]="['Прибыль до уплаты налогов:']">
+        </app-square-block>
+        <span class="results">1603.02</span>
+        <span>(тыс/руб)</span>
+    </div>
+    <div class="square">
+      <app-square-block [blockHeaderName]="['Рентабельность в сутки:']">
+      </app-square-block>
+      <span class="results">46.82<span>%</span></span>
+  </div>
+  </div>
+  <div class="button-block">
+    <app-button [btnText]="['Назад']"
+                [btnColor]="['linear-gradient(192.69deg, #2CC9DE 0.45%, #228794 100%)']"
+                [link]="['/company/economy/milk-characteristic']">
+    </app-button>
+  </div>    
+</div>

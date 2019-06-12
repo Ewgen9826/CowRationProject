@@ -1,0 +1,25 @@
+<div class="table-field">
+    <div class="button-top" (click)="scrollTop()">
+        <img src="../assets/img/table-button.svg" alt="">
+    </div>
+    <table>
+        <div #widgetsContent class="scrol">
+            <thead>
+                <tr class="header-table">
+                    <th>{{headerFirstBalance}}</th>
+                    <th>{{headerSecondBalance}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let korm of storageKorms" class="g">
+                    <th scope="row" class="row-table">{{korm.name}}</th>
+                    <td>{{korm.foodValue}}</td>
+                </tr>
+            </tbody>
+        </div>
+    </table>
+
+    <div class="button-bottom" (click)="scrollBotton()">
+        <img src="../assets/img/table-button.svg" alt="">
+    </div>
+</div>

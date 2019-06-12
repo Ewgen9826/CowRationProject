@@ -1,0 +1,12 @@
+:host {
+    display: flex;
+    flex-direction: row;
+}
+
+.navigation {
+    z-index: 100;
+}
+
+.main {
+    width: 100%;
+}

@@ -1,0 +1,21 @@
+<div class="container">
+    <table mdbTable>
+        <thead>
+            <tr class="header-table">
+                <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr mdbTableCol *ngFor="let korm of korms">
+                <th scope="row" class="row-table">{{korm.name}}</th>
+                <td>{{korm.price}}</td>
+                <td>
+                    <app-button-sorting></app-button-sorting>
+                </td>
+                <td>
+                    <app-button-choice [(value)]="korm.select"></app-button-choice>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

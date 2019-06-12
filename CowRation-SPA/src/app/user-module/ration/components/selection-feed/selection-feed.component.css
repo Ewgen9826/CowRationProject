@@ -1,0 +1,31 @@
+.table{
+  margin-top: 10px;
+}
+.container {
+  width: 100%;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+span {
+  font-size: 24px;
+  font-weight: 600;
+  color: #424242;
+}
+
+p {
+  color: #424242;
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+.button-block {
+  display: flex;
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+app-button {
+  margin: 0px 15px 0px 15px;
+}

@@ -1,0 +1,18 @@
+<div class="container">
+    <span>Исходные данные</span>
+    <p>введите параметры для более точного расчета</p>
+    <app-initial-parameters-block [nameParameter]='["Общий объем проданного молока за пред. год"]'
+                                  [parameterUnit]='["(т)"]'
+    ></app-initial-parameters-block>
+    <app-initial-parameters-block [nameParameter]='["Средний суточный удой за пред. год"]'
+                                  [parameterUnit]='["(кг)"]'
+    ></app-initial-parameters-block>
+    <app-initial-parameters-block [nameParameter]='["Фактическая жирность молока"]'
+                                  [parameterUnit]='["(%)"]'
+    ></app-initial-parameters-block>
+    <app-button [btnText]="['Продолжить']"
+                [btnColor]="['linear-gradient(192.58deg, #F1A139 0%, #DE8A1E 100%)']"
+                [link]="['/company/economy/milk-characteristic']"
+               >
+            </app-button>
+</div>

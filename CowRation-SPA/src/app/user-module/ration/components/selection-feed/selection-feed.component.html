@@ -1,0 +1,13 @@
+<div class="container">
+    <span>Выберите корма</span>
+    <p>выберите корма, которые вам доступны</p>
+    <div>
+        <section class="table">
+            <app-table-feed-selection [korms]="korms"></app-table-feed-selection>
+        </section>
+    </div>
+    <div class="button-block">
+        <app-button [btnText]="['Продолжить']" [btnColor]="['linear-gradient(193.84deg, #63F304 5.47%, #6AD822 98.79%)']" (click)="changeKormsForUser()">
+        </app-button>
+    </div>
+</div>

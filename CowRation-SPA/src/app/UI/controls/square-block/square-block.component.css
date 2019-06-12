@@ -1,0 +1,14 @@
+p{
+    padding-top: 20px;
+    margin: 0px;
+    font-size: 32px;
+    color: #26C6DA;
+    font-weight: 600;
+}
+.square{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    background: #FBFBFB;
+}

@@ -1,0 +1,32 @@
+.container {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+span {
+    font-size: 22px;
+    font-weight: 600;
+    color: #424242;
+}
+
+p {
+    color: #424242;
+    margin-bottom: 30px;
+}
+
+.cards-bloks {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-block {
+    display: flex;
+    margin-top: 27px;
+}
+
+app-button {
+    margin: 0px 15px 0px 15px;
+}

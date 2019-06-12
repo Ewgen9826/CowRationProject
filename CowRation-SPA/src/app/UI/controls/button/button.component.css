@@ -1,0 +1,14 @@
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 290px;
+    height: 55px;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
+}
+span{
+    color: #FFFFFF;
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 500;
+}

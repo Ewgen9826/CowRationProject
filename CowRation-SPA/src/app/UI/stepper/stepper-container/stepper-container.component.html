@@ -1,0 +1,10 @@
+<div class="stepper-item">
+  <h1 class="header-stepper">{{headerStepper}}</h1>
+  <div class="steps">
+      <a routerLink="{{firstLinkStepper}}" routerLinkActive="active-item" class="step">{{headerFirstItem}}</a>
+      <ng-content></ng-content>
+      <a routerLink="{{lastLinkStepper}}" routerLinkActive="active-item" class="step last">{{headerLastItem}}
+  </a>
+      </div>
+  </div>
+

@@ -1,0 +1,188 @@
+.background-sign {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("/assets/img/bgc-sign-in.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.dws-progress-bar {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+
+.progress-percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+}
+
+#preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  background: rgb(250, 246, 246);
+}
+
+.progress-text {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 70px;
+  font-weight: 700;
+}
+
+
+/*Вход в систему*/
+.form-entrance-position {
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.text-login {
+  font-size: 28px;
+  font-weight: bold;
+  font-style: normal;
+  line-height: normal;
+}
+
+input[type='email'],
+input[type='password'] {
+  padding-left: 15px;
+  border: 1px solid #545454;
+  width: 80%;
+  height: 46px;
+  border-radius: 5px;
+  outline: none;
+}
+
+input[type='email']:focus,
+input[type='password']:focus {
+  box-shadow: none;
+  border: 1px solid #46C2D9;
+}
+
+input[type='email'] {
+  margin-top: 30px;
+  margin-bottom: 25px;
+}
+input[type='password'] {
+  margin-bottom: 10px;
+}
+
+#PasswordlHelp {
+  color: #26C6DA;
+  margin-left: 230px;
+}
+
+#PasswordlHelp:hover {
+  color: #41B0C3;
+}
+
+.btn-continue {
+  width: 60%;
+  height: 54px;
+  border-radius: 5px;
+  background-color: #46C2D9;
+  border: 1px solid #46C2D9;
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+
+.btn-continue:hover {
+  cursor: pointer;
+  background-color: #41B0C3;
+}
+
+
+/*Сохранить данные*/
+.label-cbx {
+  user-select: none;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.label-cbx input:checked+.checkbox {
+  border-color: #46C2D9;
+}
+
+.label-cbx input:checked+.checkbox svg path {
+  fill: #46C2D9;
+}
+
+.label-cbx input:checked+.checkbox svg polyline {
+  stroke-dashoffset: 0;
+}
+
+.label-cbx:hover .checkbox svg path {
+  stroke-dashoffset: 0;
+}
+
+.label-cbx .checkbox {
+  position: relative;
+  top: 2px;
+  left: 110px;
+  float: left;
+  /* margin-right: -7px; */
+  width: 16px;
+  height: 16px;
+  border: 2px solid #C8CCD4;
+  border-radius: 3px;
+}
+
+.label-cbx .checkbox svg {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+}
+
+.label-cbx .checkbox svg path {
+  fill: none;
+  stroke: #46C2D9;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 71px;
+  stroke-dashoffset: 71px;
+  transition: all 0.6s ease;
+}
+
+.label-cbx .checkbox svg polyline {
+  fill: none;
+  stroke: #FFF;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 18px;
+  stroke-dashoffset: 18px;
+  transition: all 0.3s ease;
+}
+
+.label-cbx>span {
+  pointer-events: none;
+  font-size: 15px;
+}
+
+.invisible {
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
