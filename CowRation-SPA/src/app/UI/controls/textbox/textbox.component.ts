@@ -13,12 +13,14 @@ export class TextboxComponent implements OnInit {
   @Input() lineHeight: string;
   @Input() width: string;
   @Input() height: string;
+
+  @Input() model: number;
   constructor() { }
 
   ngOnInit() {
   }
   public inputValidator(event: any) {
-    const pattern = /^[0-9,]*$/;   
+    const pattern = /^[0-9,]*$/;
     if (!pattern.test(event.target.value)) {
       event.target.value = event.target.value.replace(/[^0-9,]/g, "");
     }

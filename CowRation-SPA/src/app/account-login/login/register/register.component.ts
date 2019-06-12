@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { AuthService } from "src/app/core/authentication/auth.service";
+import { AuthenticationService } from "src/app/core/services/authentication.service";
+import { UserRegister } from "src/app/core/models/user-register";
 
 @Component({
   selector: "app-register",
@@ -7,19 +8,16 @@ import { AuthService } from "src/app/core/authentication/auth.service";
   styleUrls: ["./register.component.css"]
 })
 export class RegisterComponent implements OnInit {
-  model: any = {};
+  model = new UserRegister();
 
-  constructor(private authService: AuthService) {}
+  constructor(private authenticationService: AuthenticationService) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   register() {
-    this.authService.register( this.model ).subscribe(
-      () => console.log( "Success!" ),
-      ( error ) => console.log( error )
+    this.authenticationService.register(this.model).subscribe(
+      success => console.log(success),
+      err => console.log(err)
     );
-  }
-  cancel() {
-    console.log("Cancelled");
   }
 }

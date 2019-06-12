@@ -1,5 +1,4 @@
-import { Component, OnInit } from "@angular/core";
-import { LoadingService } from "../services/loading.service";
+import { Component, OnInit, Input } from "@angular/core";
 @Component({
   selector: "app-loading",
   templateUrl: "./loading.component.html",
@@ -9,9 +8,10 @@ import { LoadingService } from "../services/loading.service";
     ]
 })
 export class LoadingComponent implements OnInit {
-  constructor(public loadingService: LoadingService) {}
+  @Input() isShow: boolean;
+  constructor() { }
 
-  public progress:number;
+  public progress: number;
   ngOnInit() {
     this.progress = 65;
   }

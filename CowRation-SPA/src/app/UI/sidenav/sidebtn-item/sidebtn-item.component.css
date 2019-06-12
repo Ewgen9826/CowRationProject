@@ -1,0 +1,38 @@
+.container{
+  cursor: pointer;
+}
+.sidenav-item {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+  padding: 20px 0;
+  transition: 0.1s;
+}
+.sidenav-item:hover {
+  background: #f2f2f2;
+  width:104%;
+  border-right: 4px solid #26C6DA;
+}
+.sidenav-item:hover span {
+  filter: invert(68%) sepia(92%) saturate(517%) hue-rotate(145deg) brightness(88%) contrast(93%);
+}
+.sidenav-item:hover img {
+	filter: invert(63%) sepia(100%) saturate(366%) hue-rotate(136deg) brightness(88%) contrast(92%);
+}
+.sidenav-item span {
+	color: #fff;
+	font-size: 16px;
+	margin-top: 5px;
+}
+.active .sidenav-item{
+  background: #f2f2f2;
+  width:104%;
+  border-right: 4px solid #26C6DA;
+}
+.active .sidenav-item img {
+	filter: invert(63%) sepia(100%) saturate(366%) hue-rotate(136deg) brightness(88%) contrast(92%);
+}
+.active .sidenav-item span {
+  filter: invert(68%) sepia(92%) saturate(517%) hue-rotate(145deg) brightness(88%) contrast(93%);
+}

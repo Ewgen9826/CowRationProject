@@ -11,10 +11,6 @@ import { EconomyComponent } from './economy/economy.component';
 import { EconomyModule } from './economy/economy.module';
 const rationRoutes: Routes = [
 	{
-		path: "",
-		loadChildren: () => UserAccountModule
-  },
-	{
 		path: "ration",
 		component: RationComponent,
 		loadChildren: () => RationModule
@@ -28,11 +24,15 @@ const rationRoutes: Routes = [
 		path: "economy",
 		component: EconomyComponent,
 		loadChildren: () => EconomyModule
-	}
+	},
+	{
+		path: "",
+		loadChildren: () => UserAccountModule
+	},
 ];
 
 @NgModule({
-	imports: [ RouterModule.forChild(rationRoutes) ],
-	exports: [ RouterModule ]
+	imports: [RouterModule.forChild(rationRoutes)],
+	exports: [RouterModule]
 })
-export class UserModuleRoutingModule {}
+export class UserModuleRoutingModule { }

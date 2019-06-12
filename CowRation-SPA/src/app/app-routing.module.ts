@@ -5,19 +5,17 @@ import { UserModuleComponent } from "./user-module/user-module.component";
 import { SignInComponent } from "./account-login/login/sign-in/sign-in.component";
 import { RegisterComponent } from "./account-login/login/register/register.component";
 import { UserModuleModule } from "./user-module/user-module.module";
-import { AuthGuard } from "./core/guards/auth.guard";
 import { AdminPanelComponent } from "./admin-panel/admin-panel.component";
 import { AdminPanelModule } from "./admin-panel/admin-panel.module";
+import { AuthenticationGuardService } from "./core/guards/authentication-guard.service";
+import { RoleGuardService } from "./core/guards/role-guard.service";
+import { LoginGuardService } from "./core/guards/login-guard.service";
 
 const routes: Routes = [
   {
-    path: "",
-    redirectTo: "login",
-    pathMatch: "full"
-  },
-  {
     path: "login",
     component: SignInComponent,
+    canActivate: [LoginGuardService],
     data: { title: "Вход в систему" }
   },
   {
@@ -29,18 +27,26 @@ const routes: Routes = [
     path: "company",
     component: UserModuleComponent,
     runGuardsAndResolvers: "always",
-    canActivate: [AuthGuard],
+    canActivate: [AuthenticationGuardService],
     loadChildren: () => UserModuleModule
   },
   {
     path: "admin",
     component: AdminPanelComponent,
-    loadChildren: () => AdminPanelModule
-  }
+    canActivate: [RoleGuardService],
+    runGuardsAndResolvers: "always",
+    loadChildren: () => AdminPanelModule,
+    data: { expectedRole: "Admin" }
+  },
+  {
+    path: "**",
+    redirectTo: "login",
+    pathMatch: "full"
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

@@ -8,21 +8,27 @@ import { InitialDataComponent } from './pages/initial-data/initial-data.componen
 import { DietaryIndicatorsComponent } from './pages/dietary-indicators/dietary-indicators.component';
 import { TablesModule } from '../../UI/tables/tables.module';
 import { ControlsModule } from 'src/app/UI/controls/controls.module';
+import { StoreModule } from '@ngrx/store';
+import { balanceReducer } from './state/balance.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { BalanceEffect } from './state/balance.effect';
 
 @NgModule({
-  declarations: 
-  [
-    InitialDataComponent, 
-    DietaryIndicatorsComponent,
-    BalanceComponent
-  ],
-  imports: 
-  [
-    CommonModule,
-    BalanceRoutingModule,
-    StepperModule,
-    TablesModule,
-    ControlsModule
-  ]
+  declarations:
+    [
+      InitialDataComponent,
+      DietaryIndicatorsComponent,
+      BalanceComponent
+    ],
+  imports:
+    [
+      CommonModule,
+      BalanceRoutingModule,
+      StepperModule,
+      TablesModule,
+      ControlsModule,
+      StoreModule.forFeature("balance", balanceReducer),
+      EffectsModule.forFeature([BalanceEffect])
+    ]
 })
 export class BalanceModule { }
