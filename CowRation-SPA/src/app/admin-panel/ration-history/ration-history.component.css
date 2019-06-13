@@ -2,11 +2,6 @@
     margin: 40px 80px;
     color: #424242;
 }
-.block-new-admin{
-    display: flex;
-    justify-content: center;
-  
-}
 
 .preview-block{
     display: flex;
@@ -32,4 +27,8 @@
 .btn-menu:hover{
     opacity: 0.7;
     transition: 0.5s;
+}
+app-table-history-ration{
+    display: flex;
+    justify-content: center;
 }

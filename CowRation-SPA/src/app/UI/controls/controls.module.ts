@@ -16,6 +16,7 @@ import { FormGroupInputComponent } from './form-group-input/form-group-input.com
 import { TextboxStringComponent } from './textbox-string/textbox-string.component';
 
 
+
 @NgModule({
   declarations: [
     ButtonCloseComponent,
@@ -29,6 +30,7 @@ import { TextboxStringComponent } from './textbox-string/textbox-string.componen
     VerticalSliderComponent,
     FormGroupInputComponent,
     TextboxStringComponent
+  
 
 
   ],
@@ -45,6 +47,7 @@ import { TextboxStringComponent } from './textbox-string/textbox-string.componen
     TextboxComponent,
     Ng5SliderModule,
     FormGroupInputComponent
+ 
 
 
   ]

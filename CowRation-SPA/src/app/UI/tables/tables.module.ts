@@ -13,6 +13,7 @@ import { TableRowComponent } from './table-row/table-row.component';
 import { FormsModule } from '@angular/forms';
 import { TabletUsersComponent } from './tablet-users/tablet-users.component';
 import { TableHistoryRationComponent } from './table-history-ration/table-history-ration.component';
+import { TableKormsComponent } from './table-korms/table-korms.component';
 @NgModule({
       declarations:
             [
@@ -21,7 +22,7 @@ import { TableHistoryRationComponent } from './table-history-ration/table-histor
                   TableEconomyComponent,
                   TableLabTestResultsComponent,
                   TabletUsersComponent,
-                  TableCostRationComponent, TableComponent, TableRowComponent, TableHistoryRationComponent
+                  TableCostRationComponent, TableComponent, TableRowComponent, TableHistoryRationComponent, TableKormsComponent
             ],
       imports:
             [
@@ -41,7 +42,8 @@ import { TableHistoryRationComponent } from './table-history-ration/table-histor
                   TableComponent,
                   TabletUsersComponent,
                   TableRowComponent,
-                  TableHistoryRationComponent
+                  TableHistoryRationComponent,
+                  TableKormsComponent
             ]
 })
 export class TablesModule { }

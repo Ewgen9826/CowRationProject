@@ -6,38 +6,47 @@
         <div #widgetsContent class="scrol">
             <thead>
                 <tr class="header-table">
-                    <th>{{headerFirstUser}}</th>
-                    <th>{{headerTime}}</th>
-                    <th>{{headerPriceRation}}</th>
+                    <th>{{headerOneKorms}}</th>
+                    <th>{{headerTwoKorms}}</th>
+                    <th>{{headerTreeKorms}}</th>
                 </tr>
             </thead>
             <tbody>
-
+  
                 <!-- 
                     !!!РАССКОМЕНТИТЬ ПОСЛЕ ПРОВЕРКИ
-
-                    <tr *ngFor="let korm of korms" class="g">
-                    <th scope="row" class="row-table">{{}}</th>
+  
+                    <tr *ngFor="let user of users" class="g">
+                    <th scope="row" class="row-table">{{user.username}}</th>
                      <td><a class="btn-delete" href=""><button>Удалить</button></a></td>
                     </tr>
             -->
-
-
+  
+  
                 <tr class="g">
                     <th scope="row" class="row-table">Женя</th>
-                    <th scope="row" class="row-table">Женя</th>
-                    <th scope="row" class="row-table">Женя</th>
-                  
+                    <th scope="row" class="row-table">12.01.19</th>
+                    <th scope="row" class="row-table">1000</th>
                 </tr>
-           
-
-
-
+                <tr class="g">
+                    <th scope="row" class="row-table">Женя</th>
+                    <th scope="row" class="row-table">12.01.19</th>
+                    <th scope="row" class="row-table">1000</th>
+                </tr>
+                <tr class="g">
+                    <th scope="row" class="row-table">Женя</th>
+                    <th scope="row" class="row-table">12.01.19</th>
+                    <th scope="row" class="row-table">1000</th>
+                </tr>
+               
+  
+  
+  
             </tbody>
         </div>
     </table>
-
+  
     <div class="button-bottom" (click)="scrollBotton()">
         <img src="../assets/img/table-button.svg" alt="">
     </div>
-</div>
+  </div>
