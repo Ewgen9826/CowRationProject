@@ -1,0 +1,139 @@
+.container{
+    color: #424242;
+    margin: 40px 80px;
+
+}
+.preview-block{
+    display: flex;
+    align-items: center;
+}
+.preview-block h2{
+  
+    font-size: 28px;
+    font-weight: 400;
+}
+.btn-menu{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(193.22deg, #2CC9DE 0.45%, #228794 100%);
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+}
+.btn-menu:hover{
+    opacity: 0.7;
+    transition: 0.5s;
+}
+
+.table-container{
+    padding: 20px;
+    background: #FBFBFB;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
+    margin-top: 60px;
+
+}
+.table-container ul{
+    display: flex;
+    justify-content: center;
+
+}
+.table-container ul div{
+    margin: 40px 120px;
+}
+.table-container ul div li{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+
+}
+.table-container h4{
+    padding-top: 40px;
+    font-size: 22px;
+    text-align: center;
+}
+
+/*Стили для input*/
+label{
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+input {
+    background: initial;
+    border: none;
+    border-bottom: 2px solid #E0E0E0;
+    text-align: left;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    font-size: 18px;
+    font-style: normal;
+    line-height: 29px;
+    width: 260px;
+    height: 29px;
+}
+
+
+input:focus {
+    outline: none;
+    border-bottom: 2px solid #26C6DA;
+}
+
+input:required {
+    border-bottom: 2px solid #26C6DA;
+}
+
+input:required:invalid {
+    border-bottom: 2px solid #E0E0E0;
+}
+
+input:required:invalid:focus {
+    border-bottom: 2px solid #26C6DA;
+}
+input[placeholder]{
+    font-weight: 200 !important;
+    font-size: 16px;
+    
+}
+input.ng-touched.ng-invalid {
+    border-bottom: 2px solid red;
+}
+
+.message{
+   visibility: hidden;
+    
+}
+.input-message{
+    margin: 0 !important;
+
+}
+.input-message p{
+    color: red;
+   font-size: 14px;
+  
+}
+
+/*button*/
+
+.btn-block:hover{
+    opacity: 0.7;
+    transition: 0.7;
+
+}
+.btn-block button{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    cursor: pointer;
+    border: none;
+    background: linear-gradient(259.83deg, #2cc9de 0.45%, #228794 100%);
+    width: 290px;
+    height: 55px;
+    font-size: 20px;
+    color: #FFFFFF;
+    box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
+
+}

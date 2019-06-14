@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, ViewEncapsulation, ViewChild, ElementRef  } from '@angular/core';
-import { Korms } from 'src/app/core/models/korms';
+import { Korms } from 'src/app/core/models/korms-table-history';
+
 
 
 @Component({

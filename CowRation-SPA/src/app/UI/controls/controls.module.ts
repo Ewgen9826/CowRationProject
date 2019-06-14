@@ -12,8 +12,8 @@ import { RouterModule } from "@angular/router";
 import { TextboxComponent } from "./textbox/textbox.component";
 import { VerticalSliderComponent } from "./vertical-slider/vertical-slider.component";
 import { Ng5SliderModule } from 'ng5-slider';
-import { FormGroupInputComponent } from './form-group-input/form-group-input.component';
 import { TextboxStringComponent } from './textbox-string/textbox-string.component';
+
 
 
 
@@ -28,8 +28,8 @@ import { TextboxStringComponent } from './textbox-string/textbox-string.componen
     ButtonComponent,
     TextboxComponent,
     VerticalSliderComponent,
-    FormGroupInputComponent,
-    TextboxStringComponent
+    TextboxStringComponent,
+   
   
 
 
@@ -46,10 +46,8 @@ import { TextboxStringComponent } from './textbox-string/textbox-string.componen
     VerticalSliderComponent,
     TextboxComponent,
     Ng5SliderModule,
-    FormGroupInputComponent
+  
  
-
-
   ]
 })
 export class ControlsModule { }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { FormsModule } from "@angular/forms";
 import { AdminPanelComponent } from './admin-panel.component';
 import { MenuComponent } from './menu/menu.component';
 import { KormsManagmentComponent } from './korms-managment/korms-managment.component';
@@ -21,6 +21,7 @@ import { KormsInputNewComponent } from './korms-managment/korms-input-new/korms-
     AdminPanelRoutingModule,
     TablesModule,
     ControlsModule,
+    FormsModule
 
 
   ],

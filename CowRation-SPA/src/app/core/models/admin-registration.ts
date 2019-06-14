@@ -1,4 +1,4 @@
-export class UserRegister {
+export class AdminRegister {
     id?: number;
     login: string;
     email: string;

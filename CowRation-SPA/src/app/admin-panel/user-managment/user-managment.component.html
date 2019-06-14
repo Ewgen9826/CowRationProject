@@ -15,8 +15,95 @@
     </div>
 
     <div>
-      <app-form-group-input blockHeaderNameSecond="Добавление нового пользователя"
-        blockHeaderName="Добавить нового пользователя"></app-form-group-input>
+
+
+      <div class="first-block" (click)="showNewBlock()" *ngIf="firstblock">
+
+        <img width="10%" height="auto" src="assets/img/plus.png" alt="Error">
+        <h4>Добавить нового пользователя</h4>
+
+      </div>
+
+      <div class="second-block" *ngIf="showBlock">
+
+        <h4>Регистрация пользователя</h4>
+
+        <ul>
+
+          <div>
+            <li>
+
+              <label>Логин</label>
+              <input placeholder="Придумайте логин" name="login" [(ngModel)]="newUser.login" #login="ngModel" required>
+
+              <div class="input-message" [ngClass]="{message: login.valid || login.untouched}">
+                <p>Введите корректные данные!</p>
+              </div>
+
+            </li>
+
+            <li>
+              <label>Имя</label>
+              <input placeholder="Введите имя" name="firstName" [(ngModel)]="newUser.firstName" #firstName="ngModel"
+                required>
+              <div class="input-message" [ngClass]="{message: firstName.valid || firstName.untouched}">
+                <p>Введите корректные данные!</p>
+              </div>
+            </li>
+            <li>
+              <label>Фамилия</label>
+              <input placeholder="Введите фамилию" name="lastName" [(ngModel)]="newUser.lastName" #lastName="ngModel"
+                required>
+              <div class="input-message" [ngClass]="{message: lastName.valid || lastName.untouched}">
+                <p>Введите корректные данные!</p>
+              </div>
+            </li>
+          </div>
+          <div>
+            <li>
+              <label>Email</label>
+              <input placeholder="Введите email" type="email" name="email" [(ngModel)]="newUser.email" #email="ngModel" required>
+              <div class="input-message" [ngClass]="{message: email.valid || email.untouched}">
+                <p>Некорректный email</p>
+              </div>
+            </li>
+            <li>
+              <label>Пароль</label>
+              <input placeholder="Придумайте пароль" type="password" name="password" [(ngModel)]="newUser.password" #password="ngModel"
+                required>
+              <div class="input-message" [ngClass]="{message: password.valid || password.untouched}">
+                <p>Введите корректные данные!</p>
+              </div>
+            </li>
+            <li>
+              <label>Повторите пароль</label>
+              <input placeholder="Повторите пароль" type="password" name="repeatPassword" [(ngModel)]="newUser.repeatPassword"
+                #repeatPassword="ngModel" required>
+              <div class="input-message" [ngClass]="{message: repeatPassword.valid || repeatPassword.untouched}">
+                <p>Введите корректные данные!</p>
+              </div>
+            </li>
+          </div>
+
+        </ul>
+
+        <div class="btn-block">
+
+          <button
+            [disabled]="login.invalid || firstName.invalid || lastName.invalid || email.invalid || password.invalid || repeatPassword.invalid"
+            (click)="addUser()">Зарегистрировать</button>
+
+        </div>
+
+
+
+
+
+
+      </div>
+
+
+
 
 
 

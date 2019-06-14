@@ -1,3 +1,278 @@
-<p>
-  korms-input-new works!
-</p>
+<div class="container">
+
+  <div class="preview-block">
+    <a class="btn-menu" routerLink="/admin/menu"><img width="60%" height="auto" src="assets/img/preview-left-arrow.png"
+        alt=""></a>
+    <h2>Добавление нового корма</h2>
+  </div>
+
+  <div class="table-container">
+    <h4>Добавление нового корма</h4>
+    <ul>
+      <div>
+        <li>
+
+          <label>Название корма</label>
+          <input placeholder="Введите название корма" name="name" [(ngModel)]="newKorm.name" #name="ngModel" required >
+
+          <div class="input-message" [ngClass]="{message: name.valid || name.untouched}">
+            <p>Введите корректные данные</p>
+          </div>
+
+        </li>
+
+        <li>
+
+          <label>Цена корма, руб.</label>
+          <input placeholder="Ввведите цену корма" name="price" [(ngModel)]="newKorm.price" #price="ngModel" required >
+
+          <div class="input-message" [ngClass]="{message: price.valid || price.untouched}">
+            <p>Введите корректные данные</p>
+          </div>
+
+        </li>
+
+      </div>
+      <div>
+        <li>
+
+          <label>Количество, кг</label>
+          <input placeholder="0" name="property1" [(ngModel)]="newKorm.property1" #property1="ngModel" required >
+          <div class="input-message" [ngClass]="{message: property1.valid || property1.untouched}">
+            <p>Вводите только цифры</p>
+          </div>
+
+        </li>
+        <li>
+
+          <label>КЕ</label>
+          <input placeholder="0" name="property2" [(ngModel)]="newKorm.property2" #property2="ngModel" required>
+
+          <div class="input-message" [ngClass]="{message: property2.valid || property2.untouched}">
+            <p>Вводите только цифры</p>
+          </div>
+
+        </li>
+        <li>
+
+          <label>ОЭ** крс, МДж</label>
+          <input placeholder="0" name="property3" [(ngModel)]="newKorm.property3" #property3="ngModel" required>
+
+          <div class="input-message" [ngClass]="{message: property3.valid || property3.untouched}">
+            <p>Вводите только цифры</p>
+          </div>
+
+        </li>
+        <li>
+
+          <label>СВ, кг</label>
+          <input placeholder="0" name="property4" [(ngModel)]="newKorm.property4" #property4="ngModel" required>
+
+          <div class="input-message" [ngClass]="{message: property4.valid || property4.untouched}">
+            <p>Вводите только цифры</p>
+          </div>
+
+        </li>
+        <li>
+
+          <label>СП, г</label>
+          <input placeholder="0" name="property5" [(ngModel)]="newKorm.property5" #property5="ngModel" required>
+
+          <div class="input-message" [ngClass]="{message: property5.valid || property5.untouched}">
+            <p>Вводите только цифры</p>
+          </div>
+
+        </li>
+        <li>
+
+          <label>СЖ, г</label>
+          <input placeholder="0" name="property6" [(ngModel)]="newKorm.property6" #property6="ngModel" required>
+
+          <div class="input-message" [ngClass]="{message: property6.valid || property6.untouched}">
+            <p>Вводите только цифры</p>
+          </div>
+
+        </li>
+        <li>
+
+          <label>СК, г</label>
+          <input placeholder="0" name="property7" [(ngModel)]="newKorm.property7" #property7="ngModel" required>
+
+          <div class="input-message" [ngClass]="{message: property7.valid || property7.untouched}">
+            <p>Вводите только цифры</p>
+          </div>
+
+        </li>
+
+        <li>
+
+          <label>ЧЭЛ, МДж</label>
+          <input placeholder="0" name="property8" [(ngModel)]="newKorm.property8" #property8="ngModel" required>
+
+          <div class="input-message" [ngClass]="{message: property8.valid || property8.untouched}">
+            <p>Вводите только цифры</p>
+          </div>
+
+        </li>
+        <li>
+
+          <label>Сах+расщКр, г</label>
+          <input placeholder="0" name="property9" [(ngModel)]="newKorm.property9" #property9="ngModel" required>
+
+          <div class="input-message" [ngClass]="{message: property9.valid || property9.untouched}">
+            <p>Вводите только цифры</p>
+          </div>
+
+        </li>
+        <li>
+
+          <label>Са, г</label>
+          <input placeholder="0" name="property10" [(ngModel)]="newKorm.property10" #property10="ngModel" required>
+
+          <div class="input-message" [ngClass]="{message: property10.valid || property10.untouched}">
+            <p>Вводите только цифры</p>
+          </div>
+
+        </li>
+        <li>
+
+          <label>Р, г</label>
+          <input placeholder="0" name="property11" [(ngModel)]="newKorm.property11" #property11="ngModel" required>
+
+          <div class="input-message" [ngClass]="{message: property11.valid || property11.untouched}">
+            <p>Вводите только цифры</p>
+          </div>
+
+        </li>
+
+      </div>
+
+      <div>
+        <li>
+
+          <label>Mg, г</label>
+          <input placeholder="0" name="property12" [(ngModel)]="newKorm.property12" #property12="ngModel" required>
+
+          <div class="input-message" [ngClass]="{message: property12.valid || property12.untouched}">
+            <p>Вводите только цифры</p>
+          </div>
+
+        </li>
+        <li>
+
+          <label>K, г</label>
+          <input placeholder="0" name="property13" [(ngModel)]="newKorm.property13" #property13="ngModel" required>
+
+          <div class="input-message" [ngClass]="{message: property13.valid || property13.untouched}">
+            <p>Вводите только цифры</p>
+          </div>
+
+        </li>
+        <li>
+
+          <label>nXP, г</label>
+          <input placeholder="0" name="property14" [(ngModel)]="newKorm.property14" #property14="ngModel" required>
+
+          <div class="input-message" [ngClass]="{message: property14.valid || property14.untouched}">
+            <p>Вводите только цифры</p>
+          </div>
+
+        </li>
+
+
+        <li>
+
+          <label>Zn, мг</label>
+          <input placeholder="0" name="property17" [(ngModel)]="newKorm.property17" #property17="ngModel" required>
+
+          <div class="input-message" [ngClass]="{message: property17.valid || property17.untouched}">
+            <p>Вводите только цифры</p>
+          </div>
+
+        </li>
+        <li>
+
+          <label>Mn, мг</label>
+          <input placeholder="0" name="property18" [(ngModel)]="newKorm.property18" #property18="ngModel" required>
+
+          <div class="input-message" [ngClass]="{message: property18.valid || property18.untouched}">
+            <p>Вводите только цифры</p>
+          </div>
+
+        </li>
+        <li>
+
+          <label>Co, мг</label>
+          <input placeholder="0" name="property19" [(ngModel)]="newKorm.property19" #property19="ngModel" required>
+
+          <div class="input-message" [ngClass]="{message: property19.valid || property19.untouched}">
+            <p>Вводите только цифры</p>
+          </div>
+
+        </li>
+        <li>
+
+          <label>J, мг</label>
+          <input placeholder="0" name="property20" [(ngModel)]="newKorm.property20" #property20="ngModel" required>
+
+          <div class="input-message" [ngClass]="{message: property20.valid || property20.untouched}">
+            <p>Вводите только цифры</p>
+          </div>
+
+        </li>
+
+        <li>
+
+          <label>Se, мг</label>
+          <input placeholder="0" name="property21" [(ngModel)]="newKorm.property21" #property21="ngModel" required>
+
+          <div class="input-message" [ngClass]="{message: property21.valid || property21.untouched}">
+            <p>Вводите только цифры</p>
+          </div>
+
+        </li>
+        <li>
+
+          <label>A, тыс. ME</label>
+          <input placeholder="0" name="property22" [(ngModel)]="newKorm.property22" #property22="ngModel" required>
+
+          <div class="input-message" [ngClass]="{message: property22.valid || property22.untouched}">
+            <p>Вводите только цифры</p>
+          </div>
+
+        </li>
+        <li>
+
+          <label>D, тыс. ME</label>
+          <input placeholder="0" name="property23" [(ngModel)]="newKorm.property23" #property23="ngModel" required>
+
+          <div class="input-message" [ngClass]="{message: property23.valid || property23.untouched}">
+            <p>Вводите только цифры</p>
+          </div>
+
+        </li>
+        <li>
+
+          <label>E, мг</label>
+          <input placeholder="0" name="property24" [(ngModel)]="newKorm.property24" #property24="ngModel" required>
+
+          <div class="input-message" [ngClass]="{message: property24.valid || property24.untouched}">
+            <p>Вводите только цифры</p>
+          </div>
+
+        </li>
+
+
+      </div>
+
+    </ul>
+
+    <div class="btn-block">
+          
+        <button [disabled]="login.invalid || firstName.invalid || lastName.invalid || email.invalid || password.invalid || repeatPassword.invalid" (click)="addKorm()" >Добавить корм</button>
+      
+    </div>
+
+  </div>
+
+</div>
