@@ -10,7 +10,7 @@
 
 
     <div>
-      <app-tablet-users [headerFirstUser]="['Логин']" [headerSecondAction]="['Действие']" [users]="users">
+      <app-tablet-users [headerFirstUser]="['Логин']" [headerSecondAction]="['Действие']">
       </app-tablet-users>
     </div>
 
@@ -85,14 +85,22 @@
             </li>
           </div>
 
+         
+
         </ul>
 
         <div class="btn-block">
 
           <button
             [disabled]="login.invalid || firstName.invalid || lastName.invalid || email.invalid || password.invalid || repeatPassword.invalid"
-            (click)="addUser()">Зарегистрировать</button>
+            (click)="addUser(login.value, firstName.value, lastName.value, email.value, password.value, repeatPassword.value )">Зарегистрировать</button>
 
+        </div>
+
+        <div class="block-notif">
+          <div class="txt-notification" #notification *ngIf="notification">
+            <p>Пользователь успешно добавлен!</p>
+          </div>
         </div>
 
 

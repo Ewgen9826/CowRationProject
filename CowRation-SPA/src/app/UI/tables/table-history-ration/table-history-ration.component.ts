@@ -1,5 +1,10 @@
 import { Component, OnInit, Input, ViewEncapsulation, ViewChild, ElementRef  } from '@angular/core';
-import { Korms } from 'src/app/core/models/korms-table-history';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/app.state';
+import { Observable } from 'rxjs';
+import { KormsHistory } from 'src/app/admin-panel/core/models/korms-table-history';
+import * as GetHistoryActions from 'src/app/admin-panel/core/actions/korms-table-history.actions';
+
 
 
 
@@ -17,7 +22,9 @@ export class TableHistoryRationComponent implements OnInit {
   @Input() headerTwoKorms: string;
   @Input() headerTreeKorms: string;
 
-  @Input() korms: Korms[];
+  kormsHistory: Observable<KormsHistory[]>;
+
+ 
 
   @ViewChild('widgetsContent', { read: ElementRef }) public widgetsContent: ElementRef<any>;
   public scrollTop(): void {
@@ -33,7 +40,9 @@ export class TableHistoryRationComponent implements OnInit {
     this.intervalTop = 0;
   }
 
-  constructor() { }
+  constructor(private store: Store<AppState>) {
+    this.kormsHistory = store.select('historykorms')
+   }
 
   ngOnInit() {
   }

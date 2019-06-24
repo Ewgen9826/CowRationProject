@@ -1,5 +1,10 @@
 import { Component, OnInit, Input, ViewEncapsulation, ViewChild, ElementRef  } from '@angular/core';
 import { User } from 'src/app/core/models/user';
+import { Observable } from 'rxjs';
+import { UserRegister } from 'src/app/admin-panel/core/models/user-register';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/app.state';
+import * as UserActions from 'src/app/admin-panel/core/actions/user-register.actions';
 
 @Component({
   selector: 'app-tablet-users',
@@ -8,12 +13,14 @@ import { User } from 'src/app/core/models/user';
 })
 export class TabletUsersComponent implements OnInit {
 
+  users: Observable<UserRegister[]>;
+
   intervalBotton;
   intervalTop;
 
   @Input() headerFirstUser: string;
   @Input() headerSecondAction: string;
-  @Input() users: User[];
+ 
   @ViewChild('widgetsContent', { read: ElementRef }) public widgetsContent: ElementRef<any>;
   public scrollTop(): void {
     this.intervalTop = 200;
@@ -28,8 +35,15 @@ export class TabletUsersComponent implements OnInit {
     this.intervalTop = 0;
   }
 
-  constructor() { }
+  constructor(private store: Store<AppState>) { 
+    this.users = store.select('users');
+  }
 
   ngOnInit() {
   }
+
+  delUser(index){
+    this.store.dispatch(new UserActions.RemoveUser(index) )
+  }
+  
 }

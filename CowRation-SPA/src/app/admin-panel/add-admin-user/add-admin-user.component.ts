@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
-import { AdminRegister } from 'src/app/core/models/admin-registration';
+import { AdminRegister } from 'src/app/admin-panel/core/models/admin-registration';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/app.state';
+import * as AdminusersActions from '../core/actions/admin-register.actions';
 
 @Component({
   selector: "app-add-admin-user",
@@ -13,6 +16,7 @@ export class AddAdminUserComponent implements OnInit {
   
   @Input() firstblock = true;
   @Input() showBlock = false;
+  @Input() notification = false;
 
   
 
@@ -22,12 +26,20 @@ export class AddAdminUserComponent implements OnInit {
     return this.firstblock && this.showBlock;
   }
 
-  addAdmin(){
-    console.log(this.newAdmin);
+  addAdmin(login, firstName, lastName, email, password, repeatPassword){
+    this.store.dispatch(new AdminusersActions.AddAdminUser({
+      login: login,
+      firstName: firstName,
+      lastName:lastName,
+      email: email,
+      password: password,
+      repeatPassword: repeatPassword
+    }))
+    this.notification = true;
 }
 
 
-  constructor() { }
+  constructor(private store: Store<AppState>) { }
 
   ngOnInit() {
   }

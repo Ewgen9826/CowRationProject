@@ -12,36 +12,13 @@
                 </tr>
             </thead>
             <tbody>
-  
-                <!-- 
-                    !!!РАССКОМЕНТИТЬ ПОСЛЕ ПРОВЕРКИ
-  
-                    <tr *ngFor="let user of users" class="g">
-                    <th scope="row" class="row-table">{{user.username}}</th>
-                     <td><a class="btn-delete" href=""><button>Удалить</button></a></td>
-                    </tr>
-            -->
-  
-  
-                <tr class="g">
-                    <th scope="row" class="row-table">Женя</th>
-                    <th scope="row" class="row-table">12.01.19</th>
-                    <th scope="row" class="row-table">1000</th>
-                </tr>
-                <tr class="g">
-                    <th scope="row" class="row-table">Женя</th>
-                    <th scope="row" class="row-table">12.01.19</th>
-                    <th scope="row" class="row-table">1000</th>
-                </tr>
-                <tr class="g">
-                    <th scope="row" class="row-table">Женя</th>
-                    <th scope="row" class="row-table">12.01.19</th>
-                    <th scope="row" class="row-table">1000</th>
-                </tr>
-               
-  
-  
-  
+              
+                <tr class="g" *ngFor="let k of kormsHistory | async">
+                    <th scope="row" class="row-table">{{k.user}}</th>
+                    <th scope="row" class="row-table">{{k.createData}}</th>
+                    <th scope="row" class="row-table">{{k.price}}</th>
+                </tr>        
+      
             </tbody>
         </div>
     </table>

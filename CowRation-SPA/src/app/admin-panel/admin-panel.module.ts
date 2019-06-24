@@ -11,6 +11,8 @@ import { AdminPanelRoutingModule } from './admin-panel-routing.module';
 import { TablesModule } from '../UI/tables/tables.module';
 import { ControlsModule } from '../UI/controls/controls.module';
 import { KormsInputNewComponent } from './korms-managment/korms-input-new/korms-input-new.component';
+import { StoreModule } from '@ngrx/store';
+import { reducer } from './core/reducers/user-register.reducer';
 
 
 
@@ -21,7 +23,8 @@ import { KormsInputNewComponent } from './korms-managment/korms-input-new/korms-
     AdminPanelRoutingModule,
     TablesModule,
     ControlsModule,
-    FormsModule
+    FormsModule,
+  
 
 
   ],

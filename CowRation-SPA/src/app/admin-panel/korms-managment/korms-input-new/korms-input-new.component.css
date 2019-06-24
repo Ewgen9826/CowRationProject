@@ -137,3 +137,13 @@ input.ng-touched.ng-invalid {
     box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
 
 }
+
+.block-notif{
+    height: 40px;
+}
+.txt-notification{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: green;
+}

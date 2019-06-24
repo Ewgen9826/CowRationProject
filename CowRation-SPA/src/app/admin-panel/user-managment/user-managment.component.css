@@ -88,6 +88,7 @@ h4{
    
 }
 .second-block h4{
+    padding-top: 20px !important;
     margin-bottom: 30px;
     font-size: 22px;
     color: #26C6DA;
@@ -182,7 +183,16 @@ button:disabled{
     color: red;
 
 }
-
+.block-notif{
+    height: 40px;
+    padding-top: 20px;
+}
+.txt-notification{
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: green;
+}
 
 
 

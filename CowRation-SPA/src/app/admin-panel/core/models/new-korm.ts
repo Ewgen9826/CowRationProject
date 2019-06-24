@@ -1,6 +1,7 @@
 export class NewKorm {
     id?: number;
     name: string;
+    category: string;
     price: string;
     property1: number;
     property2: number;
@@ -24,8 +25,7 @@ export class NewKorm {
     property20: number;
     property21: number;
     property22: number;
-    property23: number;
-    property24: number;
+  
 
 
 }
