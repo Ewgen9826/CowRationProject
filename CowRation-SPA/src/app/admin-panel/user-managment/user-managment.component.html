@@ -36,7 +36,7 @@
               <label>Логин</label>
               <input placeholder="Придумайте логин" name="login" [(ngModel)]="newUser.login" #login="ngModel" required>
 
-              <div class="input-message" [ngClass]="{message: login.valid || login.untouched}">
+              <div class="input-message" [ngClass]="{message: login.valid || login.untouched || login.dirty}">
                 <p>Введите корректные данные!</p>
               </div>
 
@@ -46,7 +46,7 @@
               <label>Имя</label>
               <input placeholder="Введите имя" name="firstName" [(ngModel)]="newUser.firstName" #firstName="ngModel"
                 required>
-              <div class="input-message" [ngClass]="{message: firstName.valid || firstName.untouched}">
+              <div class="input-message" [ngClass]="{message: firstName.valid || firstName.untouched || firstName.dirty}">
                 <p>Введите корректные данные!</p>
               </div>
             </li>
@@ -54,7 +54,7 @@
               <label>Фамилия</label>
               <input placeholder="Введите фамилию" name="lastName" [(ngModel)]="newUser.lastName" #lastName="ngModel"
                 required>
-              <div class="input-message" [ngClass]="{message: lastName.valid || lastName.untouched}">
+              <div class="input-message" [ngClass]="{message: lastName.valid || lastName.untouched || lastName.dirty}">
                 <p>Введите корректные данные!</p>
               </div>
             </li>
@@ -63,7 +63,7 @@
             <li>
               <label>Email</label>
               <input placeholder="Введите email" type="email" name="email" [(ngModel)]="newUser.email" #email="ngModel" required>
-              <div class="input-message" [ngClass]="{message: email.valid || email.untouched}">
+              <div class="input-message" [ngClass]="{message: email.valid || email.untouched || email.dirty}">
                 <p>Некорректный email</p>
               </div>
             </li>
@@ -71,7 +71,7 @@
               <label>Пароль</label>
               <input placeholder="Придумайте пароль" type="password" name="password" [(ngModel)]="newUser.password" #password="ngModel"
                 required>
-              <div class="input-message" [ngClass]="{message: password.valid || password.untouched}">
+              <div class="input-message" [ngClass]="{message: password.valid || password.untouched || password.dirty}">
                 <p>Введите корректные данные!</p>
               </div>
             </li>
@@ -79,7 +79,7 @@
               <label>Повторите пароль</label>
               <input placeholder="Повторите пароль" type="password" name="repeatPassword" [(ngModel)]="newUser.repeatPassword"
                 #repeatPassword="ngModel" required>
-              <div class="input-message" [ngClass]="{message: repeatPassword.valid || repeatPassword.untouched}">
+              <div class="input-message" [ngClass]="{message: repeatPassword.valid || repeatPassword.untouched || repeatPassword.dirty}">
                 <p>Введите корректные данные!</p>
               </div>
             </li>
@@ -89,11 +89,13 @@
 
         </ul>
 
-        <div class="btn-block">
+        <div class="btn-block" >
 
           <button
-            [disabled]="login.invalid || firstName.invalid || lastName.invalid || email.invalid || password.invalid || repeatPassword.invalid"
-            (click)="addUser(login.value, firstName.value, lastName.value, email.value, password.value, repeatPassword.value )">Зарегистрировать</button>
+            [ngClass]="{disabled: login.invalid || firstName.invalid || lastName.invalid || email.invalid || password.invalid || repeatPassword.invalid}"
+            (click)="addUser(login.value, firstName.value, lastName.value, email.value, password.value, repeatPassword.value )">
+            Зарегистрировать
+          </button>
 
         </div>
 

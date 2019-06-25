@@ -129,6 +129,9 @@ input[placeholder]{
 input.ng-touched.ng-invalid {
     border-bottom: 2px solid red;
 }
+input.ng-dirty{
+    border-bottom: 2px solid #E0E0E0 !important;
+}
 
 .message{
    visibility: hidden;
@@ -171,6 +174,11 @@ input.ng-touched.ng-invalid {
     font-size: 18px;
     font-weight: 600;
     color: green;
+}
+.disabled{
+    opacity: 0.4;
+    pointer-events: none;
+    cursor: not-allowed !important;
 }
 
 

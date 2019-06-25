@@ -148,6 +148,9 @@ input[placeholder]{
 input.ng-touched.ng-invalid {
     border-bottom: 2px solid red;
 }
+input.ng-dirty{
+    border-bottom: 2px solid #E0E0E0 !important;
+}
 .message{
    visibility: hidden;
     
@@ -168,6 +171,7 @@ input.ng-touched.ng-invalid {
     transition: 0.7;
 
 }
+
 .btn-block button{
     cursor: pointer;
     border: none;
@@ -179,10 +183,7 @@ input.ng-touched.ng-invalid {
     box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
 
 }
-button:disabled{
-    color: red;
 
-}
 .block-notif{
     height: 40px;
     padding-top: 20px;
@@ -193,6 +194,14 @@ button:disabled{
     font-weight: 600;
     color: green;
 }
+
+
+.disabled{
+    opacity: 0.4;
+    pointer-events: none;
+    cursor: not-allowed !important;
+}
+
 
 
 

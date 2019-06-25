@@ -6,7 +6,7 @@ import { NewKorm } from '../models/new-korm';
 const initialState: NewKorm = {
     name: 'Семена злаковых',
     category: 'Кормовые',
-    price: '1000',
+    price: 1000,
     property1: 1,
     property2: 1,
     property3: 1,

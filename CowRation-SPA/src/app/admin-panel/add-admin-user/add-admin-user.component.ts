@@ -35,6 +35,12 @@ export class AddAdminUserComponent implements OnInit {
       password: password,
       repeatPassword: repeatPassword
     }))
+    this.newAdmin.login = '';
+    this.newAdmin.firstName = '';
+    this.newAdmin.lastName = '';
+    this.newAdmin.email = '';
+    this.newAdmin.password = '';
+    this.newAdmin.repeatPassword = '';
     this.notification = true;
 }
 

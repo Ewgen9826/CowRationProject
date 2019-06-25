@@ -18,6 +18,8 @@ export class UserManagmentComponent implements OnInit {
   @Input() firstblock = true;
   @Input() showBlock = false;
   @Input() notification = false;
+
+ 
  
 
  
@@ -36,14 +38,21 @@ export class UserManagmentComponent implements OnInit {
       password: password,
       repeatPassword: repeatPassword
     }))
-    this.newUser.login = '[placeholder]';
+    this.newUser.login = '';
     this.newUser.firstName = '';
     this.newUser.lastName = '';
     this.newUser.email = '';
     this.newUser.password = '';
     this.newUser.repeatPassword = '';
 
+    
+     
     this.notification = true;
+
+ 
+
+
+   
     
   }
 

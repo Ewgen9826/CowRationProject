@@ -46,6 +46,31 @@ export class KormsInputNewComponent implements OnInit {
     property22: property22
   
   }));
+  this.newKorm.name = '';
+  this.newKorm.category = '';
+  this.newKorm.price = 0;
+  this.newKorm.property1 = 0;
+  this.newKorm.property2 = 0;
+  this.newKorm.property3 = 0;
+  this.newKorm.property4 = 0;
+  this.newKorm.property5 = 0;
+  this.newKorm.property6 = 0;
+  this.newKorm.property7 = 0;
+  this.newKorm.property8 = 0;
+  this.newKorm.property9 = 0;
+  this.newKorm.property10 = 0;
+  this.newKorm.property11 = 0;
+  this.newKorm.property12 = 0;
+  this.newKorm.property13 = 0;
+  this.newKorm.property14 = 0;
+  this.newKorm.property15 = 0;
+  this.newKorm.property16 = 0;
+  this.newKorm.property17 = 0;
+  this.newKorm.property18 = 0;
+  this.newKorm.property19 = 0;
+  this.newKorm.property20 = 0;
+  this.newKorm.property21 = 0;
+  this.newKorm.property22 = 0;
   this.notification = true;
 
     
