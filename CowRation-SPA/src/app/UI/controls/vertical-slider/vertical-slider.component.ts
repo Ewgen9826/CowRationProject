@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Input, Output, EventEmitter } from '@angular/core';
 import { Options } from 'ng5-slider';
 
 @Component({
@@ -8,21 +8,21 @@ import { Options } from 'ng5-slider';
   encapsulation: ViewEncapsulation.Native
 })
 export class VerticalSliderComponent implements OnInit {
-  value: number = 0;
-  
+  @Input() value: number;
+
   options: Options = {
     showSelectionBar: true,
-    ceil:100,
-    floor:0,
-    hidePointerLabels:true,
-    hideLimitLabels:true,
-    vertical:true
+    ceil: 100,
+    floor: 0,
+    hidePointerLabels: true,
+    hideLimitLabels: true,
+    vertical: true
   };
-  
+
   constructor() { }
 
   ngOnInit() {
-  
+
   }
 
 }

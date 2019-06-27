@@ -66,7 +66,6 @@ export class KormService {
         "Content-Type":  "application/json"
       })
     };
-    console.log(korms);
     return this.httpClient
       .post(this.baseUrl + "/user/" + this.userId + "/change", korms, httpOptions)
       .pipe(

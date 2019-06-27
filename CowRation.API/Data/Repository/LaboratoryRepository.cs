@@ -25,8 +25,34 @@ public class LaboratoryRepository : ILaboratoryRepository
         return user.LaboratoryIndexFoods;
     }
 
-    public Task<ICollection<LaboratoryIndexFood>> SetLaboratoryIndicators(int userId, List<LaboratoryIndexFood> indicators)
+    public async Task<ICollection<LaboratoryIndexFood>> SetLaboratoryIndicators(int userId, List<LaboratoryIndexFood> indicators)
     {
-        throw new System.NotImplementedException();
+        var user = await context.Users
+            .Include(l => l.LaboratoryIndexFoods)
+            .ThenInclude(l => l.Laboratories)
+            .ThenInclude(l => l.CatalogIndexFood)
+            .Include(l => l.LaboratoryIndexFoods).ThenInclude(l => l.Korm)
+            .FirstOrDefaultAsync(u => u.Id == userId);
+        foreach (var laboratory in indicators)
+        {
+            var oldLaboratory = user.LaboratoryIndexFoods.FirstOrDefault(l => l.KormId == laboratory.KormId);
+            if (oldLaboratory == null) break;
+            oldLaboratory.Laboratories = laboratory.Laboratories;
+        }
+        user.LaboratoryIndexFoods.Clear();
+        user.LaboratoryIndexFoods.AddRange(indicators);
+        await context.SaveChangesAsync();
+        return user.LaboratoryIndexFoods;
+    }
+
+    public async Task<Korm> GetKormByName(string name)
+    {
+        var korm = await context.Korms.FirstOrDefaultAsync(k => k.Name == name);
+        return korm;
+    }
+    public async Task<CatalogIndexFood> GetCatalogIndexByName(string name)
+    {
+        var catalogIndex = await context.CatalogIndexFoods.FirstOrDefaultAsync(c => c.Name == name);
+        return catalogIndex;
     }
 }

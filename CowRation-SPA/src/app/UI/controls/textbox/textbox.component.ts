@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-textbox',
@@ -14,16 +14,19 @@ export class TextboxComponent implements OnInit {
   @Input() width: string;
   @Input() height: string;
 
-  @Input() model: number;
+  @Input() value: number = 0;
+  @Output() valueChange = new EventEmitter<number>();
   constructor() { }
 
   ngOnInit() {
   }
   public inputValidator(event: any) {
-    const pattern = /^[0-9,]*$/;
+    const pattern = /^(\d*\.)?\d+$/;
     if (!pattern.test(event.target.value)) {
-      event.target.value = event.target.value.replace(/[^0-9,]/g, "");
+      event.target.value = event.target.value.replace(/^(\d*\.)?\d+$/g, "");
     }
+    this.value = (<HTMLInputElement>event.target).valueAsNumber;
+    this.valueChange.emit(this.value);
   }
 
 }

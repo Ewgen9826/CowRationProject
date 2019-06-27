@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { AppState } from 'src/app/state/app.state';
 import { Store, select } from '@ngrx/store';
 import { getLoadingState } from './state';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: "app-ration",
@@ -9,7 +10,7 @@ import { getLoadingState } from './state';
   styleUrls: ["./ration.component.css"]
 })
 export class RationComponent implements OnInit {
-  loading$;
+  loading$: Observable<any>;
   constructor(private store: Store<AppState>) { }
 
   ngOnInit() {

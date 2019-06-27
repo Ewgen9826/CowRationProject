@@ -13,7 +13,11 @@
             <tbody>
                 <tr *ngFor="let korm of storageKorms" class="g">
                     <th scope="row" class="row-table">{{korm.name}}</th>
-                    <td>{{korm.foodValue}}</td>
+                    <app-textbox *ngIf="edit" [(value)]="korm.foodValue" [fontSize]="['18px']" [colorText]="['#333333']"
+                        [fontWeight]="['normal']" [fontStyle]="['normal']" [lineHeight]="['25px']" [width]="['100px']"
+                        [height]="['30px']">
+                    </app-textbox>
+                    <td *ngIf="!edit">{{korm.day}}</td>
                 </tr>
             </tbody>
         </div>

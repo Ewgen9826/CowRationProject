@@ -1,8 +1,9 @@
 import { Component, OnInit } from "@angular/core";
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/state/app.state';
-import { LoadLaboratory } from '../../state/ration.actions';
+import { LoadLaboratory, ChangeLaboratory, CalculateRations } from '../../state/ration.actions';
 import { getLaboratoryIndicators } from '../../state';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: "app-laboratory-feed",
@@ -10,7 +11,7 @@ import { getLaboratoryIndicators } from '../../state';
   styleUrls: ["./laboratory-feed.component.css"]
 })
 export class LaboratoryFeedComponent implements OnInit {
-  laboratoryIndicators$;
+  laboratoryIndicators$: Observable<any>;
   constructor(private store: Store<AppState>) { }
 
   ngOnInit() {
@@ -18,4 +19,13 @@ export class LaboratoryFeedComponent implements OnInit {
     this.laboratoryIndicators$ = this.store.pipe(select(getLaboratoryIndicators));
   }
 
+  change() {
+    let changeLaboratory;
+    const subscribe = this.laboratoryIndicators$.subscribe(data => {
+      changeLaboratory = data;
+    })
+    this.store.dispatch(new ChangeLaboratory(changeLaboratory));
+    this.store.dispatch(new CalculateRations());
+    subscribe.unsubscribe();
+  }
 }

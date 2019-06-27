@@ -12,6 +12,8 @@ import { TablesModule } from "src/app/UI/tables/tables.module";
 import { MilkSettingsCardModule } from "src/app/UI/milk-settings-card/milk-settings-card.module";
 import { RationResultComponent } from "./components/ration-result/ration-result.component";
 import { EconomyResultComponent } from "./components/economy-result/economy-result.component";
+import { StoreModule } from '@ngrx/store';
+import { economyReducer } from './state/economy.reducer';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { EconomyResultComponent } from "./components/economy-result/economy-resu
     StepperModule,
     ControlsModule,
     TablesModule,
-    MilkSettingsCardModule
+    MilkSettingsCardModule,
+    StoreModule.forFeature("economy", economyReducer),
   ]
 })
 export class EconomyModule { }

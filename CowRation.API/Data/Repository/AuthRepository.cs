@@ -40,8 +40,13 @@ namespace CowRation.API.Data {
             user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;
 
+            user.CowCount = 0;
             await context.AddAsync (user);
             await context.Storages.AddAsync(new Storage { UserId = user.Id });
+            foreach (var expenses in context.Expenditures)
+            {
+                user.Expenses.Add(new Expenses { ExpendituresId = expenses.Id, Amount = 0, UserId = user.Id });
+            }
             await context.SaveChangesAsync ();
 
             return user;
@@ -57,6 +62,20 @@ namespace CowRation.API.Data {
         public async Task<bool> UserExists (string userName) {
             if (await context.Users.AnyAsync (u => u.UserName == userName)) return true;
             return false;
+        }
+
+        public async Task<int> SetCowCount(int userId, int cowCount)
+        {
+            var user = await context.Users.FirstOrDefaultAsync(u=>u.Id==userId);
+            user.CowCount=cowCount;
+            await context.SaveChangesAsync();
+            return cowCount;
+        }
+
+        public async Task<int> GetCowCount(int userId)
+        {
+             var user = await context.Users.FirstOrDefaultAsync(u=>u.Id==userId);
+             return user.CowCount;
         }
     }
 }

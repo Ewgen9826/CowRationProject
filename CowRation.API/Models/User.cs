@@ -9,29 +9,25 @@ namespace CowRation.API.Models
         public byte[] PasswordSalt { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public int CowCount { get; set; }
 
         public string Role { get; set; }
 
         public Storage Storage { get; set; }
 
         public List<KormUser> KormUsers { get; set; }
-        public List<RationResult> RationResults { get; set; }
-<<<<<<< HEAD
-        
+
         public List<LaboratoryIndexFood> LaboratoryIndexFoods { get; set; }
 
         public FeedingCategory FeedingCategory { get; set; }
-=======
->>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
+
+        public List<Expenses> Expenses { get; set; }
 
         public User()
         {
             KormUsers = new List<KormUser>();
-            RationResults = new List<RationResult>();
-<<<<<<< HEAD
             LaboratoryIndexFoods = new List<LaboratoryIndexFood>();
-=======
->>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
+            Expenses = new List<Expenses>();
         }
     }
 }

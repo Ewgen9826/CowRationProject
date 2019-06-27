@@ -5,7 +5,16 @@ import { Action } from "@ngrx/store";
 import { mergeMap, catchError, map, tap } from "rxjs/operators";
 import { AlertifyService } from "src/app/core/utils/alertify.service";
 import { BalanceService } from '../services/balance.service';
-import { BalanceActionType, LoadSuccess, LoadFail, CalcDay, LoadHowManyDay } from './balance.actions';
+import {
+    BalanceActionType,
+    LoadSuccess,
+    LoadFail,
+    CalcDay,
+    ChangeValueSuccess,
+    ChangeValueFail,
+    CalcDaySuccess,
+    CalcDayFail
+} from './balance.actions';
 import { KormStorage } from '../models/korm-storage';
 
 @Injectable()
@@ -21,17 +30,28 @@ export class BalanceEffect {
         ofType(BalanceActionType.LOAD_STORAGE_KORMS),
         mergeMap(action =>
             this.balanceServices.getStorageKorms().pipe(
-                map((korms:KormStorage[]) => (new LoadSuccess(korms))),
+                map((korms: KormStorage[]) => (new LoadSuccess(korms))),
                 catchError(err => of(new LoadFail(err)))
             ))
     );
 
-    howMayDayKorms$: Observable<Action> = this.action$.pipe(
+    @Effect()
+    calcDay$: Observable<Action> = this.action$.pipe(
         ofType(BalanceActionType.CALC_DAY),
-        mergeMap((action: CalcDay)=>
+        mergeMap((action: CalcDay) =>
             this.balanceServices.getHowManyDay(action.payload).pipe(
-                map((korms:KormStorage[])=>(new LoadHowManyDay(korms))),
-                catchError(err=>of(new LoadFail(err)))
+                map((korms: KormStorage[]) => (new CalcDaySuccess(korms))),
+                catchError(err => of(new CalcDayFail(err)))
             ))
-    )
+    );
+
+    @Effect()
+    changeKormsStorage$: Observable<Action> = this.action$.pipe(
+        ofType(BalanceActionType.CHANGE_VALUE),
+        mergeMap((action: any) =>
+            this.balanceServices.changeKormsStorage(action.payload).pipe(
+                map((korms: KormStorage[]) => (new ChangeValueSuccess(korms))),
+                catchError(err => of(new ChangeValueFail(err)))
+            ))
+    );
 }

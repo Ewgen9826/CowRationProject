@@ -25,6 +25,8 @@ namespace CowRation.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<double>("Limitation");
+
                     b.Property<string>("Name");
 
                     b.HasKey("Id");
@@ -42,8 +44,6 @@ namespace CowRation.API.Migrations
 
                     b.Property<int>("KormId");
 
-                    b.Property<int>("UserId");
-
                     b.Property<double>("Value");
 
                     b.HasKey("Id");
@@ -52,9 +52,41 @@ namespace CowRation.API.Migrations
 
                     b.HasIndex("KormId");
 
+                    b.ToTable("CharacterizationIndexFoods");
+                });
+
+            modelBuilder.Entity("CowRation.API.Models.Expenditures", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Expenditures");
+                });
+
+            modelBuilder.Entity("CowRation.API.Models.Expenses", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<double>("Amount");
+
+                    b.Property<int>("ExpendituresId");
+
+                    b.Property<int>("UserId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ExpendituresId");
+
                     b.HasIndex("UserId");
 
-                    b.ToTable("CharacterizationIndexFoods");
+                    b.ToTable("Expenses");
                 });
 
             modelBuilder.Entity("CowRation.API.Models.Korm", b =>
@@ -100,11 +132,7 @@ namespace CowRation.API.Migrations
                     b.ToTable("KormUser");
                 });
 
-<<<<<<< HEAD
             modelBuilder.Entity("CowRation.API.Models.Laboratory", b =>
-=======
-            modelBuilder.Entity("CowRation.API.Models.LaboratoryIndexFood", b =>
->>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -112,11 +140,7 @@ namespace CowRation.API.Migrations
 
                     b.Property<int>("CatalogIndexFoodId");
 
-<<<<<<< HEAD
-                    b.Property<int?>("LaboratoryIndexFoodId");
-=======
-                    b.Property<int>("UserId");
->>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
+                    b.Property<int>("LaboratoryIndexFoodId");
 
                     b.Property<double>("Value");
 
@@ -124,7 +148,6 @@ namespace CowRation.API.Migrations
 
                     b.HasIndex("CatalogIndexFoodId");
 
-<<<<<<< HEAD
                     b.HasIndex("LaboratoryIndexFoodId");
 
                     b.ToTable("Laboratories");
@@ -144,8 +167,6 @@ namespace CowRation.API.Migrations
 
                     b.HasIndex("KormId");
 
-=======
->>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
                     b.HasIndex("UserId");
 
                     b.ToTable("LaboratoryIndexFoods");
@@ -157,40 +178,19 @@ namespace CowRation.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<double>("Quantity");
+                    b.Property<int>("KormId");
 
-                    b.Property<int>("RationId");
+                    b.Property<int>("TaskId");
 
-                    b.Property<int?>("RationResultId");
+                    b.Property<double>("Value");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("RationResultId");
+                    b.HasIndex("KormId");
+
+                    b.HasIndex("TaskId");
 
                     b.ToTable("Rations");
-                });
-
-            modelBuilder.Entity("CowRation.API.Models.RationResult", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<double>("Fat");
-
-                    b.Property<double>("MilkCount");
-
-                    b.Property<double>("Protein");
-
-                    b.Property<int?>("UserId");
-
-                    b.Property<double>("Weight");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("RationResults");
                 });
 
             modelBuilder.Entity("CowRation.API.Models.Storage", b =>
@@ -209,11 +209,28 @@ namespace CowRation.API.Migrations
                     b.ToTable("Storages");
                 });
 
+            modelBuilder.Entity("CowRation.API.Models.TaskRation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("UserId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("TaskRations");
+                });
+
             modelBuilder.Entity("CowRation.API.Models.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CowCount");
 
                     b.Property<string>("FirstName");
 
@@ -232,7 +249,6 @@ namespace CowRation.API.Migrations
                     b.ToTable("Users");
                 });
 
-<<<<<<< HEAD
             modelBuilder.Entity("FeedingCategory", b =>
                 {
                     b.Property<int>("Id")
@@ -257,8 +273,6 @@ namespace CowRation.API.Migrations
                     b.ToTable("FeedingCategories");
                 });
 
-=======
->>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
             modelBuilder.Entity("CowRation.API.Models.CharacterizationIndexFood", b =>
                 {
                     b.HasOne("CowRation.API.Models.CatalogIndexFood", "CatalogIndexFood")
@@ -269,6 +283,14 @@ namespace CowRation.API.Migrations
                     b.HasOne("CowRation.API.Models.Korm", "Korm")
                         .WithMany()
                         .HasForeignKey("KormId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("CowRation.API.Models.Expenses", b =>
+                {
+                    b.HasOne("CowRation.API.Models.Expenditures", "Expenditures")
+                        .WithMany()
+                        .HasForeignKey("ExpendituresId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("CowRation.API.Models.User", "User")
@@ -303,7 +325,6 @@ namespace CowRation.API.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-<<<<<<< HEAD
             modelBuilder.Entity("CowRation.API.Models.Laboratory", b =>
                 {
                     b.HasOne("CowRation.API.Models.CatalogIndexFood", "CatalogIndexFood")
@@ -311,9 +332,10 @@ namespace CowRation.API.Migrations
                         .HasForeignKey("CatalogIndexFoodId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("CowRation.API.Models.LaboratoryIndexFood")
+                    b.HasOne("CowRation.API.Models.LaboratoryIndexFood", "LaboratoryIndexFood")
                         .WithMany("Laboratories")
-                        .HasForeignKey("LaboratoryIndexFoodId");
+                        .HasForeignKey("LaboratoryIndexFoodId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("CowRation.API.Models.LaboratoryIndexFood", b =>
@@ -325,33 +347,21 @@ namespace CowRation.API.Migrations
 
                     b.HasOne("CowRation.API.Models.User", "User")
                         .WithMany("LaboratoryIndexFoods")
-=======
-            modelBuilder.Entity("CowRation.API.Models.LaboratoryIndexFood", b =>
-                {
-                    b.HasOne("CowRation.API.Models.CatalogIndexFood", "GetCatalogIndexFood")
-                        .WithMany()
-                        .HasForeignKey("CatalogIndexFoodId")
-                        .OnDelete(DeleteBehavior.Cascade);
-
-                    b.HasOne("CowRation.API.Models.User", "User")
-                        .WithMany()
->>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("CowRation.API.Models.Ration", b =>
                 {
-                    b.HasOne("CowRation.API.Models.RationResult", "RationResult")
-                        .WithMany("Rations")
-                        .HasForeignKey("RationResultId");
-                });
+                    b.HasOne("CowRation.API.Models.Korm", "Korm")
+                        .WithMany()
+                        .HasForeignKey("KormId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
-            modelBuilder.Entity("CowRation.API.Models.RationResult", b =>
-                {
-                    b.HasOne("CowRation.API.Models.User")
-                        .WithMany("RationResults")
-                        .HasForeignKey("UserId");
+                    b.HasOne("CowRation.API.Models.TaskRation", "Task")
+                        .WithMany("Rations")
+                        .HasForeignKey("TaskId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("CowRation.API.Models.Storage", b =>
@@ -361,7 +371,14 @@ namespace CowRation.API.Migrations
                         .HasForeignKey("CowRation.API.Models.Storage", "UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
-<<<<<<< HEAD
+
+            modelBuilder.Entity("CowRation.API.Models.TaskRation", b =>
+                {
+                    b.HasOne("CowRation.API.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
 
             modelBuilder.Entity("FeedingCategory", b =>
                 {
@@ -370,8 +387,6 @@ namespace CowRation.API.Migrations
                         .HasForeignKey("FeedingCategory", "UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
-=======
->>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
 #pragma warning restore 612, 618
         }
     }

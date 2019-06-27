@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using CowRation.API.Data;
 using CowRation.API.Dtos;
+using CowRation.API.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -33,13 +34,34 @@ namespace CowRation.API.Controllers
                 laboratoryView.Add(new LaboratoryForView
                 {
                     Name = laboratory.Korm.Name,
-                    Sv = laboratory.Laboratories.FirstOrDefault(l => l.CatalogIndexFood.Name == "崖").Value,
-                    Sp = laboratory.Laboratories.FirstOrDefault(l => l.CatalogIndexFood.Name == "严").Value,
-                    Sg = laboratory.Laboratories.FirstOrDefault(l => l.CatalogIndexFood.Name == "哑").Value,
-                    Sk = laboratory.Laboratories.FirstOrDefault(l => l.CatalogIndexFood.Name == "咽").Value,
+                    Sv = laboratory.Laboratories.FirstOrDefault(l => l.CatalogIndexFood.Name == "小袙").Value,
+                    Sp = laboratory.Laboratories.FirstOrDefault(l => l.CatalogIndexFood.Name == "小袩").Value,
+                    Sg = laboratory.Laboratories.FirstOrDefault(l => l.CatalogIndexFood.Name == "小袞").Value,
+                    Sk = laboratory.Laboratories.FirstOrDefault(l => l.CatalogIndexFood.Name == "小袣").Value,
                 }) ;
             }
             return Ok(laboratoryView);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> SetLaboratoryIndicators(int userId, List<LaboratoryForView> laboratoryForViews)
+        {
+            var laboratoryIndicators = new List<LaboratoryIndexFood>();
+            foreach (var laboratory in laboratoryForViews)
+            {
+                var indicator = new LaboratoryIndexFood();
+                indicator.Korm = await repository.GetKormByName(laboratory.Name);
+                indicator.Laboratories = new List<Laboratory>
+                {
+                    new Laboratory{ Value=laboratory.Sv, CatalogIndexFoodId=(await repository.GetCatalogIndexByName("小袙")).Id },
+                    new Laboratory{ Value=laboratory.Sg, CatalogIndexFoodId=(await repository.GetCatalogIndexByName("小袞")).Id },
+                    new Laboratory{ Value=laboratory.Sk, CatalogIndexFoodId=(await repository.GetCatalogIndexByName("小袣")).Id },
+                    new Laboratory{ Value=laboratory.Sp, CatalogIndexFoodId=(await repository.GetCatalogIndexByName("小袩")).Id }
+                };
+                laboratoryIndicators.Add(indicator);
+            }
+            var indicators = await repository.SetLaboratoryIndicators(userId,laboratoryIndicators);
+            return Ok(laboratoryForViews);
         }
     }
 }

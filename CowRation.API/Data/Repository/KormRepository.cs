@@ -52,33 +52,17 @@ namespace CowRation.API.Data.Repository
         public async Task<IEnumerable<Korm>> ChangeKormsForUser(int userId, IEnumerable<Korm> korms)
         {
             var user = await context.Users
-<<<<<<< HEAD
                 .Include(s => s.Storage).ThenInclude(s => s.KormStorages)
-                .Include(k => k.KormUsers)
-                .Include(l => l.LaboratoryIndexFoods).ThenInclude(l=>l.Laboratories)
+                .Include(k => k.KormUsers).ThenInclude(k => k.Korm)
+                .Include(l => l.LaboratoryIndexFoods).ThenInclude(l => l.Laboratories)
                 .FirstOrDefaultAsync(u => u.Id == userId);
-            user.KormUsers.Clear();
-            foreach (var lab in user.LaboratoryIndexFoods)
-            {
-                lab.Laboratories.Clear();
-            }
-            user.LaboratoryIndexFoods.Clear();
-            user.Storage.KormStorages.Clear();
-
-=======
-                .Include(s => s.Storage).ThenInclude(s=>s.KormStorages)
-                .Include(k => k.KormUsers)
-                .FirstOrDefaultAsync(u => u.Id == userId);
-            user.KormUsers.Clear();
-            user.Storage.KormStorages.Clear();
->>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
-            var userStorage = user.Storage;
-            foreach (var korm in korms)
+            var oldKorms = await GetUserKorms(userId);
+            var addKorms = korms.Where(k => !oldKorms.Any(oldK => k.Name == oldK.Name));
+            //Add Korms
+            foreach (var korm in addKorms)
             {
                 user.KormUsers.Add(new KormUser { KormId = korm.Id, UserId = user.Id });
-                userStorage.KormStorages.Add(new KormStorage { KormId = korm.Id, StorageId = userStorage.Id, FoodValue = 0 });
-<<<<<<< HEAD
-
+                user.Storage.KormStorages.Add(new KormStorage { KormId = korm.Id, StorageId = user.Storage.Id, FoodValue = 0 });
                 var indicators = new List<Laboratory>();
                 var sv = await context.CatalogIndexFoods.FirstOrDefaultAsync(c => c.Name == "СВ");
                 var sp = await context.CatalogIndexFoods.FirstOrDefaultAsync(c => c.Name == "СП");
@@ -99,13 +83,19 @@ namespace CowRation.API.Data.Repository
                     Laboratories = indicators
                 });
             }
-            await context.SaveChangesAsync();
-=======
+            //Remove Korms
+            var removeKorms = oldKorms.Where(oldK => !korms.Any(k => oldK.Name == k.Name));
+            foreach (var korm in removeKorms)
+            {
+                user.KormUsers.Remove(user.KormUsers.FirstOrDefault(k=>k.KormId==korm.Id));
+                user.Storage.KormStorages.Remove(user.Storage.KormStorages.FirstOrDefault(k => k.KormId == korm.Id));
+                var catalogIndexFood = user.LaboratoryIndexFoods.FirstOrDefault(l => l.KormId == korm.Id);
+                user.LaboratoryIndexFoods.Remove(catalogIndexFood);
             }
-             await context.SaveChangesAsync();
->>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
-            var userKorms = await GetUserKorms(userId);
-            return userKorms;
+
+            await context.SaveChangesAsync();
+            var newKorms = await GetUserKorms(userId);
+            return newKorms;
         }
     }
 }

@@ -6,4 +6,6 @@ public interface ILaboratoryRepository
 {
     Task<ICollection<LaboratoryIndexFood>> GetLaboratoryIndicators(int userId);
     Task<ICollection<LaboratoryIndexFood>> SetLaboratoryIndicators(int userId, List<LaboratoryIndexFood> indicators);
+    Task<Korm> GetKormByName(string name);
+    Task<CatalogIndexFood> GetCatalogIndexByName(string name);
 }

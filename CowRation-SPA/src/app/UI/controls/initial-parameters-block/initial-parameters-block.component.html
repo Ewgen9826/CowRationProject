@@ -1,12 +1,12 @@
 <div class="initial-parameters-block">
   <div class="name-parameter">
-    <span >{{nameParameter}}</span>
+    <span>{{nameParameter}}</span>
   </div>
   <div class="parameter-value">
-      <input (input)="inputValidator($event)" type="text" value="" required >
+    <input (input)="inputValidator($event)" type="text" [value]="value" required>
   </div>
   <div class="parameter-unit">
-      <span  >{{parameterUnit}}</span>
+    <span>{{parameterUnit}}</span>
   </div>
- 
+
 </div>

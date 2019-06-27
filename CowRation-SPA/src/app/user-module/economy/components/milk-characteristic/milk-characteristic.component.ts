@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Store, select } from '@ngrx/store';
+import { AppState } from 'src/app/state/app.state';
+import { CharacteristicsMilk } from '../../models/CharacteristicsMilk';
+import { getCharacteristicsMilkState } from '../../state';
 
 @Component({
   selector: 'app-milk-characteristic',
@@ -6,10 +10,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./milk-characteristic.component.css']
 })
 export class MilkCharacteristicComponent implements OnInit {
-
-  constructor() { }
+  characteristicsMilk: CharacteristicsMilk;
+  constructor(private store: Store<AppState>) { }
 
   ngOnInit() {
+    this.store.pipe(select(getCharacteristicsMilkState)).subscribe(data => {
+      this.characteristicsMilk = data;
+    });
   }
 
 }

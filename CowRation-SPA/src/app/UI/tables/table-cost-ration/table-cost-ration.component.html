@@ -11,10 +11,9 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let el of elements" class="section-table">
-                    <th scope="row" class="row-table">{{el.firstColumn}}</th>
-                    <td>{{el.secondColumn}}</td>
-                    <td>{{el.thirdColumn}}</td>
+                <tr *ngFor="let ration of rations" class="section-table">
+                    <th scope="row" class="row-table">{{ration.kormName}}</th>
+                    <td>{{ration.value}}</td>
                 </tr>
             </tbody>
         </div>

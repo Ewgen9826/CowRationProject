@@ -13,7 +13,7 @@ export class DashboardCardComponent implements OnInit {
   @Input() headerText: string;
   @Input() btnText: string;
   @Input() btnColor: string;
-  @Input() disable: Boolean;
+  @Input() disable: boolean;
   @Input() link: string;
   public mouseWarrning = false;
   constructor() {}

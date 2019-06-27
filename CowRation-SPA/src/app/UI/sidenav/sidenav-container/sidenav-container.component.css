@@ -1,6 +1,7 @@
 .sidenav {
     height: 100vh;
     width: 150px;
+    position: fixed;
     background: linear-gradient(259.83deg, #2cc9de 0.45%, #228794 100%);
     display: flex;
     flex-direction: column;

@@ -1,7 +1,7 @@
 <div class="texbox">
     <input 
         (input)="inputValidator($event)" 
-        type="text" 
+        type="number" 
         [style.font-size]="fontSize"
         [style.color]="colorText" 
         [style.font-weight]="fontWeight"
@@ -9,7 +9,7 @@
         [style.line-height]="lineHeight"
         [style.width]="width"
         [style.height]="height"
-        [(ngModel)]="model"
+        [value]="value"
         required>
     <br>
 </div>

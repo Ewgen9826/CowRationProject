@@ -33,7 +33,13 @@ import { LoginGuardService } from "./core/guards/login-guard.service";
       maxAge: 25,
     })
   ],
-  providers: [AuthenticationGuardService, RoleGuardService, LoginGuardService],
+  providers:
+    [
+      AuthenticationGuardService,
+      RoleGuardService,
+      LoginGuardService,
+      //[{ provide: RouterStateSerializer, useClass: CustomSerializer}]
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

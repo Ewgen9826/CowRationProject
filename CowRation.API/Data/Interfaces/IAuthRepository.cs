@@ -8,5 +8,7 @@ namespace CowRation.API.Data
         Task<User> Register(User user, string password);
         Task<User> Login(string userName, string password);
         Task<bool> UserExists(string userName);
+        Task<int> SetCowCount(int userId, int cowCount);
+        Task<int> GetCowCount(int userId);
     }
 }

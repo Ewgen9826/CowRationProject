@@ -5,20 +5,15 @@ using System.Threading.Tasks;
 
 namespace CowRation.API.Models
 {
-    public class RationResult
+    public class TaskRation
     {
         public int Id { get; set; }
-        public double Weight { get; set; }
-        public double MilkCount { get; set; }
-        public double Fat { get; set; }
-        public double Protein { get; set; }
-
+        public int UserId { get; set; }
+        public User User { get; set; }
         public ICollection<Ration> Rations { get; set; }
-
-        public RationResult()
+        public TaskRation()
         {
             Rations = new List<Ration>();
         }
     }
-
 }

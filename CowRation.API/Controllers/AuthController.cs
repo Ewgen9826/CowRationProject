@@ -37,7 +37,7 @@ namespace CowRation.API.Controllers
                 UserName = userForRegisterDto.Login,
                 LastName = userForRegisterDto.LastName,
                 FirstName = userForRegisterDto.FirstName,
-                Role=Role.User
+                Role = Role.User
             };
 
             var createdUser = await repository.Register(userToCreate, userForRegisterDto.Password);
@@ -78,6 +78,20 @@ namespace CowRation.API.Controllers
             {
                 token = tokenHandler.WriteToken(token)
             });
+        }
+
+        [HttpGet("cowcount/{userid}")]
+        public async Task<IActionResult> GetCowCount(int userId)
+        {
+            var cowCountNew = await repository.GetCowCount(userId);
+            return Ok(cowCountNew);
+        }
+
+        [HttpPost("cowcount/{userid}")]
+        public async Task<IActionResult> SetCowCount(int userId, CowModel cow)
+        {
+            var cowCountNew = await repository.SetCowCount(userId, cow.CowCount);
+            return Ok(cowCountNew);
         }
     }
 }

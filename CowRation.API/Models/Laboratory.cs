@@ -11,5 +11,8 @@ namespace CowRation.API.Models
         public double Value { get; set; }
         public int CatalogIndexFoodId { get; set; }
         public CatalogIndexFood CatalogIndexFood { get; set; }
+
+        public int LaboratoryIndexFoodId { get; set; }
+        public LaboratoryIndexFood LaboratoryIndexFood { get; set; }
     }
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store, select } from '@ngrx/store';
+import { AppState } from 'src/app/state/app.state';
+import { getIsRationCalculate } from '../../state';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +9,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
-
+  isRationCalculate$;
+  constructor(private store: Store<AppState>) { }
   ngOnInit() {
+    this.isRationCalculate$ = this.store.pipe(select(getIsRationCalculate));
   }
 
 }

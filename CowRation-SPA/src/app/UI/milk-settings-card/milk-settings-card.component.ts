@@ -7,6 +7,9 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class MilkSettingsCardComponent implements OnInit {
 
+  @Input() percent: number;
+  @Input() price: number;
+
   @Input() header: string;
   constructor() { }
 

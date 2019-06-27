@@ -7,20 +7,24 @@ import { getUserToken } from 'src/app/account-login/state';
 import { Laboratory } from '../models/laboratory';
 
 @Injectable({
-    providedIn: "root"
+  providedIn: "root"
 })
 export class LaboratoryService {
-    baseUrl=environment.apiUrl+"/laboratory/"+ this.userId;
-    constructor(private httpClient: HttpClient, private store: Store<AppState>) { }
+  baseUrl = environment.apiUrl + "/laboratory/" + this.userId;
+  constructor(private httpClient: HttpClient, private store: Store<AppState>) { }
 
-    get userId(): number {
-        let id: number;
-        this.store.pipe(select(getUserToken)).subscribe(
-          data => id = data
-        );
-        return id;
-      }
-     getLaboratoryIndicators(){
-         return this.httpClient.get<Laboratory[]>(this.baseUrl);
-     }
+  get userId(): number {
+    let id: number;
+    this.store.pipe(select(getUserToken)).subscribe(
+      data => id = data
+    );
+    return id;
+  }
+  getLaboratoryIndicators() {
+    return this.httpClient.get<Laboratory[]>(this.baseUrl);
+  }
+
+  setLaboratoryIndicators(laboratories: Laboratory[]) {
+    return this.httpClient.post<Laboratory[]>(this.baseUrl, laboratories);
+  }
 }

@@ -13,6 +13,7 @@ export class TableBalanceComponent implements OnInit {
 
   @Input() headerFirstBalance: string;
   @Input() headerSecondBalance: string;
+  @Input() edit:boolean=false;
 
   @Input() storageKorms: KormStorage[];
 

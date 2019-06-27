@@ -2,20 +2,28 @@ a{
     text-decoration: none;
 }
 .button{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 290px;
     height: 55px;
     box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
 }
 span{
     color: #FFFFFF;
     font-size: 22px;
     line-height: 30px;
     font-weight: 500;
+    z-index: 1000;
 }
-a:hover{
-    opacity: 0.7;
-    transition: 0.7;
+
+.button:hover span.mask {
+	position: absolute;
+	left: 0;
+	top: 0;
+	background: rgba(0, 0, 0, 0.1);
+	height: 100%;
+	width: 100%;
 }

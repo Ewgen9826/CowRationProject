@@ -32,3 +32,13 @@ export const getLoadingState = createSelector(
     getRationFeatureState,
     state => state.loading
 );
+
+export const getCowCountState = createSelector(
+    getRationFeatureState,
+    state => state.cowCount
+)
+
+export const getRationState = createSelector(
+    getRationFeatureState,
+    state => state.rations
+)

@@ -8,9 +8,10 @@ namespace CowRation.API.Models
     public class Ration
     {
         public int Id { get; set; }
-        public double Quantity { get; set; }
-
-        public int RationId { get; set; }
-        public RationResult RationResult { get; set; }
+        public double Value { get; set; }
+        public int KormId { get; set; }
+        public Korm Korm { get; set; }
+        public int TaskId { get; set; }
+        public TaskRation Task { get; set; }
     }
 }

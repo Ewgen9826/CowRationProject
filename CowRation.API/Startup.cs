@@ -34,10 +34,7 @@ namespace CowRation.API
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-<<<<<<< HEAD
         [Obsolete]
-=======
->>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
         public void ConfigureServices(IServiceCollection services)
         {
             services
@@ -54,11 +51,9 @@ namespace CowRation.API
             services.AddScoped<IDatingRepository, DatingRepository>();
             services.AddScoped<IKormReposotory, KormRepository>();
             services.AddScoped<IStorageRepository, StorageRepository>();
-<<<<<<< HEAD
             services.AddScoped<IFeedingCategoryRepository, FeedingCategoryRepository>();
             services.AddScoped<ILaboratoryRepository, LaboratoryRepository>();
-=======
->>>>>>> 04e0766fe973038960dda7d38cba919bebcbfea7
+            services.AddScoped<IRationRepository, RationRepository>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                    options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
