@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/core/models/user';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-korms-managment',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KormsManagmentComponent implements OnInit {
 
+  
   constructor() { }
 
   ngOnInit() {
+    
   }
+
 
 }

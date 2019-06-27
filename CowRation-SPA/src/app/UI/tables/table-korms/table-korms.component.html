@@ -1,0 +1,29 @@
+<div class="table-field">
+  <div class="button-top" (click)="scrollTop()">
+      <img src="../assets/img/table-button.svg" alt="">
+  </div>
+  <table>
+      <div #widgetsContent class="scrol">
+          <thead>
+              <tr class="header-table">
+                  <th>{{headerFirstUser}}</th>
+                  <th>{{headerthirdAction}}</th>
+                  <th>{{headerSecondAction}}</th>
+              </tr>
+          </thead>
+          <tbody>
+
+                  <tr *ngFor="let k of korms | async; let i = index" class="g">
+                   <th scope="row" class="row-table">{{k.name}}</th>
+                    <th scope="row" class="row-table">{{k.category}}</th>
+                   <td><a class="btn-delete" (click)="delKorm(i)"><button>Удалить</button></a></td>
+                  </tr>
+          
+          </tbody>
+      </div>
+  </table>
+
+  <div class="button-bottom" (click)="scrollBotton()">
+      <img src="../assets/img/table-button.svg" alt="">
+  </div>
+</div>

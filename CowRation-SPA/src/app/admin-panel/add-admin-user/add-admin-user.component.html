@@ -1,6 +1,102 @@
-<div>
-  <app-form-group-input blockHeaderNameSecond="Добавление нового пользователя"
-    blockHeaderName="Добавить нового пользователя"></app-form-group-input>
+<div class="container">
+    <div class="preview-block">
+        <a unselectable="on" class="btn-menu" routerLink="/admin/menu"><img width="60%" style="pointer-events: none;"
+                height="auto" src="assets/img/preview-left-arrow.png" unselectable="on" alt=""></a>
+        <h2>Добавление нового администратора</h2>
+    </div>
+
+
+
+    <div class="first-block" (click)="showNewBlock()" *ngIf="firstblock">
+
+        <img width="10%" height="auto" src="assets/img/plus.png" alt="Error">
+        <h4>Добавить нового пользователя</h4>
+
+    </div>
+
+    <div class="second-block" *ngIf="showBlock">
+
+        <h4>Регистрация администратора</h4>
+
+        <ul>
+
+            <div>
+                <li>
+
+                    <label>Логин</label>
+                    <input placeholder="Придумайте логин" name="login" [(ngModel)]="newAdmin.login" #login="ngModel"
+                        required>
+
+                    <div class="input-message" [ngClass]="{message: login.valid || login.untouched || login.dirty}">
+                        <p>Введите корректные данные!</p>
+                    </div>
+
+                </li>
+
+                <li>
+                    <label>Имя</label>
+                    <input placeholder="Введите имя" name="firstName" [(ngModel)]="newAdmin.firstName"
+                        #firstName="ngModel" required>
+                    <div class="input-message" [ngClass]="{message: firstName.valid || firstName.untouched || firstName.dirty}">
+                        <p>Введите корректные данные!</p>
+                    </div>
+                </li>
+                <li>
+                    <label>Фамилия</label>
+                    <input placeholder="Введите фамилию" name="lastName" [(ngModel)]="newAdmin.lastName"
+                        #lastName="ngModel" required>
+                    <div class="input-message" [ngClass]="{message: lastName.valid || lastName.untouched || lastName.dirty}">
+                        <p>Введите корректные данные!</p>
+                    </div>
+                </li>
+            </div>
+            <div>
+                <li>
+                    <label>Email</label>
+                    <input placeholder="Введите email" type="email" name="email" [(ngModel)]="newAdmin.email"
+                        #email="ngModel" required>
+                    <div class="input-message" [ngClass]="{message: email.valid || email.untouched || email.dirty}">
+                        <p>Некорректный email</p>
+                    </div>
+                </li>
+                <li>
+                    <label>Пароль</label>
+                    <input placeholder="Придумайте пароль" type="password" name="password" [(ngModel)]="newAdmin.password"
+                        #password="ngModel" required>
+                    <div class="input-message" [ngClass]="{message: password.valid || password.untouched || password.dirty}">
+                        <p>Введите корректные данные!</p>
+                    </div>
+                </li>
+                <li>
+                    <label>Повторите пароль</label>
+                    <input placeholder="Повторите пароль" type="password" name="repeatPassword" [(ngModel)]="newAdmin.repeatPassword"
+                        #repeatPassword="ngModel" required>
+                    <div class="input-message" [ngClass]="{message: repeatPassword.valid || repeatPassword.untouched || repeatPassword.dirty}">
+                        <p>Введите корректные данные!</p>
+                    </div>
+                </li>
+            </div>
+
+        </ul>
+
+        <div class="btn-block">
+            
+          
+            <button  [ngClass]="{disabled: login.invalid || firstName.invalid || lastName.invalid || email.invalid || password.invalid || repeatPassword.invalid}" (click)="addAdmin(login.value, firstName.value, lastName.value, email.value, password.value, repeatPassword.value )" [disabled]="login.invalid || firstName.invalid || lastName.invalid || email.invalid || password.invalid || repeatPassword.invalid" (click)="addAdmin()" >Зарегистрировать</button>
+          
+        </div>
+        <div class="block-notif">
+            <div class="txt-notification" #notification *ngIf="notification">
+              <p>Пользователь успешно добавлен!</p>
+            </div>
+          </div>
+
+        
+         
+          
+
+       
+    </div>
 
 
 

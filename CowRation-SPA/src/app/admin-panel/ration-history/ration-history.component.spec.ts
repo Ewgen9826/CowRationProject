@@ -1,11 +1,11 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { By } from "@angular/platform-browser";
+import { DebugElement } from "@angular/core";
 
-import { RationHistoryComponent } from './ration-history.component';
+import { RationHistoryComponent } from "./ration-history.component";
 
-describe('RationHistoryComponent', () => {
+describe("RationHistoryComponent", () => {
   let component: RationHistoryComponent;
   let fixture: ComponentFixture<RationHistoryComponent>;
 
@@ -22,7 +22,7 @@ describe('RationHistoryComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

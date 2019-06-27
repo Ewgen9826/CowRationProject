@@ -1,3 +1,23 @@
-<p>
-  korms-managment works!
-</p>
+<div class="container">
+
+  <div class="preview-block">
+    <a class="btn-menu" routerLink="/admin/menu"><img width="60%" height="auto" src="assets/img/preview-left-arrow.png"
+        alt=""></a>
+    <h2>Управление кормами</h2>
+  </div>
+
+  <div class="table-block">
+
+    <div>
+      <app-table-korms [headerFirstUser]="['Название корма']" [headerthirdAction]="['Категория корма']"
+        [headerSecondAction]="['Действие']">
+      </app-table-korms>
+    </div>
+
+<a routerLink="/admin/korm-new">
+  <div class="first-block" (click)="showNewBlock()">
+    <img width="15%" height="auto" src="assets/img/plus.png" alt="Error">
+    <h4>Добавить новый корм</h4>
+  </div></a>
+ </div>
+</div>

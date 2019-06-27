@@ -1,26 +1,31 @@
 import { Component, OnInit, Input, ViewEncapsulation, ViewChild, ElementRef  } from '@angular/core';
-import { User } from 'src/app/core/models/user';
-import { Observable } from 'rxjs';
-import { UserRegister } from 'src/app/admin-panel/core/models/user-register';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/app.state';
-import * as UserActions from 'src/app/admin-panel/core/actions/user-register.actions';
+import { Observable } from 'rxjs';
+import { KormsHistory } from 'src/app/admin-panel/core/models/korms-table-history';
+import * as GetHistoryActions from 'src/app/admin-panel/core/actions/korms-table-history.actions';
+
+
+
 
 @Component({
-  selector: 'app-tablet-users',
-  templateUrl: './tablet-users.component.html',
-  styleUrls: ['./tablet-users.component.css']
+  selector: 'app-table-history-ration',
+  templateUrl: './table-history-ration.component.html',
+  styleUrls: ['./table-history-ration.component.css']
 })
-export class TabletUsersComponent implements OnInit {
-
-  users: Observable<UserRegister[]>;
+export class TableHistoryRationComponent implements OnInit {
 
   intervalBotton;
   intervalTop;
 
-  @Input() headerFirstUser: string;
-  @Input() headerSecondAction: string;
+  @Input() headerOneKorms: string;
+  @Input() headerTwoKorms: string;
+  @Input() headerTreeKorms: string;
+
+  kormsHistory: Observable<KormsHistory[]>;
+
  
+
   @ViewChild('widgetsContent', { read: ElementRef }) public widgetsContent: ElementRef<any>;
   public scrollTop(): void {
     this.intervalTop = 200;
@@ -35,15 +40,11 @@ export class TabletUsersComponent implements OnInit {
     this.intervalTop = 0;
   }
 
-  constructor(private store: Store<AppState>) { 
-    this.users = store.select('users');
-  }
+  constructor(private store: Store<AppState>) {
+    this.kormsHistory = store.select('historykorms')
+   }
 
   ngOnInit() {
   }
 
-  delUser(index){
-    this.store.dispatch(new UserActions.RemoveUser(index) )
-  }
-  
 }

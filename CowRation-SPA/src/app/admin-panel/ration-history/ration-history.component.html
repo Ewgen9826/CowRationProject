@@ -1,3 +1,9 @@
-<p>
-  ration-history works!
-</p>
+<div class="container">
+    <div class="preview-block">
+        <a class="btn-menu" routerLink="/admin/menu"><img width="60%" height="auto" src="assets/img/preview-left-arrow.png"
+            alt=""></a>
+        <h2>История рационов</h2>
+      </div>
+    <app-table-history-ration [headerOneKorms]="['Пользователь']" [headerTwoKorms]="['Дата создания']"  [headerTreeKorms]="['Стоимость (руб.)']">
+    </app-table-history-ration>
+  </div>

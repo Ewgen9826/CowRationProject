@@ -1,0 +1,104 @@
+.table-field {
+  
+  display: flex;
+  flex-direction: column;
+  width: 810px;
+}
+table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  background: #FBFBFB;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
+  color: #424242;
+}
+
+.scrol {
+  overflow-y: scroll;
+  height: 340px;
+}
+
+.scrol::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+.row-table {
+  height: 65px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: normal;
+}
+
+.header-table>th {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: normal;
+  padding: 20px 80px 20px 80px;
+}
+
+tr:nth-child(odd) {
+  background: rgba(38, 198, 218, 0.1);
+
+}
+
+tr.header-table {
+  background: initial;
+}
+
+.button-top {
+  margin-bottom: 10px;
+}
+
+.button-bottom {
+  margin-top: 10px;
+}
+
+.button-top,
+.button-bottom {
+  position: relative;
+  height: 47px;
+  background: #FBFBFB;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+.button-top:hover{
+  opacity: 0.7;
+  transition: 0.7s;
+}
+.button-bottom:hover{
+  opacity: 0.7;
+  transition: 0.7s;
+}
+
+.button-top img,
+.button-bottom img {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.button-bottom img {
+  transform: rotate(180deg);
+}
+.btn-delete button{
+  color: #424242;
+  background-color: transparent;
+  border: none;
+  height: 65px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: normal;
+}
+.btn-delete button:hover{
+  color: #26c6da;
+  transition: 0.7s;
+}
+
+
+

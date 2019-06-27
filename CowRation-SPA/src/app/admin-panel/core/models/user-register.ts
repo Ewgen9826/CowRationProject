@@ -1,6 +1,9 @@
 export class UserRegister {
+    id?: number;
     login: string;
-    password: string;
+    email: string;
+    password?: string;
+    repeatPassword?: string;
     firstName: string;
     lastName: string;
 }

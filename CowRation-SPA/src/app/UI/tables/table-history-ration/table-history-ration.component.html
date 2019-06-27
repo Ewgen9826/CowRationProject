@@ -6,22 +6,24 @@
         <div #widgetsContent class="scrol">
             <thead>
                 <tr class="header-table">
-                    <th>{{headerFirstUser}}</th>
-                    <th>{{headerSecondAction}}</th>
+                    <th>{{headerOneKorms}}</th>
+                    <th>{{headerTwoKorms}}</th>
+                    <th>{{headerTreeKorms}}</th>
                 </tr>
             </thead>
             <tbody>
-                
-                    <tr *ngFor="let u of users | async; let i = index" class="g">
-                    <th scope="row" class="row-table">{{u.firstName}}</th>
-                     <td><a (click)="delUser(i)" class="btn-delete"><button>Удалить</button></a></td>
-                    </tr>
-
+              
+                <tr class="g" *ngFor="let k of kormsHistory | async">
+                    <th scope="row" class="row-table">{{k.user}}</th>
+                    <th scope="row" class="row-table">{{k.createData}}</th>
+                    <th scope="row" class="row-table">{{k.price}}</th>
+                </tr>        
+      
             </tbody>
         </div>
     </table>
-
+  
     <div class="button-bottom" (click)="scrollBotton()">
         <img src="../assets/img/table-button.svg" alt="">
     </div>
-</div>
+  </div>
