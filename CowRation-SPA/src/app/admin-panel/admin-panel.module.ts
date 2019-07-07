@@ -12,10 +12,12 @@ import { TablesModule } from '../UI/tables/tables.module';
 import { ControlsModule } from '../UI/controls/controls.module';
 import { KormsInputNewComponent } from './korms-managment/korms-input-new/korms-input-new.component';
 import { StoreModule } from '@ngrx/store';
-import { reducer } from './core/reducers/user-register.reducer';
-
-
-
+import { EffectsModule } from '@ngrx/effects';
+import { UserEffects } from './core/store/user/user.effects';
+import { reducers } from './core/store';
+import { userReducer } from './core/store/user/user.reducer';
+import { KormsEffects } from './core/store/korms/korms.effects';
+import { kormReducer } from './core/store/korms/korms.reducer';
 
 @NgModule({
   imports: [
@@ -24,9 +26,9 @@ import { reducer } from './core/reducers/user-register.reducer';
     TablesModule,
     ControlsModule,
     FormsModule,
-  
-
-
+    StoreModule.forFeature("userManagment", userReducer),
+    StoreModule.forFeature("kormManagment", kormReducer),
+    EffectsModule.forFeature([UserEffects, KormsEffects]),
   ],
   declarations: [
     AdminPanelComponent,

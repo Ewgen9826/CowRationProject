@@ -29,6 +29,12 @@ namespace CowRation.API.Data.Repository
 
         }
 
+        public async Task<CatalogIndexFood> GetCatalogIndexByName(string name)
+        {
+            var catalogIndex = await context.CatalogIndexFoods.FirstOrDefaultAsync(c => c.Name == name);
+            return catalogIndex;
+        }
+
         public async Task<IEnumerable<Korm>> GetKorms()
         {
             var korms = await context.Korms.ToListAsync();

@@ -9,11 +9,13 @@ export const isAuthenticatedUser = createSelector(
     state => state.isAuthenticated
 );
 
-export const getUserToken = createSelector(
+export const getUserId = createSelector(
     selectAuthenticationState,
     state => {
         const jwtHelper = new JwtHelperService();
-        return jwtHelper.decodeToken(state.token).nameid;
+        const decodeToken = jwtHelper.decodeToken(state.token);
+        if(!decodeToken) return;
+        return decodeToken.nameid;
     }
 )
 

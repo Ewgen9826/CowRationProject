@@ -2,32 +2,27 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 
 import { RationComponent } from "./ration/ration.component";
-import { RationModule } from "./ration/ration.module";
-import { UserAccountModule } from "./user-account/user-account.module";
-
 import { BalanceComponent } from './balance/balance.component';
-import { BalanceModule } from './balance/balance.module';
 import { EconomyComponent } from './economy/economy.component';
-import { EconomyModule } from './economy/economy.module';
 const rationRoutes: Routes = [
 	{
 		path: "ration",
 		component: RationComponent,
-		loadChildren: () => RationModule
+		loadChildren: () => import("./ration/ration.module").then(mod => mod.RationModule),
 	},
 	{
 		path: "balance",
 		component: BalanceComponent,
-		loadChildren: () => BalanceModule
+		loadChildren: () => import("./balance/balance.module").then(mod => mod.BalanceModule),
 	},
 	{
 		path: "economy",
 		component: EconomyComponent,
-		loadChildren: () => EconomyModule
+		loadChildren: () => import("./economy/economy.module").then(mod => mod.EconomyModule),
 	},
 	{
 		path: "",
-		loadChildren: () => UserAccountModule
+		loadChildren: () => import("./user-account/user-account.module").then(mod => mod.UserAccountModule)
 	},
 ];
 

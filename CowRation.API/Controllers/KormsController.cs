@@ -30,6 +30,26 @@ namespace CowRation.API.Controllers
             var kormsToReturn = mapper.Map<IEnumerable<KormForRation>>(korms);
             return Ok(kormsToReturn);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> AddKorms(KormForManagment kormModel)
+        {
+            var characterizations = new List<CharacterizationIndexFood>();
+            foreach (var characteristicIndex in kormModel.CharacterizationIndexFoods)
+            {
+                var catalogIndex = await context.GetCatalogIndexByName(characteristicIndex.NameIndex);
+                characterizations.Add(new CharacterizationIndexFood
+                {
+                    CatalogIndexFoodId=catalogIndex.Id,
+                    Value=characteristicIndex.Value,
+                    
+                });
+            }
+            var korm = new Korm { Name = kormModel.Name, Price = kormModel.Price, CharacterizationIndexFoods=characterizations };
+            context.AddKorm(korm);
+            return Ok();
+        }
+
         [HttpGet("user/{userId}")]
         public async Task<IActionResult> GetUserKorms(int userId)
         {
@@ -37,6 +57,7 @@ namespace CowRation.API.Controllers
             var kormsToReturn = mapper.Map<IEnumerable<KormForRation>>(korms);
             return Ok(kormsToReturn);
         }
+
         [HttpPost("user/{userId}/change")]
         public async Task<IActionResult> AddKormsForUser(int userId, IEnumerable<Korm> korms)
         {

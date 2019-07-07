@@ -14,6 +14,7 @@ namespace CowRation.API.Helpers
             CreateMap<FeedingCategory, FeedingCategoryForView>();
             CreateMap<LaboratoryIndexFood, LaboratoryForView>();
             CreateMap<Korm, StorageForView>();
+            CreateMap<User, UserManagmentDto>();
         }
     }
 }

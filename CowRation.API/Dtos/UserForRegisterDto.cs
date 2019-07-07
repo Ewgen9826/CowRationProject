@@ -10,9 +10,10 @@ namespace CowRation.API.Dtos {
         public string Password { get; set; }
 
         [Required]
-        public string FirstName { get; set; }
+        public string CompanyName { get; set; }
 
         [Required]
-        public string LastName { get; set; }
+        [EmailAddress]
+        public string Email { get; set; }
     }
 }

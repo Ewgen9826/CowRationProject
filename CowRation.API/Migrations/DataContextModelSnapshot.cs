@@ -230,11 +230,11 @@ namespace CowRation.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("CompanyName");
+
                     b.Property<int>("CowCount");
 
-                    b.Property<string>("FirstName");
-
-                    b.Property<string>("LastName");
+                    b.Property<string>("Email");
 
                     b.Property<byte[]>("PasswordHash");
 
@@ -281,7 +281,7 @@ namespace CowRation.API.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("CowRation.API.Models.Korm", "Korm")
-                        .WithMany()
+                        .WithMany("CharacterizationIndexFoods")
                         .HasForeignKey("KormId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
@@ -294,7 +294,7 @@ namespace CowRation.API.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("CowRation.API.Models.User", "User")
-                        .WithMany()
+                        .WithMany("Expenses")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });

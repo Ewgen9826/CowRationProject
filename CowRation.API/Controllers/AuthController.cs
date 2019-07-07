@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using CowRation.API.Data;
 using CowRation.API.Dtos;
 using CowRation.API.Models;
@@ -18,11 +20,29 @@ namespace CowRation.API.Controllers
     {
         private readonly IAuthRepository repository;
         private readonly IConfiguration config;
+        private readonly IMapper mapper;
 
-        public AuthController(IAuthRepository repository, IConfiguration config)
+        public AuthController(IAuthRepository repository, IConfiguration config, IMapper mapper)
         {
             this.repository = repository;
             this.config = config;
+            this.mapper = mapper;
+        }
+
+        [HttpGet("users")]
+        public async Task<IActionResult> GetAllUsers()
+        {
+            var users = await repository.GetAllUsers();
+            var usersDto = mapper.Map<List<UserManagmentDto>>(users);
+            return Ok(usersDto);
+        }
+
+        [HttpPost("remove/{userId}")]
+        public async Task<IActionResult> RemoveUser(int userId)
+        {
+            var removeUserId = await repository.RemoveUser(userId);
+            if (removeUserId == null) return BadRequest("User is missing");
+            return Ok(removeUserId);
         }
 
         [HttpPost("register")]
@@ -35,14 +55,14 @@ namespace CowRation.API.Controllers
             var userToCreate = new User
             {
                 UserName = userForRegisterDto.Login,
-                LastName = userForRegisterDto.LastName,
-                FirstName = userForRegisterDto.FirstName,
+                CompanyName=userForRegisterDto.CompanyName,
+                Email=userForRegisterDto.Email,
                 Role = Role.User
             };
 
             var createdUser = await repository.Register(userToCreate, userForRegisterDto.Password);
 
-            return Ok();
+            return Ok(createdUser);
         }
 
         [HttpPost("login")]

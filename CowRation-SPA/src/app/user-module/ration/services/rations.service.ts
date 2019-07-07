@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/state/app.state';
-import { getUserToken } from 'src/app/account-login/state';
+import { getUserId } from 'src/app/account-login/state';
 import { Ration } from '../models/ration';
 
 @Injectable({
@@ -15,7 +15,7 @@ export class RationsService {
 
     get userId(): number {
         let id: number;
-        this.store.pipe(select(getUserToken)).subscribe(
+        this.store.pipe(select(getUserId)).subscribe(
             data => id = data
         );
         return id;

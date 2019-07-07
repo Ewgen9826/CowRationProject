@@ -43,6 +43,7 @@ namespace CowRation.API.Data {
             user.CowCount = 0;
             await context.AddAsync (user);
             await context.Storages.AddAsync(new Storage { UserId = user.Id });
+            await context.FeedingCategories.AddAsync(new FeedingCategory{ UserId = user.Id, });
             foreach (var expenses in context.Expenditures)
             {
                 user.Expenses.Add(new Expenses { ExpendituresId = expenses.Id, Amount = 0, UserId = user.Id });
@@ -76,6 +77,20 @@ namespace CowRation.API.Data {
         {
              var user = await context.Users.FirstOrDefaultAsync(u=>u.Id==userId);
              return user.CowCount;
+        }
+
+        public Task<List<User>> GetAllUsers()
+        {
+            return context.Users.ToListAsync();
+        }
+
+        public async Task<int?> RemoveUser(int userId)
+        {
+            var user = await context.Users.FirstOrDefaultAsync(u => u.Id == userId);
+            if (user == null) return null;
+            context.Users.Remove(user);
+            await context.SaveChangesAsync();
+            return user.Id;
         }
     }
 }

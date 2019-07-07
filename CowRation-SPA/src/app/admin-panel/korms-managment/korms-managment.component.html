@@ -9,13 +9,12 @@
   <div class="table-block">
 
     <div>
-      <app-table-korms [headerFirstUser]="['Название корма']" [headerthirdAction]="['Категория корма']"
-        [headerSecondAction]="['Действие']">
+      <app-table-korms [headerFirstUser]="['Название корма']" [headerthirdAction]="['Действие']" [korms]="korms$ | async">
       </app-table-korms>
     </div>
 
 <a routerLink="/admin/korm-new">
-  <div class="first-block" (click)="showNewBlock()">
+  <div class="first-block">
     <img width="15%" height="auto" src="assets/img/plus.png" alt="Error">
     <h4>Добавить новый корм</h4>
   </div></a>

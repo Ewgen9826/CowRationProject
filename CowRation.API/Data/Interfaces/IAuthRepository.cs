@@ -1,4 +1,5 @@
 ﻿using CowRation.API.Models;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace CowRation.API.Data
@@ -10,5 +11,7 @@ namespace CowRation.API.Data
         Task<bool> UserExists(string userName);
         Task<int> SetCowCount(int userId, int cowCount);
         Task<int> GetCowCount(int userId);
+        Task<List<User>> GetAllUsers();
+        Task<int?> RemoveUser(int userId);
     }
 }

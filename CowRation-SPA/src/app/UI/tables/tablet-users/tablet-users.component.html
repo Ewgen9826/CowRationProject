@@ -11,11 +11,11 @@
                 </tr>
             </thead>
             <tbody>
-                
-                    <tr *ngFor="let u of users | async; let i = index" class="g">
-                    <th scope="row" class="row-table">{{u.firstName}}</th>
-                     <td><a (click)="delUser(i)" class="btn-delete"><button>Удалить</button></a></td>
-                    </tr>
+
+                <tr *ngFor="let u of users; let i = index" class="g">
+                    <th scope="row" class="row-table">{{u.companyName}}</th>
+                    <td><a (click)="remove(u.id)" class="btn-delete"><button>Удалить</button></a></td>
+                </tr>
 
             </tbody>
         </div>

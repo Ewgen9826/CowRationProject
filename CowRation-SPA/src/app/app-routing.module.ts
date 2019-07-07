@@ -3,10 +3,7 @@ import { Routes, RouterModule } from "@angular/router";
 
 import { UserModuleComponent } from "./user-module/user-module.component";
 import { SignInComponent } from "./account-login/login/sign-in/sign-in.component";
-import { RegisterComponent } from "./account-login/login/register/register.component";
-import { UserModuleModule } from "./user-module/user-module.module";
 import { AdminPanelComponent } from "./admin-panel/admin-panel.component";
-import { AdminPanelModule } from "./admin-panel/admin-panel.module";
 import { AuthenticationGuardService } from "./core/guards/authentication-guard.service";
 import { RoleGuardService } from "./core/guards/role-guard.service";
 import { LoginGuardService } from "./core/guards/login-guard.service";
@@ -19,23 +16,18 @@ const routes: Routes = [
     data: { title: "Вход в систему" }
   },
   {
-    path: "register",
-    component: RegisterComponent,
-    data: { title: "Регистрация" }
-  },
-  {
     path: "company",
     component: UserModuleComponent,
     runGuardsAndResolvers: "always",
     canActivate: [AuthenticationGuardService],
-    loadChildren: () => UserModuleModule
+    loadChildren: () => import("./user-module/user-module.module").then(mod => mod.UserModuleModule),
   },
   {
     path: "admin",
     component: AdminPanelComponent,
     // canActivate: [RoleGuardService],
     runGuardsAndResolvers: "always",
-    loadChildren: () => AdminPanelModule,
+    loadChildren: () => import("./admin-panel/admin-panel.module").then(mod => mod.AdminPanelModule),
     data: { expectedRole: "Admin" }
   },
   {

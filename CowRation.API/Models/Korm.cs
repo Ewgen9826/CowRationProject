@@ -12,10 +12,12 @@ namespace CowRation.API.Models
         public double Price { get; set; }
         public List<KormUser> KormUsers { get; set; }
         public List<KormStorage> KormStorages { get; set; }
+        public List<CharacterizationIndexFood> CharacterizationIndexFoods { get; set; }
         public Korm()
         {
             KormStorages = new List<KormStorage>();
             KormUsers = new List<KormUser>();
+            CharacterizationIndexFoods = new List<CharacterizationIndexFood>();
         }
     }
 }

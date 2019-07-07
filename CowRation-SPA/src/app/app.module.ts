@@ -14,11 +14,6 @@ import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { AuthenticationGuardService } from "./core/guards/authentication-guard.service";
 import { RoleGuardService } from "./core/guards/role-guard.service";
 import { LoginGuardService } from "./core/guards/login-guard.service";
-import { reducer } from './admin-panel/core/reducers/user-register.reducer';
-import { reducerKorms } from './admin-panel/core/reducers/new-korm.reducer';
-import { reducerHistoryKorms } from './admin-panel/core/reducers/korms-table-history.reducer';
-import { reducerAdmin } from './admin-panel/core/reducers/admin-registration.reducer';
-
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -32,17 +27,7 @@ import { reducerAdmin } from './admin-panel/core/reducers/admin-registration.red
     LoadingPageModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
-    StoreDevtoolsModule.instrument({
-      name: "APM Demo App DevTools",
-      maxAge: 25,
-    }),
-    StoreModule.forRoot({
-      users: reducer,
-      korms: reducerKorms,
-      historykorms: reducerHistoryKorms,
-      adminusers: reducerAdmin,
-
-    })
+    StoreDevtoolsModule.instrument()
   ],
   providers:
     [

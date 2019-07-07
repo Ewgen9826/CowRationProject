@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from 'src/app/core/models/user';
-import { ActivatedRoute } from '@angular/router';
+import { Store, select } from '@ngrx/store';
+import { AppState } from 'src/app/state/app.state';
+import { AllKormsState } from '../core/store';
+import { LoadingKorms } from '../core/store/korms/korms.actions';
 
 @Component({
   selector: 'app-korms-managment',
@@ -8,12 +10,12 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./korms-managment.component.css']
 })
 export class KormsManagmentComponent implements OnInit {
-
-  
-  constructor() { }
+  korms$;
+  constructor(private store: Store<AppState>) { }
 
   ngOnInit() {
-    
+    this.store.dispatch(new LoadingKorms());
+    this.korms$ = this.store.pipe(select(AllKormsState));
   }
 
 

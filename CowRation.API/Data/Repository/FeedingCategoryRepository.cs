@@ -14,7 +14,7 @@ public class FeedingCategoryRepository : IFeedingCategoryRepository
     {
         var user = await context.Users.Include(f => f.FeedingCategory)
         .FirstOrDefaultAsync(u => u.Id == userId);
-        if(user.FeedingCategory==null) return new FeedingCategory();
+        if(user.FeedingCategory==null) return null;
         return user.FeedingCategory;
     }
 

@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Store, select } from '@ngrx/store';
 import { AppState } from 'src/app/state/app.state';
-import { getUserToken } from 'src/app/account-login/state';
+import { getUserId } from 'src/app/account-login/state';
 import { KormStorage } from '../models/korm-storage';
 import { of, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -20,7 +20,7 @@ export class BalanceService {
 
   get userId(): number {
     let id: number;
-    this.store.pipe(select(getUserToken)).subscribe(
+    this.store.pipe(select(getUserId)).subscribe(
       data => id = data
     );
     return id;

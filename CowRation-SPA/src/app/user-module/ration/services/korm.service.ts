@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
 import { catchError, map } from "rxjs/operators";
 import { Store, select } from "@ngrx/store";
 import { AppState } from "src/app/state/app.state";
-import { getUserToken } from "src/app/account-login/state";
+import { getUserId } from "src/app/account-login/state";
 
 @Injectable({
   providedIn: "root"
@@ -18,7 +18,7 @@ export class KormService {
 
   get userId(): number {
     let id: number;
-    this.store.pipe(select(getUserToken)).subscribe(
+    this.store.pipe(select(getUserId)).subscribe(
       data => id = data
     );
     return id;

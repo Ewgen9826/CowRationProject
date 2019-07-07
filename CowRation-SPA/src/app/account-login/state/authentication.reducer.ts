@@ -1,4 +1,4 @@
-import { User } from "../../core/models/user";
+import { UserRegister } from "../../core/models/user-register";
 import { AuthenticationActionTypes, AuthenticationActions } from "../state/authentication.actions";
 
 export interface AuthenticationState {
@@ -10,7 +10,7 @@ export interface AuthenticationState {
 
 export const initialState: AuthenticationState = {
     isAuthenticated: localStorage.getItem("token") !== null,
-    token: localStorage.getItem("token"),
+    token: localStorage.getItem("token") ? localStorage.getItem("token") : null,
     errorMessage: null,
     loading: false
 };

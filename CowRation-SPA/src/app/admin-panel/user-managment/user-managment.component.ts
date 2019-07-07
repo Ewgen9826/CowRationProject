@@ -1,10 +1,11 @@
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { UserRegister } from 'src/app/admin-panel/core/models/user-register';
-import { AppState } from 'src/app/app.state';
-import { Store } from '@ngrx/store';
-import * as UserActions from '../core/actions/user-register.actions';
+import { Store, select } from '@ngrx/store';
+import { User } from '../core/models/user';
+import { LoadingUsers, AddUser, RemoveUser } from '../core/store/user/user.actions';
+import { AllUserState } from '../core/store';
+import { AppState } from 'src/app/state/app.state';
 
 @Component({
   selector: 'app-user-managment',
@@ -13,53 +14,38 @@ import * as UserActions from '../core/actions/user-register.actions';
 })
 export class UserManagmentComponent implements OnInit {
 
-  newUser: UserRegister = new UserRegister();
-  
+  newUser: User = new User();
+
   @Input() firstblock = true;
   @Input() showBlock = false;
   @Input() notification = false;
 
- 
- 
+  users$;
 
- 
   showNewBlock() {
     this.firstblock = false;
     this.showBlock = true;
     return this.firstblock && this.showBlock;
   }
 
-  addUser(login, firstName, lastName, email, password, repeatPassword) {
-    this.store.dispatch(new UserActions.AddUser({
-      login: login,
-      firstName: firstName,
-      lastName:lastName,
-      email: email,
-      password: password,
-      repeatPassword: repeatPassword
-    }))
+  addUser() {
+    this.store.dispatch(new AddUser(this.newUser));
     this.newUser.login = '';
-    this.newUser.firstName = '';
-    this.newUser.lastName = '';
     this.newUser.email = '';
     this.newUser.password = '';
-    this.newUser.repeatPassword = '';
-
-    
-     
+    this.newUser.companyName = '';
     this.notification = true;
-
- 
-
-
-   
-    
   }
 
   constructor(private store: Store<AppState>) { }
 
   ngOnInit() {
-   
+    this.store.dispatch(new LoadingUsers());
+    this.users$ = this.store.pipe(select(AllUserState));
+  }
+
+  remove(userId: number) {
+    this.store.dispatch(new RemoveUser(userId));
   }
 
 }

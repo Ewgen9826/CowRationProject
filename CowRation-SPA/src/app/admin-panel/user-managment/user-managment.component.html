@@ -10,7 +10,8 @@
 
 
     <div>
-      <app-tablet-users [headerFirstUser]="['Логин']" [headerSecondAction]="['Действие']">
+      <app-tablet-users [headerFirstUser]="['Логин']" [users]="users$ | async" (removeUser)="remove($event)"
+        [headerSecondAction]="['Действие']">
       </app-tablet-users>
     </div>
 
@@ -43,18 +44,11 @@
             </li>
 
             <li>
-              <label>Имя</label>
-              <input placeholder="Введите имя" name="firstName" [(ngModel)]="newUser.firstName" #firstName="ngModel"
-                required>
-              <div class="input-message" [ngClass]="{message: firstName.valid || firstName.untouched || firstName.dirty}">
-                <p>Введите корректные данные!</p>
-              </div>
-            </li>
-            <li>
-              <label>Фамилия</label>
-              <input placeholder="Введите фамилию" name="lastName" [(ngModel)]="newUser.lastName" #lastName="ngModel"
-                required>
-              <div class="input-message" [ngClass]="{message: lastName.valid || lastName.untouched || lastName.dirty}">
+              <label>Название организации</label>
+              <input placeholder="Введите имя" name="companyName" [(ngModel)]="newUser.companyName"
+                #companyName="ngModel" required>
+              <div class="input-message"
+                [ngClass]="{message: companyName.valid || companyName.untouched || companyName.dirty}">
                 <p>Введите корректные данные!</p>
               </div>
             </li>
@@ -62,38 +56,27 @@
           <div>
             <li>
               <label>Email</label>
-              <input placeholder="Введите email" type="email" name="email" [(ngModel)]="newUser.email" #email="ngModel" required>
+              <input placeholder="Введите email" type="email" name="email" [(ngModel)]="newUser.email" #email="ngModel"
+                required>
               <div class="input-message" [ngClass]="{message: email.valid || email.untouched || email.dirty}">
                 <p>Некорректный email</p>
               </div>
             </li>
             <li>
               <label>Пароль</label>
-              <input placeholder="Придумайте пароль" type="password" name="password" [(ngModel)]="newUser.password" #password="ngModel"
-                required>
+              <input placeholder="Придумайте пароль" type="password" name="password" [(ngModel)]="newUser.password"
+                #password="ngModel" required>
               <div class="input-message" [ngClass]="{message: password.valid || password.untouched || password.dirty}">
                 <p>Введите корректные данные!</p>
               </div>
             </li>
-            <li>
-              <label>Повторите пароль</label>
-              <input placeholder="Повторите пароль" type="password" name="repeatPassword" [(ngModel)]="newUser.repeatPassword"
-                #repeatPassword="ngModel" required>
-              <div class="input-message" [ngClass]="{message: repeatPassword.valid || repeatPassword.untouched || repeatPassword.dirty}">
-                <p>Введите корректные данные!</p>
-              </div>
-            </li>
           </div>
-
-         
-
         </ul>
 
-        <div class="btn-block" >
+        <div class="btn-block">
 
-          <button
-            [ngClass]="{disabled: login.invalid || firstName.invalid || lastName.invalid || email.invalid || password.invalid || repeatPassword.invalid}"
-            (click)="addUser(login.value, firstName.value, lastName.value, email.value, password.value, repeatPassword.value )">
+          <button [ngClass]="{disabled: login.invalid || companyName.invalid || email.invalid || password.invalid}"
+            (click)="addUser()">
             Зарегистрировать
           </button>
 

@@ -1,4 +1,4 @@
-export class NewKorm {
+export class Korm {
     id?: number;
     name: string;
     category: string;
