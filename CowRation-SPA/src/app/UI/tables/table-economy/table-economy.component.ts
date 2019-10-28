@@ -13,7 +13,7 @@ export class TableEconomyComponent implements OnInit {
   @Input() headerFirstBalance: string;
   @Input() headerSecondBalance: string;
   @Input() headerThirdBalance: string;
-  @ViewChild('widgetsContent', { read: ElementRef }) public widgetsContent: ElementRef<any>;
+  @ViewChild('widgetsContent', { read: ElementRef, static: true }) public widgetsContent: ElementRef<any>;
   public scrollTop(): void {
     this.intervalTop = 200;
     this.widgetsContent.nativeElement.scrollTo({ top: (this.widgetsContent.nativeElement.scrollTop - this.intervalTop), behavior: 'smooth' });

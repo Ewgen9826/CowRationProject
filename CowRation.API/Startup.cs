@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -93,14 +94,17 @@ namespace CowRation.API
             }
 
             //app.UseHttpsRedirection();
+
+            app.UseDeveloperExceptionPage();
             app.UseCors(options => options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseAuthentication();
             app.UseDefaultFiles();
             app.UseStaticFiles();
-            app.UseMvc(routes=>{
+            app.UseMvc(routes =>
+            {
                 routes.MapSpaFallbackRoute(
-                    name:"spa-fallback",
-                    defaults: new { controller = "FallBack", action = "Index"}
+                    name: "spa-fallback",
+                    defaults: new { controller = "FallBack", action = "Index" }
                 );
             });
 

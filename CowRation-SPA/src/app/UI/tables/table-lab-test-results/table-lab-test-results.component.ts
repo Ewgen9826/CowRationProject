@@ -16,7 +16,7 @@ export class TableLabTestResultsComponent implements OnInit {
 
   @Input() laboratoryIndicators: Laboratory[];
 
-  @ViewChild('widgetsContent', { read: ElementRef }) public widgetsContent: ElementRef<any>;
+  @ViewChild('widgetsContent', { read: ElementRef, static: false }) public widgetsContent: ElementRef<any>;
   constructor() { }
 
   ngOnInit() {

@@ -21,7 +21,7 @@ export class TableHistoryRationComponent implements OnInit {
 
 
 
-  @ViewChild('widgetsContent', { read: ElementRef }) public widgetsContent: ElementRef<any>;
+  @ViewChild('widgetsContent', { read: ElementRef, static: true }) public widgetsContent: ElementRef<any>;
   public scrollTop(): void {
     this.intervalTop = 200;
     // tslint:disable-next-line:max-line-length

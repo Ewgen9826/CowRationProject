@@ -1,0 +1,32 @@
+{
+    "deploy": {
+        "packages": [
+            {
+                "name": "Version 2.3.4",
+                "description": "CowRation Project ",
+                "files": [
+                    "CowRation.API/bin/Debug/netcoreapp2.2/publish/**"
+                ],
+            }
+        ],
+        "targets": [
+            {
+                "type": "sftp",
+                "name": "Linux",
+                "description": "Remote Linux Server",
+                "dir": "/home/cowboy/cowration-app",
+                "mappings": [
+                    {
+                        "source": "/CowRation.API/bin/Debug/netcoreapp2.2/publish",
+                        "target": "/"
+                    }
+                ],
+                "host": "polessu.by",
+                "port": 9185,
+                "user": "root",
+                "password": "Cowabanga",
+                "checkBeforeDeploy": true
+            }
+        ]
+    }
+}
